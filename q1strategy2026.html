@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parker's GBI - Q1 2026 Growth Strategy & Performance Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #162642 0%, #1a2d4f 100%);
+            color: white;
+            line-height: 1.5;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            page-break-after: always;
+        }
+        
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            height: 60px;
+        }
+        
+        .slide-number {
+            background: #cc5b27;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .main-title {
+            font-size: 3.2em;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #cc5b27, #ff7c4c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            font-size: 1.4em;
+            text-align: center;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #cc5b27;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #cc5b27;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-number {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #cc5b27;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 15px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #cc5b27, #ff7c4c);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+        
+        .three-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+        
+        .data-table {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .data-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .data-table th {
+            background: #cc5b27;
+            padding: 12px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .data-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .performance-table {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .performance-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .performance-table th {
+            background: #2c3e50;
+            padding: 12px;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: left;
+        }
+        
+        .performance-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+        }
+        
+        .current { background: #4CAF50; color: white; font-weight: bold; text-align: center; }
+        .month1 { background: #2196F3; color: white; font-weight: bold; text-align: center; }
+        .month3 { background: #E91E63; color: white; font-weight: bold; text-align: center; }
+        .q3 { background: #607D8B; color: white; font-weight: bold; text-align: center; }
+        .q4 { background: #4CAF50; color: white; font-weight: bold; text-align: center; }
+        
+        .bullet-points {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .bullet-points li {
+            margin: 12px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 15px;
+        }
+        
+        .bullet-points li:before {
+            content: ">";
+            color: #cc5b27;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .competitor-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(204, 91, 39, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        
+        .keyword-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .keyword-list {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .tier-box {
+            background: rgba(76, 175, 80, 0.2);
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        
+        .tier-title {
+            color: #4CAF50;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .roi-visual {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 30px 0;
+        }
+        
+        .roi-box {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            flex: 1;
+            margin: 0 8px;
+        }
+        
+        .arrow {
+            font-size: 1.8em;
+            color: #cc5b27;
+        }
+        
+        .improvement-badge {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+        
+        .warning-badge {
+            display: inline-block;
+            background: #FF9800;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+        
+        .hero-stat {
+            font-size: 4em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .metric-comparison {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .metric-box {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            min-width: 150px;
+        }
+        
+        .metric-arrow {
+            font-size: 2em;
+            color: #4CAF50;
+        }
+        
+        .executive-summary-box {
+            background: rgba(76, 175, 80, 0.1);
+            border: 2px solid #4CAF50;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+        
+        .opportunity-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-left: 4px solid #cc5b27;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .campaign-status-good {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        .campaign-status-excellent {
+            color: #8BC34A;
+            font-weight: bold;
+        }
+        
+        .campaign-status-optimize {
+            color: #FFC107;
+            font-weight: bold;
+        }
+
+        @media print {
+            .slide { page-break-after: always; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">01</div>
+        </div>
+        <div class="main-title">Parkers GBI Google Ads</div>
+        <div class="subtitle">Q1 2026 Growth Strategy and Q4 2025 Performance Audit</div>
+        
+        <div class="highlight-box">
+            <h3>Q4 2025 Delivered Extraordinary Results: 398% Conversion Growth</h3>
+            <p>Account Transformation: CPA reduced 77% while conversions increased 5x quarter over quarter</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number">$8,541</span>
+                <div class="stat-label">Q4 2025 Total Spend</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">2,587</span>
+                <div class="stat-label">Q4 Conversions</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">$3.30</span>
+                <div class="stat-label">Q4 Cost Per Conversion</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">2,438%</span>
+                <div class="stat-label">Q4 ROAS</div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <div style="font-size: 1.1em; margin-top: 20px;">Q4 Performance Period: <strong>October 1 to December 31, 2025</strong></div>
+            <div style="opacity: 0.8; margin-top: 8px;">Compared to Q3 2025: July 1 to September 30, 2025</div>
+        </div>
+    </div>
+
+    <!-- Slide 2: Executive Summary -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">02</div>
+        </div>
+        <div class="section-title">Executive Summary: Q4 2025 Performance Breakthrough</div>
+        
+        <div class="executive-summary-box">
+            <h3 style="color: #4CAF50; margin-bottom: 15px; font-size: 1.4em;">Account Transformation Achieved</h3>
+            <p style="font-size: 15px; line-height: 1.7;">Q4 2025 marks a pivotal turning point for Parkers GBI Google Ads. Through strategic campaign optimization and the launch of the high-performing Q4-2025-search campaign, the account delivered 2,587 conversions at just $3.30 per conversion. This represents a 398% increase in conversion volume while simultaneously reducing cost per acquisition by 77% compared to Q3 2025.</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card" style="border-color: #4CAF50;">
+                <span class="stat-number" style="color: #4CAF50;">+398%</span>
+                <div class="stat-label">Conversion Growth<br>Q4 vs Q3</div>
+            </div>
+            <div class="stat-card" style="border-color: #2196F3;">
+                <span class="stat-number" style="color: #2196F3;">-77%</span>
+                <div class="stat-label">CPA Reduction<br>$14.35 to $3.30</div>
+            </div>
+            <div class="stat-card" style="border-color: #FF9800;">
+                <span class="stat-number" style="color: #FF9800;">+173%</span>
+                <div class="stat-label">ROAS Improvement<br>8.93x to 24.38x</div>
+            </div>
+            <div class="stat-card" style="border-color: #E91E63;">
+                <span class="stat-number" style="color: #E91E63;">+115%</span>
+                <div class="stat-label">Click Growth<br>7,552 to 16,239</div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Q4 2025 Revenue Impact</h3>
+            <p><strong>Conversion Value Generated: $208,226</strong><br>
+            Investment: $8,541 | Return on Ad Spend: 24.38x | Revenue Growth: +213% vs Q3</p>
+        </div>
+    </div>
+
+    <!-- Slide 3: Q4 vs Q3 Performance Comparison -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">03</div>
+        </div>
+        <div class="section-title">Quarter-Over-Quarter Performance Analysis</div>
+        
+        <div class="performance-table">
+            <table>
+                <tr>
+                    <th>Performance Metric</th>
+                    <th class="q3">Q3 2025 (Jul-Sep)</th>
+                    <th class="q4">Q4 2025 (Oct-Dec)</th>
+                    <th>Change</th>
+                    <th>Impact</th>
+                </tr>
+                <tr>
+                    <td><strong>Total Ad Spend</strong></td>
+                    <td>$7,451.30</td>
+                    <td style="color: #4CAF50; font-weight: bold;">$8,541.32</td>
+                    <td style="color: #4CAF50;">+$1,090 (+14.6%)</td>
+                    <td>Controlled scaling</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Impressions</strong></td>
+                    <td>243,745</td>
+                    <td style="color: #4CAF50; font-weight: bold;">263,359</td>
+                    <td style="color: #4CAF50;">+19,614 (+8.1%)</td>
+                    <td>Market presence growth</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Clicks</strong></td>
+                    <td>7,552</td>
+                    <td style="color: #4CAF50; font-weight: bold;">16,239</td>
+                    <td style="color: #4CAF50;">+8,687 (+115%)</td>
+                    <td>Traffic doubled</td>
+                </tr>
+                <tr>
+                    <td><strong>Click-Through Rate</strong></td>
+                    <td>3.57%</td>
+                    <td style="color: #4CAF50; font-weight: bold;">6.99%</td>
+                    <td style="color: #4CAF50;">+3.42% (+96%)</td>
+                    <td>Ad relevance improved</td>
+                </tr>
+                <tr>
+                    <td><strong>Average CPC</strong></td>
+                    <td>$0.99</td>
+                    <td style="color: #4CAF50; font-weight: bold;">$0.53</td>
+                    <td style="color: #4CAF50;">-$0.46 (-47%)</td>
+                    <td>Cost efficiency gains</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Conversions</strong></td>
+                    <td>519.35</td>
+                    <td style="color: #4CAF50; font-weight: bold;">2,587.42</td>
+                    <td style="color: #4CAF50;">+2,068 (+398%)</td>
+                    <td>5x volume increase</td>
+                </tr>
+                <tr>
+                    <td><strong>Conversion Rate</strong></td>
+                    <td>5.97%</td>
+                    <td style="color: #4CAF50; font-weight: bold;">14.05%</td>
+                    <td style="color: #4CAF50;">+8.08% (+135%)</td>
+                    <td>Targeting excellence</td>
+                </tr>
+                <tr>
+                    <td><strong>Cost Per Conversion</strong></td>
+                    <td>$14.35</td>
+                    <td style="color: #4CAF50; font-weight: bold;">$3.30</td>
+                    <td style="color: #4CAF50;">-$11.05 (-77%)</td>
+                    <td>Major efficiency win</td>
+                </tr>
+                <tr style="background: rgba(76, 175, 80, 0.2);">
+                    <td><strong>Conversion Value</strong></td>
+                    <td>$66,544</td>
+                    <td style="color: #4CAF50; font-weight: bold;">$208,226</td>
+                    <td style="color: #4CAF50;">+$141,682 (+213%)</td>
+                    <td>Revenue tripled</td>
+                </tr>
+                <tr style="background: rgba(76, 175, 80, 0.2);">
+                    <td><strong>ROAS</strong></td>
+                    <td>8.93x</td>
+                    <td style="color: #4CAF50; font-weight: bold;">24.38x</td>
+                    <td style="color: #4CAF50;">+15.45x (+173%)</td>
+                    <td>Exceptional returns</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Key Insight: Efficiency-Driven Growth</h3>
+            <p>With only a 14.6% increase in spend, the account achieved 398% more conversions and 213% more revenue. This demonstrates the power of strategic optimization over budget increases.</p>
+        </div>
+    </div>
+
+    <!-- Slide 4: Campaign-Level Performance -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">04</div>
+        </div>
+        <div class="section-title">Campaign Performance Breakdown: Q4 2025</div>
+        
+        <div class="performance-table">
+            <table>
+                <tr>
+                    <th>Campaign</th>
+                    <th>Spend</th>
+                    <th>Clicks</th>
+                    <th>Conv Rate</th>
+                    <th>Conversions</th>
+                    <th>CPA</th>
+                    <th>ROAS</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td><strong>Q4-2025-search</strong></td>
+                    <td>$1,235</td>
+                    <td>3,889</td>
+                    <td style="color: #4CAF50;"><strong>38.26%</strong></td>
+                    <td style="color: #4CAF50;"><strong>1,488</strong></td>
+                    <td style="color: #4CAF50;"><strong>$0.83</strong></td>
+                    <td style="color: #4CAF50;"><strong>82.67x</strong></td>
+                    <td class="campaign-status-excellent">STAR PERFORMER</td>
+                </tr>
+                <tr>
+                    <td><strong>Test-July-AIMax-Search</strong></td>
+                    <td>$3,291</td>
+                    <td>2,476</td>
+                    <td style="color: #4CAF50;">23.11%</td>
+                    <td>572</td>
+                    <td style="color: #4CAF50;">$5.75</td>
+                    <td>11.35x</td>
+                    <td class="campaign-status-good">SCALE READY</td>
+                </tr>
+                <tr>
+                    <td><strong>Sales-Performance Max-1</strong></td>
+                    <td>$3,102</td>
+                    <td>9,013</td>
+                    <td>3.99%</td>
+                    <td>447</td>
+                    <td style="color: #4CAF50;">$6.95</td>
+                    <td>18.44x</td>
+                    <td class="campaign-status-good">OPTIMIZING</td>
+                </tr>
+                <tr>
+                    <td><strong>Search Campaign British Food</strong></td>
+                    <td>$913</td>
+                    <td>861</td>
+                    <td>9.36%</td>
+                    <td>81</td>
+                    <td style="color: #FFC107;">$11.33</td>
+                    <td>12.64x</td>
+                    <td class="campaign-status-optimize">REFINE</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="two-column">
+            <div>
+                <div class="section-title" style="font-size: 1.3em;">Campaign Improvement Q4 vs Q3</div>
+                <div class="data-table">
+                    <table>
+                        <tr><th>Campaign</th><th>CPA Change</th></tr>
+                        <tr><td>Q4-2025-search</td><td style="color: #4CAF50;"><strong>NEW: $0.83 CPA</strong></td></tr>
+                        <tr><td>Test-July-AIMax-Search</td><td style="color: #4CAF50;">-41% ($9.79 to $5.75)</td></tr>
+                        <tr><td>Sales-Performance Max-1</td><td style="color: #4CAF50;">-55% ($15.45 to $6.95)</td></tr>
+                        <tr><td>Search British Food</td><td style="color: #4CAF50;">-53% ($24.03 to $11.33)</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <div class="section-title" style="font-size: 1.3em;">Conversion Growth by Campaign</div>
+                <div class="data-table">
+                    <table>
+                        <tr><th>Campaign</th><th>Conv Change</th></tr>
+                        <tr><td>Q4-2025-search</td><td style="color: #4CAF50;"><strong>NEW: +1,488</strong></td></tr>
+                        <tr><td>Test-July-AIMax-Search</td><td style="color: #4CAF50;">+162% (218 to 572)</td></tr>
+                        <tr><td>Sales-Performance Max-1</td><td style="color: #4CAF50;">+100% (224 to 447)</td></tr>
+                        <tr><td>Search British Food</td><td style="color: #4CAF50;">+4% (77 to 81)</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Star Campaign Deep Dive -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">05</div>
+        </div>
+        <div class="section-title">Star Campaign: Q4-2025-search Performance</div>
+        
+        <div class="highlight-box">
+            <h3>Exceptional Campaign Delivering 82.67x ROAS</h3>
+            <p>This new Search campaign launched in Q4 is generating conversions at $0.83 each with a 38.26% conversion rate</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card" style="border-color: #4CAF50;">
+                <span class="stat-number" style="color: #4CAF50;">$0.83</span>
+                <div class="stat-label">Cost Per Conversion<br>(Lowest in Account)</div>
+            </div>
+            <div class="stat-card" style="border-color: #8BC34A;">
+                <span class="stat-number" style="color: #8BC34A;">38.26%</span>
+                <div class="stat-label">Conversion Rate<br>(Highest in Account)</div>
+            </div>
+            <div class="stat-card" style="border-color: #2196F3;">
+                <span class="stat-number" style="color: #2196F3;">$0.32</span>
+                <div class="stat-label">Average CPC<br>(Most Efficient)</div>
+            </div>
+            <div class="stat-card" style="border-color: #E91E63;">
+                <span class="stat-number" style="color: #E91E63;">31.38%</span>
+                <div class="stat-label">Click-Through Rate<br>(Best Engagement)</div>
+            </div>
+        </div>
+
+        <div class="two-column">
+            <div>
+                <div class="section-title" style="font-size: 1.3em;">Why This Campaign Excels</div>
+                <ul class="bullet-points">
+                    <li>Highly targeted keyword selection aligned with buyer intent</li>
+                    <li>Responsive search ads with optimized headlines</li>
+                    <li>Target CPA bidding strategy at $0.56</li>
+                    <li>Strong brand-related search term capture</li>
+                    <li>Efficient mobile performance (34.17% CTR)</li>
+                    <li>Desktop conversion rate of 56.25%</li>
+                </ul>
+            </div>
+            <div>
+                <div class="section-title" style="font-size: 1.3em;">Q1 2026 Scaling Opportunity</div>
+                <ul class="bullet-points">
+                    <li>Current daily budget: $15 (limited by budget)</li>
+                    <li>Recommendation: Increase to $50/day</li>
+                    <li>Projected additional conversions: 3,000+/quarter</li>
+                    <li>Expected CPA maintenance: under $1.50</li>
+                    <li>Estimated incremental revenue: $250,000+</li>
+                    <li>Priority: Highest scaling potential</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Device Performance Analysis -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">06</div>
+        </div>
+        <div class="section-title">Device Performance Analysis: Q4 2025</div>
+        
+        <div class="performance-table">
+            <table>
+                <tr>
+                    <th>Device</th>
+                    <th>Spend</th>
+                    <th>Clicks</th>
+                    <th>Conversions</th>
+                    <th>Conv Rate</th>
+                    <th>CPA</th>
+                    <th>Share of Conv</th>
+                </tr>
+                <tr>
+                    <td><strong>Mobile Phones</strong></td>
+                    <td>$4,745</td>
+                    <td>12,094</td>
+                    <td style="color: #4CAF50;"><strong>1,435</strong></td>
+                    <td>11.87%</td>
+                    <td style="color: #4CAF50;">$3.31</td>
+                    <td><strong>55.5%</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Computers</strong></td>
+                    <td>$3,410</td>
+                    <td>3,136</td>
+                    <td style="color: #4CAF50;"><strong>1,046</strong></td>
+                    <td style="color: #4CAF50;"><strong>33.37%</strong></td>
+                    <td style="color: #4CAF50;">$3.26</td>
+                    <td><strong>40.4%</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Tablets</strong></td>
+                    <td>$379</td>
+                    <td>994</td>
+                    <td>106</td>
+                    <td>10.66%</td>
+                    <td style="color: #4CAF50;">$3.58</td>
+                    <td>4.1%</td>
+                </tr>
+                <tr>
+                    <td><strong>TV Screens</strong></td>
+                    <td>$5</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>N/A</td>
+                    <td>$5.46</td>
+                    <td>0.04%</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="two-column">
+            <div class="opportunity-card">
+                <h4 style="color: #cc5b27; margin-bottom: 10px;">Mobile Optimization Opportunity</h4>
+                <p style="font-size: 14px;">Mobile drives 55.5% of conversions with strong efficiency. Q1 focus: Enhanced mobile landing pages and call extensions to capture high-intent mobile users searching for British food delivery.</p>
+            </div>
+            <div class="opportunity-card">
+                <h4 style="color: #cc5b27; margin-bottom: 10px;">Desktop Conversion Excellence</h4>
+                <p style="font-size: 14px;">Desktop shows highest conversion rate at 33.37%. Q1 strategy: Leverage desktop for high-value orders with detailed product pages and enhanced shopping experience.</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Device Strategy for Q1 2026</h3>
+            <p>Maintain balanced approach across devices. Both mobile and desktop deliver exceptional CPA under $3.50. Focus on device-specific ad copy and landing page optimization.</p>
+        </div>
+    </div>
+
+    <!-- Slide 7: Keyword Performance -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">07</div>
+        </div>
+        <div class="section-title">Top Performing Keywords: Q4 2025</div>
+        
+        <div class="two-column">
+            <div>
+                <div class="section-title" style="font-size: 1.3em;">Highest Volume Keywords</div>
+                <div class="data-table">
+                    <table>
+                        <tr><th>Keyword</th><th>Spend</th><th>Clicks</th><th>CTR</th></tr>
+                        <tr><td>British Food</td><td>$1,004</td><td>738</td><td>10.96%</td></tr>
+                        <tr><td>british food market</td><td>$224</td><td>745</td><td>39.15%</td></tr>
+                        <tr><td>meat pies</td><td>$557</td><td>443</td><td>12.64%</td></tr>
+                        <tr><td>sausage rolls</td><td>$510</td><td>353</td><td>16.77%</td></tr>
+                        <tr><td>british pies</td><td>$444</td><td>1,459</td><td>36.10%</td></tr>
+                        <tr><td>cornish pasty</td><td>$315</td><td>336</td><td>28.74%</td></tr>
+                        <tr><td>british food online</td><td>$118</td><td>298</td><td>27.85%</td></tr>
+                        <tr><td>cumberland sausage</td><td>$236</td><td>174</td><td>21.75%</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <div class="section-title" style="font-size: 1.3em;">Highest CTR Keywords</div>
+                <div class="data-table">
+                    <table>
+                        <tr><th>Keyword</th><th>CTR</th><th>Clicks</th></tr>
+                        <tr><td>british food market</td><td style="color: #4CAF50;"><strong>39.15%</strong></td><td>745</td></tr>
+                        <tr><td>british pies</td><td style="color: #4CAF50;"><strong>36.10%</strong></td><td>1,459</td></tr>
+                        <tr><td>british sausage company</td><td style="color: #4CAF50;">30.96%</td><td>74</td></tr>
+                        <tr><td>british pork pies</td><td style="color: #4CAF50;">28.95%</td><td>119</td></tr>
+                        <tr><td>cornish pasty</td><td style="color: #4CAF50;">28.74%</td><td>336</td></tr>
+                        <tr><td>british food online</td><td style="color: #4CAF50;">27.85%</td><td>298</td></tr>
+                        <tr><td>british meat pies</td><td style="color: #4CAF50;">27.92%</td><td>196</td></tr>
+                        <tr><td>pork pies</td><td style="color: #4CAF50;">24.33%</td><td>199</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Keyword Strategy Insight</h3>
+            <p>Product-specific keywords (pies, sausages, pasties) deliver highest engagement with CTRs above 25%. Q1 focus: Expand product-specific keyword coverage and create dedicated ad groups for top performers.</p>
+        </div>
+    </div>
+
+    <!-- Slide 8: Search Term Analysis -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">08</div>
+        </div>
+        <div class="section-title">Search Term Intelligence: Brand and Product Insights</div>
+        
+        <div class="three-column">
+            <div class="competitor-section">
+                <h4 style="color: #4CAF50; margin-bottom: 15px;">Brand Search Terms</h4>
+                <div style="font-size: 15px; margin-bottom: 15px;">
+                    <strong>Strong brand recognition driving traffic</strong>
+                </div>
+                <div class="keyword-list">
+                    <strong>Top Brand Searches:</strong><br>
+                    parkers british foods: 760 clicks<br>
+                    parkers british: 767 clicks<br>
+                    parkers gbi: 336 clicks<br>
+                    parkers english food: 292 clicks<br>
+                    parkers pies: 205 clicks<br>
+                    parkers pork pies: 109 clicks<br>
+                    parkers sausages: 123 clicks
+                </div>
+            </div>
+            
+            <div class="competitor-section">
+                <h4 style="color: #2196F3; margin-bottom: 15px;">Product Search Terms</h4>
+                <div style="font-size: 15px; margin-bottom: 15px;">
+                    <strong>High-intent product searches</strong>
+                </div>
+                <div class="keyword-list">
+                    <strong>Product Searches:</strong><br>
+                    pork pie: 480 impressions<br>
+                    british food: 430 impressions<br>
+                    cumberland sausage: 274 impressions<br>
+                    black pudding: 241 impressions<br>
+                    british sausages: 167 impressions<br>
+                    english sausages: 167 impressions<br>
+                    pork pies: 148 impressions
+                </div>
+            </div>
+            
+            <div class="competitor-section">
+                <h4 style="color: #FF9800; margin-bottom: 15px;">Competitor Search Terms</h4>
+                <div style="font-size: 15px; margin-bottom: 15px;">
+                    <strong>Capturing competitor traffic</strong>
+                </div>
+                <div class="keyword-list">
+                    <strong>Competitor Captures:</strong><br>
+                    jolly posh foods: 1,470 impressions<br>
+                    jolly posh: 308 impressions<br>
+                    british food depot: 80 impressions<br>
+                    goodwoods british: 38 impressions<br>
+                    jollyposh: 76 impressions<br>
+                    <br>
+                    <em>Opportunity: Expand competitor targeting</em>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Search Term Optimization for Q1</h3>
+            <p>Brand terms drive 40% of search traffic. Competitor terms show high impression potential. Q1 strategy: Implement dedicated brand defense campaign and expand competitor conquesting.</p>
+        </div>
+    </div>
+
+    <!-- Slide 9: Demographics Analysis -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">09</div>
+        </div>
+        <div class="section-title">Audience Demographics: Q4 2025 Insights</div>
+        
+        <div class="two-column">
+            <div>
+                <div class="section-title" style="font-size: 1.3em;">Age Distribution (% of Impressions)</div>
+                <div class="data-table">
+                    <table>
+                        <tr><th>Age Range</th><th>Male</th><th>Female</th><th>Total</th></tr>
+                        <tr><td>18-24</td><td>2.30%</td><td>1.79%</td><td>4.09%</td></tr>
+                        <tr><td>25-34</td><td>7.62%</td><td>6.02%</td><td>13.64%</td></tr>
+                        <tr><td>35-44</td><td>8.37%</td><td>8.56%</td><td>16.93%</td></tr>
+                        <tr><td>45-54</td><td>8.41%</td><td>9.43%</td><td>17.84%</td></tr>
+                        <tr><td style="color: #4CAF50;"><strong>55-64</strong></td><td style="color: #4CAF50;">9.68%</td><td style="color: #4CAF50;"><strong>12.71%</strong></td><td style="color: #4CAF50;"><strong>22.39%</strong></td></tr>
+                        <tr><td style="color: #4CAF50;"><strong>65+</strong></td><td style="color: #4CAF50;">10.10%</td><td style="color: #4CAF50;"><strong>15.00%</strong></td><td style="color: #4CAF50;"><strong>25.10%</strong></td></tr>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <div class="section-title" style="font-size: 1.3em;">Key Demographic Insights</div>
+                <ul class="bullet-points">
+                    <li><strong>Core Audience:</strong> Adults 55+ represent 47.5% of impressions</li>
+                    <li><strong>Female 65+:</strong> Largest single segment at 15.00%</li>
+                    <li><strong>Female 55-64:</strong> Second largest at 12.71%</li>
+                    <li><strong>Male 65+:</strong> Strong segment at 10.10%</li>
+                    <li><strong>Growth Opportunity:</strong> 35-54 age group underrepresented</li>
+                    <li><strong>Youth Market:</strong> 18-34 at 17.73% shows potential</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Demographic Strategy for Q1 2026</h3>
+            <p>The 55+ demographic drives nearly half of all impressions. Nostalgia-focused messaging resonates strongly. Q1 opportunity: Expand reach to 35-54 segment with family-focused messaging while maintaining strong 55+ engagement.</p>
+        </div>
+    </div>
+
+    <!-- Slide 10: Time-Based Performance -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">10</div>
+        </div>
+        <div class="section-title">Performance Timing: Day and Hour Analysis</div>
+        
+        <div class="two-column">
+            <div>
+                <div class="section-title" style="font-size: 1.3em;">Peak Performance Hours</div>
+                <div class="data-table">
+                    <table>
+                        <tr><th>Time Period</th><th>Impressions</th><th>Performance</th></tr>
+                        <tr><td style="color: #4CAF50;"><strong>12 PM - 2 PM</strong></td><td>High</td><td>Peak engagement</td></tr>
+                        <tr><td style="color: #4CAF50;"><strong>3 PM - 5 PM</strong></td><td>High</td><td>Strong conversions</td></tr>
+                        <tr><td>10 AM - 12 PM</td><td>Medium-High</td><td>Building momentum</td></tr>
+                        <tr><td>6 PM - 8 PM</td><td>Medium</td><td>Evening shopping</td></tr>
+                        <tr><td>8 AM - 10 AM</td><td>Medium</td><td>Morning browsers</td></tr>
+                        <tr><td>12 AM - 6 AM</td><td>Low</td><td>Minimal activity</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <div class="section-title" style="font-size: 1.3em;">Day of Week Performance</div>
+                <div class="data-table">
+                    <table>
+                        <tr><th>Day</th><th>Relative Volume</th><th>Q1 Strategy</th></tr>
+                        <tr><td style="color: #4CAF50;"><strong>Thursday</strong></td><td>Highest</td><td>Max budget allocation</td></tr>
+                        <tr><td style="color: #4CAF50;"><strong>Wednesday</strong></td><td>Very High</td><td>Strong investment</td></tr>
+                        <tr><td>Tuesday</td><td>High</td><td>Maintain budget</td></tr>
+                        <tr><td>Friday</td><td>Medium-High</td><td>Weekend prep push</td></tr>
+                        <tr><td>Saturday</td><td>Medium</td><td>Weekend shoppers</td></tr>
+                        <tr><td>Sunday</td><td>Medium</td><td>Planning ahead</td></tr>
+                        <tr><td>Monday</td><td>Medium</td><td>Week start browsers</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Ad Schedule Optimization for Q1</h3>
+            <p>Peak performance occurs Wednesday through Thursday, 12 PM to 5 PM. Q1 recommendation: Implement bid adjustments of +20% during peak hours and +15% on Thursday/Wednesday to maximize high-converting traffic.</p>
+        </div>
+    </div>
+
+    <!-- Slide 11: Q1 2026 Growth Strategy -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">11</div>
+        </div>
+        <div class="section-title">Q1 2026 Growth Strategy: Scaling Success</div>
+        
+        <div class="highlight-box">
+            <h3>Strategic Objective: Scale Proven Winners, Optimize Underperformers</h3>
+            <p>Leverage Q4's exceptional efficiency gains to drive sustainable growth through strategic budget allocation and campaign expansion</p>
+        </div>
+        
+        <div class="three-column">
+            <div class="tier-box">
+                <div class="tier-title">Phase 1: Scale Winners (Weeks 1-4)</div>
+                <div style="font-size: 15px;">
+                    <strong>Q4-2025-search Campaign:</strong><br>
+                    Increase daily budget from $15 to $50<br>
+                    Expected: +2,000 conversions<br>
+                    Maintain CPA under $1.50<br><br>
+                    <strong>Test-July-AIMax-Search:</strong><br>
+                    Scale from $35.50 to $60/day<br>
+                    Expected: +400 conversions<br>
+                    Target CPA: under $6.00
+                </div>
+            </div>
+            
+            <div class="tier-box" style="border-color: #2196F3; background: rgba(33, 150, 243, 0.2);">
+                <div class="tier-title" style="color: #2196F3;">Phase 2: Optimize & Expand (Weeks 5-8)</div>
+                <div style="font-size: 15px;">
+                    <strong>Performance Max Refinement:</strong><br>
+                    Asset group optimization<br>
+                    Audience signal enhancement<br>
+                    Target: Improve CVR to 6%<br><br>
+                    <strong>New Campaign Launch:</strong><br>
+                    Product-specific campaigns<br>
+                    Seasonal promotions<br>
+                    Competitor conquesting
+                </div>
+            </div>
+            
+            <div class="tier-box" style="border-color: #FF9800; background: rgba(255, 152, 0, 0.2);">
+                <div class="tier-title" style="color: #FF9800;">Phase 3: Market Expansion (Weeks 9-12)</div>
+                <div style="font-size: 15px;">
+                    <strong>Geographic Expansion:</strong><br>
+                    High-performing state targeting<br>
+                    Location bid adjustments<br>
+                    Regional messaging tests<br><br>
+                    <strong>Channel Diversification:</strong><br>
+                    YouTube consideration ads<br>
+                    Display remarketing<br>
+                    Discovery campaigns
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 12: Budget Allocation Strategy -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">12</div>
+        </div>
+        <div class="section-title">Q1 2026 Budget Allocation Strategy</div>
+        
+        <div class="stats-grid">
+            <div class="stat-card" style="border-color: #4CAF50;">
+                <span class="stat-number" style="color: #4CAF50;">45%</span>
+                <div class="stat-label">Q4-2025-search<br>(Star Performer: $0.83 CPA)</div>
+            </div>
+            <div class="stat-card" style="border-color: #2196F3;">
+                <span class="stat-number" style="color: #2196F3;">30%</span>
+                <div class="stat-label">Test-July-AIMax-Search<br>(Strong: $5.75 CPA)</div>
+            </div>
+            <div class="stat-card" style="border-color: #FF9800;">
+                <span class="stat-number" style="color: #FF9800;">20%</span>
+                <div class="stat-label">Sales-Performance Max<br>(Optimize to $5.50 CPA)</div>
+            </div>
+            <div class="stat-card" style="border-color: #9C27B0;">
+                <span class="stat-number" style="color: #9C27B0;">5%</span>
+                <div class="stat-label">Testing Budget<br>(New Campaigns)</div>
+            </div>
+        </div>
+
+        <div class="performance-table">
+            <table>
+                <tr>
+                    <th>Campaign</th>
+                    <th>Q4 Monthly Spend</th>
+                    <th>Q4 CPA</th>
+                    <th>Q1 Monthly Budget</th>
+                    <th>Target CPA</th>
+                    <th>Expected Conversions</th>
+                </tr>
+                <tr>
+                    <td><strong>Q4-2025-search</strong></td>
+                    <td>$412</td>
+                    <td style="color: #4CAF50;">$0.83</td>
+                    <td style="color: #4CAF50;"><strong>$1,500</strong></td>
+                    <td style="color: #4CAF50;"><strong>$1.00</strong></td>
+                    <td style="color: #4CAF50;"><strong>1,500</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Test-July-AIMax-Search</strong></td>
+                    <td>$1,097</td>
+                    <td style="color: #4CAF50;">$5.75</td>
+                    <td style="color: #2196F3;"><strong>$1,000</strong></td>
+                    <td style="color: #2196F3;"><strong>$5.50</strong></td>
+                    <td style="color: #2196F3;"><strong>182</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Sales-Performance Max</strong></td>
+                    <td>$1,034</td>
+                    <td style="color: #4CAF50;">$6.95</td>
+                    <td style="color: #FF9800;"><strong>$667</strong></td>
+                    <td style="color: #FF9800;"><strong>$5.50</strong></td>
+                    <td style="color: #FF9800;"><strong>121</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Testing/New</strong></td>
+                    <td>$0</td>
+                    <td>N/A</td>
+                    <td style="color: #9C27B0;"><strong>$167</strong></td>
+                    <td style="color: #9C27B0;"><strong>$8.00</strong></td>
+                    <td style="color: #9C27B0;"><strong>21</strong></td>
+                </tr>
+                <tr style="background: rgba(76, 175, 80, 0.2);">
+                    <td><strong>Q1 Monthly Total</strong></td>
+                    <td colspan="2"></td>
+                    <td><strong>$3,334</strong></td>
+                    <td><strong>$1.83</strong></td>
+                    <td style="color: #4CAF50;"><strong>1,824</strong></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Slide 13: Q1 Projections -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">13</div>
+        </div>
+        <div class="section-title">Q1 2026 Performance Projections</div>
+        
+        <div class="performance-table">
+            <table>
+                <tr>
+                    <th>Metric</th>
+                    <th class="q4">Q4 2025 Actual</th>
+                    <th class="month1">Q1 2026 Conservative</th>
+                    <th class="month3">Q1 2026 Optimistic</th>
+                </tr>
+                <tr>
+                    <td><strong>Quarterly Budget</strong></td>
+                    <td>$8,541</td>
+                    <td>$10,000</td>
+                    <td>$12,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Expected Clicks</strong></td>
+                    <td>16,239</td>
+                    <td>20,000</td>
+                    <td>25,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Conversion Rate</strong></td>
+                    <td>14.05%</td>
+                    <td>15.00%</td>
+                    <td>16.00%</td>
+                </tr>
+                <tr>
+                    <td><strong>Expected Conversions</strong></td>
+                    <td>2,587</td>
+                    <td style="color: #4CAF50;"><strong>3,000</strong></td>
+                    <td style="color: #4CAF50;"><strong>4,000</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Cost Per Conversion</strong></td>
+                    <td>$3.30</td>
+                    <td style="color: #4CAF50;"><strong>$3.33</strong></td>
+                    <td style="color: #4CAF50;"><strong>$3.00</strong></td>
+                </tr>
+                <tr style="background: rgba(76, 175, 80, 0.2);">
+                    <td><strong>Expected Revenue</strong></td>
+                    <td>$208,226</td>
+                    <td style="color: #4CAF50;"><strong>$241,380</strong></td>
+                    <td style="color: #4CAF50;"><strong>$321,840</strong></td>
+                </tr>
+                <tr style="background: rgba(76, 175, 80, 0.2);">
+                    <td><strong>Expected ROAS</strong></td>
+                    <td>24.38x</td>
+                    <td style="color: #4CAF50;"><strong>24.14x</strong></td>
+                    <td style="color: #4CAF50;"><strong>26.82x</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card" style="border-color: #4CAF50;">
+                <span class="stat-number" style="color: #4CAF50;">+16%</span>
+                <div class="stat-label">Conversion Growth<br>(Conservative)</div>
+            </div>
+            <div class="stat-card" style="border-color: #2196F3;">
+                <span class="stat-number" style="color: #2196F3;">+55%</span>
+                <div class="stat-label">Conversion Growth<br>(Optimistic)</div>
+            </div>
+            <div class="stat-card" style="border-color: #FF9800;">
+                <span class="stat-number" style="color: #FF9800;">24x+</span>
+                <div class="stat-label">Maintained ROAS<br>(Both Scenarios)</div>
+            </div>
+            <div class="stat-card" style="border-color: #E91E63;">
+                <span class="stat-number" style="color: #E91E63;">$322K</span>
+                <div class="stat-label">Revenue Potential<br>(Optimistic)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 14: Competitive Opportunities -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">14</div>
+        </div>
+        <div class="section-title">Competitive Opportunities for Q1 2026</div>
+        
+        <div class="two-column">
+            <div class="competitor-section">
+                <h4 style="color: #cc5b27; margin-bottom: 15px;">Competitor Traffic Capture</h4>
+                <div style="font-size: 15px; margin-bottom: 15px;">
+                    Q4 data shows significant competitor search terms appearing in your traffic. These users are actively searching for British food alternatives.
+                </div>
+                <div class="keyword-list">
+                    <strong>Competitor Terms Captured:</strong><br>
+                    jolly posh foods: 1,470 impressions<br>
+                    british food depot: 80 impressions<br>
+                    goodwoods british market: 38 impressions<br><br>
+                    <strong>Q1 Strategy:</strong><br>
+                    Launch dedicated competitor targeting campaign<br>
+                    Create comparison landing pages<br>
+                    Highlight Parker's unique value propositions
+                </div>
+            </div>
+            
+            <div class="competitor-section">
+                <h4 style="color: #cc5b27; margin-bottom: 15px;">Brand Defense Strategy</h4>
+                <div style="font-size: 15px; margin-bottom: 15px;">
+                    Strong brand search volume indicates growing awareness. Protect and expand brand presence to maximize value of existing demand.
+                </div>
+                <div class="keyword-list">
+                    <strong>Brand Terms to Defend:</strong><br>
+                    parkers british: 767 clicks<br>
+                    parkers british foods: 760 clicks<br>
+                    parkers gbi: 336 clicks<br>
+                    parkers english food: 292 clicks<br><br>
+                    <strong>Q1 Strategy:</strong><br>
+                    Ensure 100% impression share on brand terms<br>
+                    Add sitelink extensions for key products<br>
+                    Implement call extensions for direct orders
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Competitive Advantage Analysis</h3>
+            <p>Parker's GBI shows strong brand recognition with 3,400+ brand-related clicks in Q4. Competitor searches indicate market awareness. Q1 focus: Strengthen brand defense while strategically targeting competitor audiences.</p>
+        </div>
+    </div>
+
+    <!-- Slide 15: Risk Assessment -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">15</div>
+        </div>
+        <div class="section-title">Risk Assessment and Mitigation Strategy</div>
+        
+        <div class="stats-grid">
+            <div class="stat-card" style="border-color: #4CAF50;">
+                <span class="stat-number" style="color: #4CAF50;">95%</span>
+                <div class="stat-label">Success Probability<br>Based on Q4 Data</div>
+            </div>
+            <div class="stat-card" style="border-color: #FFC107;">
+                <span class="stat-number" style="color: #FFC107;">$5.00</span>
+                <div class="stat-label">CPA Alert Threshold<br>For Search Campaigns</div>
+            </div>
+            <div class="stat-card" style="border-color: #2196F3;">
+                <span class="stat-number" style="color: #2196F3;">Weekly</span>
+                <div class="stat-label">Performance Reviews<br>Optimization Cadence</div>
+            </div>
+            <div class="stat-card" style="border-color: #9C27B0;">
+                <span class="stat-number" style="color: #9C27B0;">15%</span>
+                <div class="stat-label">Budget Flexibility<br>For Rapid Scaling</div>
+            </div>
+        </div>
+
+        <div class="two-column">
+            <div>
+                <div class="section-title" style="font-size: 1.3em;">Potential Risks</div>
+                <ul class="bullet-points">
+                    <li><strong>Scaling Dilution:</strong> CPA may increase as budgets scale</li>
+                    <li><strong>Seasonal Variation:</strong> Q1 may have different demand patterns</li>
+                    <li><strong>Competitor Response:</strong> Increased competition possible</li>
+                    <li><strong>Platform Changes:</strong> Google algorithm updates</li>
+                    <li><strong>Market Saturation:</strong> Limited audience pool</li>
+                </ul>
+            </div>
+            <div>
+                <div class="section-title" style="font-size: 1.3em;">Mitigation Strategies</div>
+                <ul class="bullet-points">
+                    <li><strong>Gradual Scaling:</strong> Increase budgets 20% weekly maximum</li>
+                    <li><strong>Automated Rules:</strong> Pause if CPA exceeds threshold</li>
+                    <li><strong>Diversified Campaigns:</strong> Multiple traffic sources</li>
+                    <li><strong>Audience Expansion:</strong> Lookalike and interest targeting</li>
+                    <li><strong>Creative Testing:</strong> Continuous ad optimization</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Risk-Adjusted Confidence Level: High</h3>
+            <p>Q4's exceptional performance provides strong foundation. Conservative projections account for scaling challenges. Mitigation strategies minimize downside risk while preserving upside potential.</p>
+        </div>
+    </div>
+
+    <!-- Slide 16: 2026 Annual Projections -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">16</div>
+        </div>
+        <div class="section-title">2026 Annual Financial Projections</div>
+        
+        <div class="performance-table">
+            <table>
+                <tr>
+                    <th>Quarter</th>
+                    <th>Ad Spend</th>
+                    <th>Conversions</th>
+                    <th>CPA</th>
+                    <th>Revenue</th>
+                    <th>ROAS</th>
+                </tr>
+                <tr>
+                    <td><strong>Q1 2026</strong></td>
+                    <td>$10,000</td>
+                    <td>3,000</td>
+                    <td style="color: #4CAF50;">$3.33</td>
+                    <td style="color: #4CAF50;">$241,380</td>
+                    <td style="color: #4CAF50;"><strong>24.14x</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Q2 2026</strong></td>
+                    <td>$12,000</td>
+                    <td>3,600</td>
+                    <td style="color: #4CAF50;">$3.33</td>
+                    <td style="color: #4CAF50;">$289,656</td>
+                    <td style="color: #4CAF50;"><strong>24.14x</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Q3 2026</strong></td>
+                    <td>$14,000</td>
+                    <td>4,200</td>
+                    <td style="color: #4CAF50;">$3.33</td>
+                    <td style="color: #4CAF50;">$337,932</td>
+                    <td style="color: #4CAF50;"><strong>24.14x</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Q4 2026</strong></td>
+                    <td>$16,000</td>
+                    <td>4,800</td>
+                    <td style="color: #4CAF50;">$3.33</td>
+                    <td style="color: #4CAF50;">$386,208</td>
+                    <td style="color: #4CAF50;"><strong>24.14x</strong></td>
+                </tr>
+                <tr style="background: rgba(204, 91, 39, 0.3);">
+                    <td><strong>2026 ANNUAL TOTAL</strong></td>
+                    <td><strong>$52,000</strong></td>
+                    <td><strong>15,600</strong></td>
+                    <td style="color: #4CAF50;"><strong>$3.33</strong></td>
+                    <td style="color: #4CAF50;"><strong>$1,255,176</strong></td>
+                    <td style="color: #4CAF50;"><strong>24.14x</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card" style="border-color: #4CAF50;">
+                <span class="stat-number" style="color: #4CAF50;">$1.26M</span>
+                <div class="stat-label">Projected Annual Revenue</div>
+            </div>
+            <div class="stat-card" style="border-color: #2196F3;">
+                <span class="stat-number" style="color: #2196F3;">15,600</span>
+                <div class="stat-label">Projected Annual Conversions</div>
+            </div>
+            <div class="stat-card" style="border-color: #FF9800;">
+                <span class="stat-number" style="color: #FF9800;">24x</span>
+                <div class="stat-label">Maintained ROAS</div>
+            </div>
+            <div class="stat-card" style="border-color: #E91E63;">
+                <span class="stat-number" style="color: #E91E63;">$52K</span>
+                <div class="stat-label">Annual Investment</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 17: Partnership Value -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">17</div>
+        </div>
+        <div class="section-title">Heathmedia Partnership: Delivering Exceptional Value</div>
+        
+        <div class="highlight-box">
+            <h3>Q4 2025 Results Demonstrate Partnership Excellence</h3>
+            <p>77% CPA reduction | 398% conversion growth | 173% ROAS improvement</p>
+        </div>
+
+        <div class="two-column">
+            <div>
+                <div class="section-title" style="font-size: 1.3em;">What We Delivered in Q4</div>
+                <ul class="bullet-points">
+                    <li>Launched star-performing Q4-2025-search campaign achieving $0.83 CPA</li>
+                    <li>Reduced account-wide CPA from $14.35 to $3.30</li>
+                    <li>Grew conversions by 398% quarter-over-quarter</li>
+                    <li>Improved ROAS from 8.93x to 24.38x</li>
+                    <li>Generated $208,226 in conversion value</li>
+                    <li>Doubled click volume while reducing CPC by 47%</li>
+                </ul>
+            </div>
+            <div>
+                <div class="section-title" style="font-size: 1.3em;">What We Will Deliver in Q1</div>
+                <ul class="bullet-points">
+                    <li>Strategic scaling of proven campaigns</li>
+                    <li>Advanced audience targeting optimization</li>
+                    <li>Competitor conquesting campaigns</li>
+                    <li>Brand defense and protection</li>
+                    <li>Creative testing and optimization</li>
+                    <li>Weekly performance reporting and insights</li>
+                    <li>Proactive opportunity identification</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="executive-summary-box">
+            <h3 style="color: #4CAF50; margin-bottom: 15px;">Our Commitment to Your Success</h3>
+            <p style="font-size: 15px;">Heathmedia is committed to building on Q4's exceptional results. Our data-driven approach, combined with deep Google Ads expertise, positions Parkers GBI for continued growth and market leadership in the British food e-commerce space.</p>
+        </div>
+    </div>
+
+    <!-- Slide 18: Strategic Recommendation -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">18</div>
+        </div>
+        <div class="main-title" style="font-size: 2.5em;">Strategic Recommendation</div>
+        <div class="subtitle">Expand Google Ads Partnership for Accelerated Growth</div>
+        
+        <div class="highlight-box">
+            <h3>Q4 Results Validate Scaling Opportunity</h3>
+            <div class="two-column" style="text-align: left;">
+                <div>
+                    <ul class="bullet-points">
+                        <li>Achieved 2,587 conversions at $3.30 CPA</li>
+                        <li>Delivered 24.38x return on ad spend</li>
+                        <li>Reduced CPA by 77% quarter-over-quarter</li>
+                        <li>Generated $208,226 in conversion value</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="bullet-points">
+                        <li>Identified star campaign with $0.83 CPA</li>
+                        <li>Strong brand search momentum captured</li>
+                        <li>Clear path to 3,000+ quarterly conversions</li>
+                        <li>Sustainable efficiency at scale proven</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="performance-table">
+            <table>
+                <tr>
+                    <th style="background: #cc5b27;">Growth Scenario</th>
+                    <th>Q1 Investment</th>
+                    <th>Expected Conversions</th>
+                    <th>Expected Revenue</th>
+                    <th>ROAS</th>
+                </tr>
+                <tr>
+                    <td><strong>Conservative Growth</strong></td>
+                    <td>$10,000</td>
+                    <td>3,000</td>
+                    <td style="color: #4CAF50;">$241,380</td>
+                    <td style="color: #4CAF50;">24.14x</td>
+                </tr>
+                <tr>
+                    <td><strong>Accelerated Growth</strong></td>
+                    <td>$12,000</td>
+                    <td>4,000</td>
+                    <td style="color: #4CAF50;">$321,840</td>
+                    <td style="color: #4CAF50;">26.82x</td>
+                </tr>
+                <tr style="background: rgba(76, 175, 80, 0.2);">
+                    <td><strong>2026 Annual Potential</strong></td>
+                    <td>$52,000</td>
+                    <td>15,600</td>
+                    <td style="color: #4CAF50;"><strong>$1,255,176</strong></td>
+                    <td style="color: #4CAF50;"><strong>24.14x</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="cta-section">
+            <div style="font-size: 1.4em; margin-bottom: 20px;">
+                <strong>RECOMMENDATION: APPROVED FOR EXPANDED PARTNERSHIP</strong>
+            </div>
+            <div style="font-size: 1.1em;">
+                Proven Performance: 77% CPA reduction with 398% conversion growth<br>
+                <strong>Q1 Target: 3,000+ conversions at $3.33 CPA generating $241K+ revenue</strong><br>
+                <strong>2026 Projection: $1.26M revenue potential with 24x ROAS</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 19: Next Steps -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">19</div>
+        </div>
+        <div class="section-title">Next Steps: Q1 2026 Implementation</div>
+        
+        <div class="roi-visual">
+            <div class="roi-box">
+                <h4>Week 1</h4>
+                <div>Partnership Kickoff</div>
+                <div style="font-size: 14px; margin-top: 8px;">Finalize budget allocation<br>Campaign prioritization</div>
+            </div>
+            <div class="arrow">></div>
+            <div class="roi-box">
+                <h4>Week 2-4</h4>
+                <div>Scale Winners</div>
+                <div style="font-size: 14px; margin-top: 8px;">Increase Q4-search budget<br>Optimize ad copy</div>
+            </div>
+            <div class="arrow">></div>
+            <div class="roi-box">
+                <h4>Week 5-8</h4>
+                <div>Expand & Optimize</div>
+                <div style="font-size: 14px; margin-top: 8px;">New campaign launch<br>Performance refinement</div>
+            </div>
+            <div class="arrow">></div>
+            <div class="roi-box">
+                <h4>Week 9-12</h4>
+                <div>Growth Acceleration</div>
+                <div style="font-size: 14px; margin-top: 8px;">Channel expansion<br>Q2 planning</div>
+            </div>
+        </div>
+
+        <div class="two-column">
+            <div>
+                <div class="section-title" style="font-size: 1.3em;">Immediate Actions (Week 1)</div>
+                <ul class="bullet-points">
+                    <li>Confirm Q1 budget allocation and approval</li>
+                    <li>Schedule strategy call with Emma Reynolds</li>
+                    <li>Increase Q4-2025-search daily budget to $50</li>
+                    <li>Set up enhanced conversion tracking</li>
+                    <li>Implement automated performance alerts</li>
+                    <li>Create Q1 reporting dashboard</li>
+                </ul>
+            </div>
+            <div>
+                <div class="section-title" style="font-size: 1.3em;">Ongoing Partnership Support</div>
+                <ul class="bullet-points">
+                    <li>Weekly performance reports and insights</li>
+                    <li>Bi-weekly strategy optimization calls</li>
+                    <li>Monthly comprehensive analysis</li>
+                    <li>Proactive opportunity identification</li>
+                    <li>Competitive monitoring and response</li>
+                    <li>24-hour response for critical issues</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Ready to Scale Your Success</h3>
+            <p>Contact Heathmedia to begin your Q1 2026 growth journey. Let us build on Q4's exceptional results to drive even greater performance in the year ahead.</p>
+        </div>
+    </div>
+</body>
+</html>
