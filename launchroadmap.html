@@ -1,0 +1,1952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parker's GBI - Google Ads Strategic Launch Roadmap 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #162642 0%, #1a2d4f 100%);
+            color: white;
+            line-height: 1.5;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            page-break-after: always;
+        }
+        
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            height: 60px;
+        }
+        
+        .slide-number {
+            background: #cc5b27;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .main-title {
+            font-size: 3em;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #cc5b27, #ff7c4c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            font-size: 1.4em;
+            text-align: center;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #cc5b27;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #cc5b27;
+            border-radius: 15px;
+            padding: 22px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #cc5b27;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #cc5b27, #ff7c4c);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+        
+        .three-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+        
+        .four-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 15px;
+            align-items: start;
+        }
+        
+        .data-table {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+        
+        .data-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .data-table th {
+            background: #cc5b27;
+            padding: 12px 10px;
+            font-weight: bold;
+            font-size: 13px;
+            text-align: left;
+        }
+        
+        .data-table td {
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 13px;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .performance-table {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .performance-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .performance-table th {
+            background: #2c3e50;
+            padding: 12px 8px;
+            font-weight: bold;
+            font-size: 12px;
+            text-align: left;
+        }
+        
+        .performance-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 12px;
+        }
+        
+        .bullet-points {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .bullet-points li {
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 14px;
+        }
+        
+        .bullet-points li:before {
+            content: "▸";
+            color: #cc5b27;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .phase-box {
+            background: rgba(255, 255, 255, 0.08);
+            border-left: 4px solid #cc5b27;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .phase-title {
+            color: #cc5b27;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .tier-box {
+            background: rgba(76, 175, 80, 0.15);
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            padding: 18px;
+            margin: 10px 0;
+            font-size: 13px;
+        }
+        
+        .tier-title {
+            color: #4CAF50;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        
+        .warning-box {
+            background: rgba(255, 152, 0, 0.15);
+            border: 2px solid #FF9800;
+            border-radius: 10px;
+            padding: 18px;
+            margin: 10px 0;
+            font-size: 13px;
+        }
+        
+        .warning-title {
+            color: #FF9800;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .alert-box {
+            background: rgba(244, 67, 54, 0.15);
+            border: 2px solid #f44336;
+            border-radius: 10px;
+            padding: 18px;
+            margin: 10px 0;
+            font-size: 13px;
+        }
+        
+        .alert-title {
+            color: #f44336;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .info-box {
+            background: rgba(33, 150, 243, 0.15);
+            border: 2px solid #2196F3;
+            border-radius: 10px;
+            padding: 18px;
+            margin: 10px 0;
+            font-size: 13px;
+        }
+        
+        .info-title {
+            color: #2196F3;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .executive-summary-box {
+            background: rgba(76, 175, 80, 0.1);
+            border: 2px solid #4CAF50;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .roadmap-timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .roadmap-timeline::before {
+            content: '';
+            position: absolute;
+            top: 35px;
+            left: 5%;
+            right: 5%;
+            height: 4px;
+            background: linear-gradient(90deg, #cc5b27, #4CAF50);
+            z-index: 0;
+        }
+        
+        .timeline-item {
+            text-align: center;
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .timeline-marker {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #cc5b27;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            border: 4px solid #162642;
+        }
+        
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+        
+        .kpi-target {
+            display: inline-block;
+            background: rgba(76, 175, 80, 0.3);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            margin: 5px;
+            border: 1px solid #4CAF50;
+        }
+        
+        .kpi-current {
+            display: inline-block;
+            background: rgba(33, 150, 243, 0.3);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            margin: 5px;
+            border: 1px solid #2196F3;
+        }
+        
+        .status-excellent { color: #4CAF50; font-weight: bold; }
+        .status-good { color: #8BC34A; font-weight: bold; }
+        .status-optimize { color: #FFC107; font-weight: bold; }
+        .status-review { color: #FF9800; font-weight: bold; }
+        
+        .priority-high {
+            background: #f44336;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        
+        .priority-medium {
+            background: #FF9800;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        
+        .priority-low {
+            background: #4CAF50;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        
+        .checklist {
+            list-style: none;
+        }
+        
+        .checklist li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .checklist li:before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: #cc5b27;
+            font-size: 16px;
+        }
+        
+        .metric-highlight {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        
+        .campaign-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 18px;
+            margin: 10px 0;
+        }
+        
+        .campaign-name {
+            color: #cc5b27;
+            font-weight: bold;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        @media print {
+            .slide { page-break-after: always; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title Slide -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">01</div>
+        </div>
+        <div class="main-title">Parker's GBI Google Ads<br>Strategic Launch Roadmap</div>
+        <div class="subtitle">Q1 2026 Takeover Strategy & 90-Day Scaling Plan</div>
+        
+        <div class="highlight-box">
+            <h3>Current Account Status: All Campaigns Budget-Limited with Exceptional Efficiency</h3>
+            <p>Star campaign achieving $0.76 CPA against $5.00 target. Massive untapped demand ready for scaling.</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number">$0.76</span>
+                <div class="stat-label">Star Campaign CPA<br>(Target: $5.00)</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">425</span>
+                <div class="stat-label">January Conversions<br>(28 Days)</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">14.52x</span>
+                <div class="stat-label">Account ROAS<br>(vs 4x Target)</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">&lt;10%</span>
+                <div class="stat-label">Search Impression Share<br>(90%+ Opportunity)</div>
+            </div>
+        </div>
+        
+        <div class="executive-summary-box">
+            <h3 style="color: #4CAF50; margin-bottom: 15px;">Executive Summary</h3>
+            <p style="font-size: 14px;">This roadmap outlines the strategic takeover and scaling plan for Parker's GBI Google Ads. Current performance is exceptional, with the star Q4-2025-search campaign delivering $0.76 CPA against a $5.00 target. All four campaigns are budget-limited, indicating significant untapped demand. The 90-day plan focuses on controlled scaling, campaign restructuring, and market expansion to achieve 3,000+ monthly conversions while maintaining CPA below $5.00.</p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 20px;">
+            <div style="font-size: 1.1em;">Analysis Period: <strong>January 1-28, 2026</strong></div>
+            <div style="opacity: 0.8; margin-top: 8px;">Prepared for Emma Reynolds, Parker's GBI</div>
+        </div>
+    </div>
+
+    <!-- Slide 2: Current Performance Snapshot -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">02</div>
+        </div>
+        <div class="section-title">Current Performance Snapshot: January 2026</div>
+        
+        <div class="performance-table">
+            <table>
+                <tr>
+                    <th>Campaign</th>
+                    <th>Daily Budget</th>
+                    <th>Spend (28d)</th>
+                    <th>Clicks</th>
+                    <th>Conv Rate</th>
+                    <th>Conversions</th>
+                    <th>CPA</th>
+                    <th>ROAS</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td><strong>Q4-2025-search</strong></td>
+                    <td>$15.00</td>
+                    <td>$166.67</td>
+                    <td>1,084</td>
+                    <td style="color: #4CAF50;"><strong>20.35%</strong></td>
+                    <td style="color: #4CAF50;"><strong>220.55</strong></td>
+                    <td style="color: #4CAF50;"><strong>$0.76</strong></td>
+                    <td style="color: #4CAF50;"><strong>90.38x</strong></td>
+                    <td class="status-excellent">★ STAR</td>
+                </tr>
+                <tr>
+                    <td><strong>Test-July-AIMax-Search</strong></td>
+                    <td>$35.50</td>
+                    <td>$996.00</td>
+                    <td>737</td>
+                    <td style="color: #8BC34A;">14.83%</td>
+                    <td>109.29</td>
+                    <td style="color: #8BC34A;">$9.11</td>
+                    <td>7.51x</td>
+                    <td class="status-good">SCALE</td>
+                </tr>
+                <tr>
+                    <td><strong>Sales-Performance Max-1</strong></td>
+                    <td>$33.50</td>
+                    <td>$927.46</td>
+                    <td>2,841</td>
+                    <td>2.19%</td>
+                    <td>82.20</td>
+                    <td style="color: #FFC107;">$11.28</td>
+                    <td>11.09x</td>
+                    <td class="status-optimize">OPTIMIZE</td>
+                </tr>
+                <tr>
+                    <td><strong>Search Campaign British Food</strong></td>
+                    <td>$10.00</td>
+                    <td>$282.29</td>
+                    <td>219</td>
+                    <td>6.15%</td>
+                    <td>13.47</td>
+                    <td style="color: #FF9800;">$20.96</td>
+                    <td>5.78x</td>
+                    <td class="status-review">RESTRUCTURE</td>
+                </tr>
+                <tr style="background: rgba(204, 91, 39, 0.2);">
+                    <td><strong>ACCOUNT TOTAL</strong></td>
+                    <td><strong>$94.00</strong></td>
+                    <td><strong>$2,372.42</strong></td>
+                    <td><strong>4,881</strong></td>
+                    <td><strong>7.34%</strong></td>
+                    <td><strong>425.51</strong></td>
+                    <td><strong>$5.58</strong></td>
+                    <td><strong>14.52x</strong></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="two-column">
+            <div class="tier-box">
+                <div class="tier-title">✓ Critical Finding: All Campaigns Budget-Limited</div>
+                <p>Every active campaign shows "limited by budget" status. The Q4-2025-search campaign is also "limited by bidding strategy type" indicating it could scale significantly with higher bids and budget.</p>
+                <br>
+                <strong>Search Impression Share Lost to Budget:</strong>
+                <ul style="margin-top: 10px; padding-left: 20px; font-size: 12px;">
+                    <li>Q4-2025-search: 62.51% lost (capturing only 37.49%)</li>
+                    <li>Performance Max: 81.85% lost</li>
+                    <li>AIMax-Search: Only capturing &lt;10%</li>
+                    <li>British Food Search: Only capturing &lt;10%</li>
+                </ul>
+            </div>
+            <div class="alert-box">
+                <div class="alert-title">⚠ Immediate Opportunity</div>
+                <p>The star campaign (Q4-2025-search) is achieving <strong>$0.76 CPA</strong> against a $5.00 target, but is only capturing 37.49% of available impression share.</p>
+                <br>
+                <p><strong>Implication:</strong> We are leaving approximately 60%+ of high-converting traffic on the table. Immediate budget increase recommended.</p>
+                <br>
+                <p><strong>January Revenue Generated:</strong> $34,458.86 from $2,372 spend</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: KPI Alignment & Targets -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">03</div>
+        </div>
+        <div class="section-title">KPI Alignment: Targets vs Current Performance</div>
+        
+        <div class="two-column">
+            <div>
+                <div class="section-title" style="font-size: 1.3em;">Agreed KPI Targets (Per Call 27 Jan)</div>
+                <div class="data-table">
+                    <table>
+                        <tr><th>Metric</th><th>Target</th><th>Current</th><th>Status</th></tr>
+                        <tr>
+                            <td><strong>Base CPA Target</strong></td>
+                            <td>$5.00</td>
+                            <td style="color: #4CAF50;">$5.58</td>
+                            <td>✓ Near Target</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Stretch CPA Target</strong></td>
+                            <td>$3.00</td>
+                            <td style="color: #4CAF50;">$0.76*</td>
+                            <td>✓ Exceeded (Star)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Breakeven CPA</strong></td>
+                            <td>$8.00</td>
+                            <td style="color: #4CAF50;">$5.58</td>
+                            <td>✓ Below Breakeven</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Target ROAS</strong></td>
+                            <td>4.0x</td>
+                            <td style="color: #4CAF50;">14.52x</td>
+                            <td>✓ 3.6x Above Target</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Quarterly Growth</strong></td>
+                            <td>22-25%</td>
+                            <td>TBD</td>
+                            <td>Baseline Set</td>
+                        </tr>
+                    </table>
+                </div>
+                <p style="font-size: 12px; opacity: 0.8; margin-top: 10px;">*Star campaign CPA; blended account CPA is $5.58</p>
+            </div>
+            <div>
+                <div class="section-title" style="font-size: 1.3em;">Business Context</div>
+                <div class="info-box">
+                    <div class="info-title">Financial Parameters</div>
+                    <ul class="bullet-points" style="font-size: 12px;">
+                        <li><strong>AOV:</strong> $133 average order value</li>
+                        <li><strong>LTV:</strong> $300-$500 first year (3-4 orders)</li>
+                        <li><strong>Breakeven CPA:</strong> $45-50 (first purchase)</li>
+                        <li><strong>Gross Margin:</strong> ~50% after fulfilment</li>
+                        <li><strong>Shipping Threshold:</strong> $150 free shipping</li>
+                        <li><strong>Credit Card Fees:</strong> 2.9%</li>
+                    </ul>
+                </div>
+                <div class="warning-box">
+                    <div class="warning-title">Margin Consideration</div>
+                    <p style="font-size: 12px;">West Coast orders have tighter margins ($60 shipping vs $15 East Coast). Priority focus on East Coast targeting as discussed.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Performance Against Targets: Exceptional</h3>
+            <p>Current performance significantly exceeds all KPI targets. The primary opportunity is scaling volume while maintaining efficiency, not improving efficiency further.</p>
+        </div>
+    </div>
+
+    <!-- Slide 4: Campaign Deep Dive - Q4-2025-search -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">04</div>
+        </div>
+        <div class="section-title">Star Campaign Deep Dive: Q4-2025-search</div>
+        
+        <div class="stats-grid">
+            <div class="stat-card" style="border-color: #4CAF50;">
+                <span class="stat-number" style="color: #4CAF50;">$0.76</span>
+                <div class="stat-label">Cost Per Conversion<br>(84% Below Target)</div>
+            </div>
+            <div class="stat-card" style="border-color: #4CAF50;">
+                <span class="stat-number" style="color: #4CAF50;">20.35%</span>
+                <div class="stat-label">Conversion Rate<br>(Highest in Account)</div>
+            </div>
+            <div class="stat-card" style="border-color: #4CAF50;">
+                <span class="stat-number" style="color: #4CAF50;">32.47%</span>
+                <div class="stat-label">Click-Through Rate<br>(Industry: 3-5%)</div>
+            </div>
+            <div class="stat-card" style="border-color: #4CAF50;">
+                <span class="stat-number" style="color: #4CAF50;">90.38x</span>
+                <div class="stat-label">ROAS<br>(22x Above Target)</div>
+            </div>
+        </div>
+
+        <div class="two-column">
+            <div>
+                <div class="section-title" style="font-size: 1.2em;">Top Performing Keywords</div>
+                <div class="data-table">
+                    <table>
+                        <tr><th>Keyword</th><th>Clicks</th><th>CTR</th><th>Conv</th><th>CPA</th></tr>
+                        <tr><td>british pies</td><td>467</td><td>33.79%</td><td>95.56</td><td style="color:#4CAF50;">$0.70</td></tr>
+                        <tr><td>british food market</td><td>229</td><td>40.97%</td><td>48.39</td><td style="color:#4CAF50;">$0.77</td></tr>
+                        <tr><td>british food online</td><td>92</td><td>32.74%</td><td>11.00</td><td style="color:#4CAF50;">$1.44</td></tr>
+                        <tr><td>pork pies</td><td>55</td><td>30.39%</td><td>9.08</td><td style="color:#4CAF50;">$0.93</td></tr>
+                        <tr><td>british meat pies</td><td>42</td><td>28.77%</td><td>7.12</td><td style="color:#4CAF50;">$0.81</td></tr>
+                        <tr><td>british sausages</td><td>35</td><td>20.23%</td><td>5.40</td><td style="color:#4CAF50;">$1.10</td></tr>
+                        <tr><td>british pork pies</td><td>23</td><td>27.71%</td><td>7.00</td><td style="color:#4CAF50;">$0.62</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <div class="section-title" style="font-size: 1.2em;">Why This Campaign Excels</div>
+                <ul class="bullet-points">
+                    <li><strong>Hyper-relevant keywords:</strong> Brand-aligned, high-intent British food terms</li>
+                    <li><strong>Low Target CPA bid:</strong> $0.56 tCPA capturing only highest-intent traffic</li>
+                    <li><strong>Strong ad relevance:</strong> RSA with British-focused messaging</li>
+                    <li><strong>Brand traffic capture:</strong> "Parkers" brand terms converting at 37%+</li>
+                    <li><strong>AI Max landing pages:</strong> Additional 20 conversions at $0.37 CPA</li>
+                </ul>
+                <br>
+                <div class="tier-box">
+                    <div class="tier-title">Scaling Recommendation</div>
+                    <p><strong>Immediate:</strong> Increase budget from $15 to $50/day</p>
+                    <p><strong>Week 2:</strong> Test $75/day if CPA stays under $1.50</p>
+                    <p><strong>Expected Impact:</strong> +150-200 additional conversions/month</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Device & Audience Analysis -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">05</div>
+        </div>
+        <div class="section-title">Audience & Device Performance Analysis</div>
+        
+        <div class="two-column">
+            <div>
+                <div class="section-title" style="font-size: 1.2em;">Device Performance (January 2026)</div>
+                <div class="data-table">
+                    <table>
+                        <tr><th>Device</th><th>Spend</th><th>Conv</th><th>Conv Rate</th><th>CPA</th></tr>
+                        <tr>
+                            <td><strong>Mobile</strong></td>
+                            <td>$1,333</td>
+                            <td>208</td>
+                            <td>5.25%</td>
+                            <td style="color:#4CAF50;">$6.41</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Desktop</strong></td>
+                            <td>$947</td>
+                            <td>185</td>
+                            <td style="color:#4CAF50;"><strong>18.68%</strong></td>
+                            <td style="color:#4CAF50;">$5.12</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tablet</strong></td>
+                            <td>$87</td>
+                            <td>31</td>
+                            <td>8.81%</td>
+                            <td style="color:#4CAF50;">$2.81</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="info-box">
+                    <div class="info-title">Device Insight</div>
+                    <p style="font-size: 12px;"><strong>Desktop delivers 3.5x higher conversion rate</strong> than mobile but mobile drives volume. The Q4-2025-search campaign shows desktop at 36.98% conversion rate. Recommend maintaining balanced approach with enhanced mobile landing pages.</p>
+                </div>
+            </div>
+            <div>
+                <div class="section-title" style="font-size: 1.2em;">Demographic Distribution</div>
+                <div class="data-table">
+                    <table>
+                        <tr><th>Age Range</th><th>Male</th><th>Female</th><th>Total</th></tr>
+                        <tr><td>18-24</td><td>2.62%</td><td>1.84%</td><td>4.46%</td></tr>
+                        <tr><td>25-34</td><td>7.82%</td><td>6.72%</td><td>14.54%</td></tr>
+                        <tr><td>35-44</td><td>8.50%</td><td>8.68%</td><td>17.18%</td></tr>
+                        <tr><td>45-54</td><td>8.47%</td><td>9.52%</td><td>17.99%</td></tr>
+                        <tr style="background: rgba(76,175,80,0.2);">
+                            <td><strong>55-64</strong></td>
+                            <td>9.65%</td>
+                            <td style="color:#4CAF50;"><strong>11.81%</strong></td>
+                            <td style="color:#4CAF50;"><strong>21.46%</strong></td>
+                        </tr>
+                        <tr style="background: rgba(76,175,80,0.2);">
+                            <td><strong>65+</strong></td>
+                            <td>10.07%</td>
+                            <td style="color:#4CAF50;"><strong>14.31%</strong></td>
+                            <td style="color:#4CAF50;"><strong>24.38%</strong></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tier-box">
+                    <div class="tier-title">Core Audience: 55+ (45.84%)</div>
+                    <p style="font-size: 12px;">Female 55+ represents 26.12% of traffic. Aligns perfectly with target demographic of British expats seeking nostalgic comfort food.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Audience Strategy Alignment</h3>
+            <p>Demographics match Emma's target audience perfectly: 55+ adults (45.84% of impressions), female-skewing. Nostalgia-driven messaging resonating strongly. Recommend testing bid adjustments: +15% for 55-64, +20% for 65+.</p>
+        </div>
+    </div>
+
+    <!-- Slide 6: Time-Based Performance -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">06</div>
+        </div>
+        <div class="section-title">Performance Timing: Day & Hour Analysis</div>
+        
+        <div class="two-column">
+            <div>
+                <div class="section-title" style="font-size: 1.2em;">Day of Week Performance</div>
+                <div class="data-table">
+                    <table>
+                        <tr><th>Day</th><th>Impressions</th><th>Relative Volume</th><th>Recommendation</th></tr>
+                        <tr style="background: rgba(76,175,80,0.2);">
+                            <td><strong>Thursday</strong></td>
+                            <td>18,743</td>
+                            <td style="color:#4CAF50;"><strong>Highest</strong></td>
+                            <td>+20% bid adjustment</td>
+                        </tr>
+                        <tr style="background: rgba(76,175,80,0.15);">
+                            <td><strong>Wednesday</strong></td>
+                            <td>17,870</td>
+                            <td style="color:#4CAF50;">Very High</td>
+                            <td>+15% bid adjustment</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>15,774</td>
+                            <td>High</td>
+                            <td>Maintain</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>14,983</td>
+                            <td>Medium-High</td>
+                            <td>Maintain</td>
+                        </tr>
+                        <tr>
+                            <td>Monday</td>
+                            <td>14,283</td>
+                            <td>Medium</td>
+                            <td>Maintain</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>14,078</td>
+                            <td>Medium</td>
+                            <td>Maintain</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>12,458</td>
+                            <td>Lower</td>
+                            <td>Monitor</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <div class="section-title" style="font-size: 1.2em;">Peak Hours (US Eastern Time)</div>
+                <div class="data-table">
+                    <table>
+                        <tr><th>Time Period</th><th>Performance</th><th>Action</th></tr>
+                        <tr style="background: rgba(76,175,80,0.2);">
+                            <td><strong>12 PM - 2 PM</strong></td>
+                            <td style="color:#4CAF50;">Peak (1,300+ impr/hr)</td>
+                            <td>+20% bid</td>
+                        </tr>
+                        <tr style="background: rgba(76,175,80,0.15);">
+                            <td><strong>2 PM - 5 PM</strong></td>
+                            <td style="color:#4CAF50;">High (1,100+ impr/hr)</td>
+                            <td>+15% bid</td>
+                        </tr>
+                        <tr>
+                            <td>10 AM - 12 PM</td>
+                            <td>Building momentum</td>
+                            <td>+10% bid</td>
+                        </tr>
+                        <tr>
+                            <td>7 PM - 9 PM</td>
+                            <td>Evening spike</td>
+                            <td>+10% bid</td>
+                        </tr>
+                        <tr>
+                            <td>6 PM - 7 PM</td>
+                            <td>Dinner browsing</td>
+                            <td>Maintain</td>
+                        </tr>
+                        <tr>
+                            <td>12 AM - 6 AM</td>
+                            <td>Low activity</td>
+                            <td>-20% bid</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="warning-box">
+                    <div class="warning-title">Thursday 7 PM Anomaly</div>
+                    <p style="font-size: 12px;">Single highest hour: 2,022 impressions. Likely evening planning for weekend shopping. Key targeting window.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Ad Schedule Optimisation: Immediate Implementation</h3>
+            <p>Implement bid adjustments for Wednesday-Thursday peak days and 12 PM - 5 PM peak hours. Expected efficiency gain: 8-12% CPA reduction through better daypart allocation.</p>
+        </div>
+    </div>
+
+    <!-- Slide 7: Keyword & Search Term Intelligence -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">07</div>
+        </div>
+        <div class="section-title">Keyword & Search Term Intelligence</div>
+        
+        <div class="three-column">
+            <div class="tier-box">
+                <div class="tier-title">★ Brand Terms (Convert 25%+)</div>
+                <div style="font-size: 12px;">
+                    <p><strong>Strong brand awareness driving traffic:</strong></p>
+                    <br>
+                    <p>parkers british: 767 clicks</p>
+                    <p>parkers british foods: 760 clicks</p>
+                    <p>parkers gbi: 336 clicks</p>
+                    <p>parkers english food: 292 clicks</p>
+                    <p>parkers pies: 205 clicks</p>
+                    <br>
+                    <p><strong>Action:</strong> Protect with dedicated brand campaign</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <div class="info-title">Product Terms (High Intent)</div>
+                <div style="font-size: 12px;">
+                    <p><strong>Core product searches:</strong></p>
+                    <br>
+                    <p>british pies: 467 clicks, 33.79% CTR</p>
+                    <p>meat pies: 135 clicks, 9.44% CTR</p>
+                    <p>sausage rolls: 79 clicks, 10.78% CTR</p>
+                    <p>pork pie: 23 clicks, 2.87% CTR</p>
+                    <p>cornish pasty: 7 clicks, 3.17% CTR</p>
+                    <br>
+                    <p><strong>Action:</strong> Expand product-specific ad groups</p>
+                </div>
+            </div>
+            <div class="warning-box">
+                <div class="warning-title">Competitor Terms (Opportunity)</div>
+                <div style="font-size: 12px;">
+                    <p><strong>Capturing competitor traffic:</strong></p>
+                    <br>
+                    <p>jolly posh foods: 1,470 impressions</p>
+                    <p>jolly posh food: 415 impr, 11 clicks</p>
+                    <p>jollyposhfoods: 76 impressions</p>
+                    <p>british food depot: 80 impressions</p>
+                    <br>
+                    <p><strong>Action:</strong> Launch dedicated competitor conquesting campaign</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="two-column" style="margin-top: 20px;">
+            <div>
+                <div class="section-title" style="font-size: 1.1em;">High-Performing Search Terms to Add</div>
+                <ul class="bullet-points" style="font-size: 12px;">
+                    <li><strong>british food market</strong> - 40.97% CTR, $0.77 CPA</li>
+                    <li><strong>order british food online</strong> - 18.88% CTR</li>
+                    <li><strong>british sausage company</strong> - 28.26% CTR</li>
+                    <li><strong>british food products</strong> - 37.33% CTR</li>
+                    <li><strong>british pork pies</strong> - 27.71% CTR</li>
+                </ul>
+            </div>
+            <div>
+                <div class="section-title" style="font-size: 1.1em;">Negative Keywords to Add</div>
+                <ul class="bullet-points" style="font-size: 12px;">
+                    <li><strong>recipe</strong> - Low intent, informational</li>
+                    <li><strong>how to make</strong> - DIY seekers</li>
+                    <li><strong>near me</strong> - Local intent (not e-commerce)</li>
+                    <li><strong>costco/walmart/grocery</strong> - Retail searches</li>
+                    <li><strong>free/cheap</strong> - Price sensitive</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: 90-Day Strategic Roadmap Overview -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">08</div>
+        </div>
+        <div class="section-title">90-Day Strategic Launch Roadmap</div>
+        
+        <div class="roadmap-timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker" style="background: #f44336;">WEEK<br>1-2</div>
+                <div class="timeline-content">
+                    <strong>Foundation</strong><br>
+                    Technical setup<br>
+                    Quick wins<br>
+                    Budget increase #1
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker" style="background: #FF9800;">WEEK<br>3-4</div>
+                <div class="timeline-content">
+                    <strong>Optimisation</strong><br>
+                    Ad schedule<br>
+                    Bid adjustments<br>
+                    Budget increase #2
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker" style="background: #2196F3;">WEEK<br>5-8</div>
+                <div class="timeline-content">
+                    <strong>Expansion</strong><br>
+                    New campaigns<br>
+                    Restructure<br>
+                    Audience testing
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker" style="background: #4CAF50;">WEEK<br>9-12</div>
+                <div class="timeline-content">
+                    <strong>Scale</strong><br>
+                    Full acceleration<br>
+                    Channel expansion<br>
+                    Q2 planning
+                </div>
+            </div>
+        </div>
+
+        <div class="three-column">
+            <div class="phase-box">
+                <div class="phase-title">Phase 1: Foundation (Week 1-2)</div>
+                <ul class="bullet-points" style="font-size: 12px;">
+                    <li>Complete Merchant Center access</li>
+                    <li>Implement conversion tracking audit</li>
+                    <li>Increase Q4-search to $50/day</li>
+                    <li>Add negative keywords</li>
+                    <li>Set up automated alerts</li>
+                </ul>
+                <p style="margin-top: 10px; font-size: 11px;"><strong>Target:</strong> 15-20% volume increase</p>
+            </div>
+            <div class="phase-box" style="border-color: #2196F3;">
+                <div class="phase-title" style="color: #2196F3;">Phase 2: Optimisation (Week 3-4)</div>
+                <ul class="bullet-points" style="font-size: 12px;">
+                    <li>Implement ad schedule bids</li>
+                    <li>Device bid adjustments</li>
+                    <li>Demographic bid modifiers</li>
+                    <li>RSA testing (3 variants)</li>
+                    <li>Second budget increase</li>
+                </ul>
+                <p style="margin-top: 10px; font-size: 11px;"><strong>Target:</strong> 10% CPA improvement</p>
+            </div>
+            <div class="phase-box" style="border-color: #4CAF50;">
+                <div class="phase-title" style="color: #4CAF50;">Phase 3-4: Scale (Week 5-12)</div>
+                <ul class="bullet-points" style="font-size: 12px;">
+                    <li>Launch brand defence campaign</li>
+                    <li>Competitor conquesting</li>
+                    <li>Product-specific campaigns</li>
+                    <li>Geographic expansion test</li>
+                    <li>YouTube consideration ads</li>
+                </ul>
+                <p style="margin-top: 10px; font-size: 11px;"><strong>Target:</strong> 3,000+ monthly conversions</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Week 1-2 Action Plan -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">09</div>
+        </div>
+        <div class="section-title">Phase 1: Foundation (Week 1-2) - Detailed Action Plan</div>
+        
+        <div class="two-column">
+            <div>
+                <div class="section-title" style="font-size: 1.2em;">Week 1: Technical Setup & Quick Wins</div>
+                <ul class="checklist">
+                    <li><strong>Merchant Center Access</strong> - Resolve via Google Support or email alias redirect (Emma action)</li>
+                    <li><strong>Conversion Tracking Audit</strong> - Verify purchase tracking accuracy against Shopify</li>
+                    <li><strong>Tag Manager Review</strong> - Address untagged pages (cart, checkout, product)</li>
+                    <li><strong>Budget Increase #1</strong> - Q4-2025-search: $15 → $50/day <span class="priority-high">HIGH</span></li>
+                    <li><strong>Negative Keywords</strong> - Add "recipe", "how to make", "near me" exclusions</li>
+                    <li><strong>Search Term Mining</strong> - Add top 15 converting terms as exact match</li>
+                    <li><strong>Setup Automated Rules</strong> - Pause if CPA exceeds $15 for 3 days</li>
+                </ul>
+            </div>
+            <div>
+                <div class="section-title" style="font-size: 1.2em;">Week 2: Consolidation & Monitoring</div>
+                <ul class="checklist">
+                    <li><strong>Performance Review</strong> - Analyse Week 1 budget increase impact</li>
+                    <li><strong>CPA Threshold Check</strong> - If star campaign CPA &lt;$1.50, increase to $75/day</li>
+                    <li><strong>AIMax-Search Increase</strong> - $35.50 → $50/day <span class="priority-medium">MEDIUM</span></li>
+                    <li><strong>Ad Copy Audit</strong> - Review RSA asset performance</li>
+                    <li><strong>Landing Page Check</strong> - Verify all product URLs working</li>
+                    <li><strong>First Weekly Report</strong> - Share Loom + actionable insights</li>
+                    <li><strong>Budget Meeting Prep</strong> - Thursday data for Emma's approval</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Week 1-2 Budget Projection</h3>
+            <table style="width: 100%; text-align: center; font-size: 14px;">
+                <tr>
+                    <td><strong>Current Daily:</strong> $94</td>
+                    <td><strong>Week 1 Target:</strong> $129 (+37%)</td>
+                    <td><strong>Week 2 Target:</strong> $164 (+74%)</td>
+                </tr>
+                <tr>
+                    <td><strong>Monthly:</strong> $2,820</td>
+                    <td><strong>Monthly:</strong> $3,870</td>
+                    <td><strong>Monthly:</strong> $4,920</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Slide 10: Week 3-4 Optimisation Plan -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">10</div>
+        </div>
+        <div class="section-title">Phase 2: Optimisation (Week 3-4) - Efficiency Maximisation</div>
+        
+        <div class="two-column">
+            <div>
+                <div class="section-title" style="font-size: 1.2em;">Ad Schedule Implementation</div>
+                <div class="data-table">
+                    <table>
+                        <tr><th>Day/Time</th><th>Bid Adjustment</th><th>Rationale</th></tr>
+                        <tr><td>Wednesday</td><td style="color:#4CAF50;">+15%</td><td>2nd highest volume</td></tr>
+                        <tr><td>Thursday</td><td style="color:#4CAF50;">+20%</td><td>Peak performance day</td></tr>
+                        <tr><td>12 PM - 5 PM</td><td style="color:#4CAF50;">+20%</td><td>Peak conversion hours</td></tr>
+                        <tr><td>7 PM - 9 PM</td><td style="color:#4CAF50;">+10%</td><td>Evening shopping spike</td></tr>
+                        <tr><td>12 AM - 6 AM</td><td style="color:#f44336;">-20%</td><td>Low activity period</td></tr>
+                    </table>
+                </div>
+                <div class="info-box" style="margin-top: 15px;">
+                    <div class="info-title">Demographic Bid Adjustments</div>
+                    <ul style="font-size: 12px; padding-left: 20px;">
+                        <li>Female 55-64: +15%</li>
+                        <li>Female 65+: +20%</li>
+                        <li>Male 55+: +10%</li>
+                        <li>18-24: -10% (low converting segment)</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="section-title" style="font-size: 1.2em;">RSA Testing Framework</div>
+                <div class="campaign-card">
+                    <div class="campaign-name">Test Variant A: Nostalgia Focus</div>
+                    <p style="font-size: 12px;">Headlines: "A Proper Taste of Home" | "Handmade Like Mum's" | "Real British Food, Delivered"</p>
+                </div>
+                <div class="campaign-card">
+                    <div class="campaign-name">Test Variant B: Quality Focus</div>
+                    <p style="font-size: 12px;">Headlines: "Handmade, Not Factory Made" | "Traditional British Recipes" | "Authentic British Pies & Sausages"</p>
+                </div>
+                <div class="campaign-card">
+                    <div class="campaign-name">Test Variant C: Urgency Focus</div>
+                    <p style="font-size: 12px;">Headlines: "Ships Frozen Nationwide" | "Free Shipping Over $150" | "Order Today, Taste Britain Tomorrow"</p>
+                </div>
+                <p style="font-size: 11px; margin-top: 15px; opacity: 0.8;">All copy to use British English spelling, avoid Americanisms per brand guidelines</p>
+            </div>
+        </div>
+
+        <div class="stats-grid" style="margin-top: 20px;">
+            <div class="stat-card" style="border-color: #2196F3;">
+                <span class="stat-number" style="color: #2196F3;">10-15%</span>
+                <div class="stat-label">Expected CPA Improvement<br>from Bid Adjustments</div>
+            </div>
+            <div class="stat-card" style="border-color: #4CAF50;">
+                <span class="stat-number" style="color: #4CAF50;">$4.75</span>
+                <div class="stat-label">Target Blended CPA<br>End of Week 4</div>
+            </div>
+            <div class="stat-card" style="border-color: #FF9800;">
+                <span class="stat-number" style="color: #FF9800;">600+</span>
+                <div class="stat-label">Target Monthly Conv<br>End of Phase 2</div>
+            </div>
+            <div class="stat-card" style="border-color: #9C27B0;">
+                <span class="stat-number" style="color: #9C27B0;">$5,500</span>
+                <div class="stat-label">Target Monthly Spend<br>End of Phase 2</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 11: Campaign Restructure Plan -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">11</div>
+        </div>
+        <div class="section-title">Campaign Restructure Plan (Week 5-8)</div>
+        
+        <div class="section-title" style="font-size: 1.2em;">Proposed Account Structure</div>
+        
+        <div class="performance-table">
+            <table>
+                <tr>
+                    <th>Campaign</th>
+                    <th>Type</th>
+                    <th>Purpose</th>
+                    <th>Target CPA</th>
+                    <th>Daily Budget</th>
+                    <th>Priority</th>
+                </tr>
+                <tr style="background: rgba(76,175,80,0.15);">
+                    <td><strong>Brand Defence</strong></td>
+                    <td>Search</td>
+                    <td>Protect brand terms from competitors</td>
+                    <td>$1.00</td>
+                    <td>$30</td>
+                    <td><span class="priority-high">P1</span></td>
+                </tr>
+                <tr style="background: rgba(76,175,80,0.15);">
+                    <td><strong>Q4-2025-search (Scaled)</strong></td>
+                    <td>Search</td>
+                    <td>Core high-intent traffic</td>
+                    <td>$1.50</td>
+                    <td>$100</td>
+                    <td><span class="priority-high">P1</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Product - Pies</strong></td>
+                    <td>Search</td>
+                    <td>Pork pies, meat pies, steak & ale</td>
+                    <td>$5.00</td>
+                    <td>$40</td>
+                    <td><span class="priority-medium">P2</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Product - Sausages</strong></td>
+                    <td>Search</td>
+                    <td>Bangers, cumberland, breakfast</td>
+                    <td>$5.00</td>
+                    <td>$40</td>
+                    <td><span class="priority-medium">P2</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Product - Bacon & Breakfast</strong></td>
+                    <td>Search</td>
+                    <td>Rashers, black pudding, fry-up</td>
+                    <td>$6.00</td>
+                    <td>$30</td>
+                    <td><span class="priority-medium">P2</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Competitor Conquest</strong></td>
+                    <td>Search</td>
+                    <td>Jolly Posh, British Food Depot</td>
+                    <td>$8.00</td>
+                    <td>$25</td>
+                    <td><span class="priority-medium">P2</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Performance Max (Optimised)</strong></td>
+                    <td>PMax</td>
+                    <td>Shopping + Display + Discovery</td>
+                    <td>$8.00</td>
+                    <td>$50</td>
+                    <td><span class="priority-low">P3</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Remarketing</strong></td>
+                    <td>Display</td>
+                    <td>Cart abandoners, past visitors</td>
+                    <td>$4.00</td>
+                    <td>$20</td>
+                    <td><span class="priority-low">P3</span></td>
+                </tr>
+                <tr style="background: rgba(204, 91, 39, 0.2);">
+                    <td><strong>TOTAL</strong></td>
+                    <td></td>
+                    <td></td>
+                    <td>$4.50 blended</td>
+                    <td><strong>$335/day</strong></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="two-column" style="margin-top: 20px;">
+            <div class="tier-box">
+                <div class="tier-title">Campaigns to Sunset</div>
+                <ul class="bullet-points" style="font-size: 12px;">
+                    <li><strong>Search Campaign British Food:</strong> $20.96 CPA - Absorb keywords into product campaigns</li>
+                    <li><strong>Test-July-AIMax-Search:</strong> Transition best performers to dedicated campaigns</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <div class="info-title">Restructure Rationale</div>
+                <p style="font-size: 12px;">Current structure has overlapping keywords and budget competition. New structure provides granular control, dedicated budgets per product category, and clear performance attribution.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 12: Scaling Strategy -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">12</div>
+        </div>
+        <div class="section-title">Budget Scaling Strategy: Controlled Growth</div>
+        
+        <div class="highlight-box">
+            <h3>Scaling Philosophy: 15-20% Increases Every 7-10 Days</h3>
+            <p>Per Emma's guidance, budget increases require Thursday approval. Gradual scaling protects cash flow while capturing available demand.</p>
+        </div>
+
+        <div class="performance-table">
+            <table>
+                <tr>
+                    <th>Week</th>
+                    <th>Daily Budget</th>
+                    <th>Monthly Equivalent</th>
+                    <th>Expected CPA</th>
+                    <th>Expected Conv</th>
+                    <th>Expected Revenue</th>
+                </tr>
+                <tr>
+                    <td>Current</td>
+                    <td>$94</td>
+                    <td>$2,820</td>
+                    <td>$5.58</td>
+                    <td>505</td>
+                    <td>$40,881</td>
+                </tr>
+                <tr>
+                    <td>Week 2</td>
+                    <td>$129</td>
+                    <td>$3,870</td>
+                    <td>$5.00</td>
+                    <td>774</td>
+                    <td>$62,662</td>
+                </tr>
+                <tr>
+                    <td>Week 4</td>
+                    <td>$175</td>
+                    <td>$5,250</td>
+                    <td>$4.75</td>
+                    <td>1,105</td>
+                    <td>$89,505</td>
+                </tr>
+                <tr>
+                    <td>Week 6</td>
+                    <td>$230</td>
+                    <td>$6,900</td>
+                    <td>$4.50</td>
+                    <td>1,533</td>
+                    <td>$124,173</td>
+                </tr>
+                <tr>
+                    <td>Week 8</td>
+                    <td>$285</td>
+                    <td>$8,550</td>
+                    <td>$4.50</td>
+                    <td>1,900</td>
+                    <td>$153,900</td>
+                </tr>
+                <tr style="background: rgba(76,175,80,0.2);">
+                    <td><strong>Week 12</strong></td>
+                    <td><strong>$335</strong></td>
+                    <td><strong>$10,050</strong></td>
+                    <td style="color:#4CAF50;"><strong>$4.50</strong></td>
+                    <td style="color:#4CAF50;"><strong>2,233</strong></td>
+                    <td style="color:#4CAF50;"><strong>$180,873</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card" style="border-color: #4CAF50;">
+                <span class="stat-number" style="color: #4CAF50;">+342%</span>
+                <div class="stat-label">Conversion Growth<br>Week 1 → Week 12</div>
+            </div>
+            <div class="stat-card" style="border-color: #2196F3;">
+                <span class="stat-number" style="color: #2196F3;">+257%</span>
+                <div class="stat-label">Budget Growth<br>(Controlled Scaling)</div>
+            </div>
+            <div class="stat-card" style="border-color: #FF9800;">
+                <span class="stat-number" style="color: #FF9800;">-19%</span>
+                <div class="stat-label">CPA Improvement<br>$5.58 → $4.50</div>
+            </div>
+            <div class="stat-card" style="border-color: #9C27B0;">
+                <span class="stat-number" style="color: #9C27B0;">18x</span>
+                <div class="stat-label">Maintained ROAS<br>Above 4x Target</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 13: Competitive Strategy -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">13</div>
+        </div>
+        <div class="section-title">Competitive Strategy: Defence & Conquest</div>
+        
+        <div class="two-column">
+            <div>
+                <div class="section-title" style="font-size: 1.2em;">Competitor Landscape</div>
+                <div class="campaign-card">
+                    <div class="campaign-name">Jolly Posh Foods (Primary Competitor)</div>
+                    <ul class="bullet-points" style="font-size: 12px;">
+                        <li>1,470 impressions captured on their brand terms</li>
+                        <li>Free shipping threshold: $120 (vs Parker's $150)</li>
+                        <li>Mass-produced, outsourced products</li>
+                        <li>Larger marketing budget</li>
+                        <li><strong>Weakness:</strong> Not handmade, lower quality</li>
+                    </ul>
+                </div>
+                <div class="campaign-card">
+                    <div class="campaign-name">British Food Depot</div>
+                    <ul class="bullet-points" style="font-size: 12px;">
+                        <li>80 impressions captured</li>
+                        <li>Focus on volume, not quality</li>
+                        <li><strong>Weakness:</strong> No handmade products</li>
+                    </ul>
+                </div>
+                <div class="campaign-card">
+                    <div class="campaign-name">Goodwoods British Market</div>
+                    <ul class="bullet-points" style="font-size: 12px;">
+                        <li>38 impressions captured</li>
+                        <li>Retail-focused, pantry items</li>
+                        <li><strong>Weakness:</strong> Limited fresh/frozen</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="section-title" style="font-size: 1.2em;">Conquest Campaign Strategy</div>
+                <div class="tier-box">
+                    <div class="tier-title">Competitor Targeting Keywords</div>
+                    <div style="font-size: 12px;">
+                        <p><strong>Jolly Posh variations:</strong></p>
+                        <p>jolly posh foods, jolly posh, jollyposh, jolly posh sausages, jolly posh pies</p>
+                        <br>
+                        <p><strong>General competitor terms:</strong></p>
+                        <p>british food depot, goodwoods british, british corner shop usa, british essentials usa</p>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <div class="info-title">Conquest Ad Messaging</div>
+                    <p style="font-size: 12px;"><strong>Key differentiators to highlight:</strong></p>
+                    <ul style="font-size: 12px; padding-left: 20px; margin-top: 10px;">
+                        <li>"Handmade, Not Factory Made"</li>
+                        <li>"Authentic British Recipes Since [Year]"</li>
+                        <li>"Made Fresh in the USA, British Style"</li>
+                        <li>"Real Ingredients, No Shortcuts"</li>
+                    </ul>
+                    <p style="font-size: 11px; margin-top: 10px; opacity: 0.8;">Note: Do not mention competitor names in ad copy (Google policy)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Brand Defence Priority</h3>
+            <p>With 2,500+ brand term clicks monthly, protecting "Parkers" branded searches is critical. Dedicated brand campaign ensures 100% impression share on brand terms and prevents competitor poaching.</p>
+        </div>
+    </div>
+
+    <!-- Slide 14: Reporting & Communication -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">14</div>
+        </div>
+        <div class="section-title">Reporting Framework & Communication Cadence</div>
+        
+        <div class="two-column">
+            <div>
+                <div class="section-title" style="font-size: 1.2em;">Weekly Reporting Schedule</div>
+                <div class="data-table">
+                    <table>
+                        <tr><th>Day</th><th>Deliverable</th><th>Purpose</th></tr>
+                        <tr>
+                            <td><strong>Monday</strong></td>
+                            <td>Week-in-Review Loom</td>
+                            <td>Performance summary + insights</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wednesday</strong></td>
+                            <td>Mid-Week Check-in</td>
+                            <td>Optimisation updates via Slack</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Thursday AM</strong></td>
+                            <td>Budget Recommendation</td>
+                            <td>For Emma's budget meeting</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Friday</strong></td>
+                            <td>Proactive Insights</td>
+                            <td>Opportunities & actions planned</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="info-box">
+                    <div class="info-title">Slack Communication</div>
+                    <p style="font-size: 12px;">3x weekly messages with actionable insights. Not just "what happened" but "what we're doing about it."</p>
+                </div>
+            </div>
+            <div>
+                <div class="section-title" style="font-size: 1.2em;">Key Metrics Tracked</div>
+                <div class="tier-box">
+                    <div class="tier-title">Primary KPIs (Weekly)</div>
+                    <ul class="bullet-points" style="font-size: 12px;">
+                        <li>Cost Per Conversion (Target: &lt;$5.00)</li>
+                        <li>Total Conversions</li>
+                        <li>ROAS (Target: &gt;4x)</li>
+                        <li>Conversion Value</li>
+                        <li>Impression Share Captured</li>
+                    </ul>
+                </div>
+                <div class="warning-box">
+                    <div class="warning-title">Alert Thresholds</div>
+                    <ul style="font-size: 12px; padding-left: 20px;">
+                        <li>CPA exceeds $8 for 3+ days → Investigate</li>
+                        <li>ROAS drops below 8x → Review</li>
+                        <li>Conversion volume drops 20%+ → Alert</li>
+                        <li>Click fraud suspected → Audit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Source of Truth: Google Ads + Shopify Cross-Reference</h3>
+            <p>All performance reporting uses Google Ads as primary source, cross-referenced with Shopify sales dashboard for revenue validation. Discrepancies flagged and investigated.</p>
+        </div>
+    </div>
+
+    <!-- Slide 15: Risk Assessment -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">15</div>
+        </div>
+        <div class="section-title">Risk Assessment & Mitigation Strategy</div>
+        
+        <div class="performance-table">
+            <table>
+                <tr>
+                    <th>Risk</th>
+                    <th>Probability</th>
+                    <th>Impact</th>
+                    <th>Mitigation Strategy</th>
+                </tr>
+                <tr>
+                    <td><strong>CPA Inflation at Scale</strong></td>
+                    <td style="color:#FF9800;">Medium</td>
+                    <td style="color:#FF9800;">Medium</td>
+                    <td>Gradual 15-20% increases; automated pause rules if CPA exceeds $15</td>
+                </tr>
+                <tr>
+                    <td><strong>Competitor Response</strong></td>
+                    <td style="color:#FF9800;">Medium</td>
+                    <td style="color:#FFC107;">Low-Med</td>
+                    <td>Brand defence campaign; quality messaging differentiation</td>
+                </tr>
+                <tr>
+                    <td><strong>Seasonal Demand Drop (Q1)</strong></td>
+                    <td style="color:#4CAF50;">Low</td>
+                    <td style="color:#FF9800;">Medium</td>
+                    <td>Adjust budgets dynamically; focus on high-intent terms</td>
+                </tr>
+                <tr>
+                    <td><strong>Stock Availability Issues</strong></td>
+                    <td style="color:#FF9800;">Medium</td>
+                    <td style="color:#f44336;">High</td>
+                    <td>Proactive stock communication; pause affected product ads</td>
+                </tr>
+                <tr>
+                    <td><strong>Merchant Center Complications</strong></td>
+                    <td style="color:#FF9800;">Medium</td>
+                    <td style="color:#FF9800;">Medium</td>
+                    <td>Google Support escalation; alternative account creation if needed</td>
+                </tr>
+                <tr>
+                    <td><strong>Attribution Discrepancies</strong></td>
+                    <td style="color:#4CAF50;">Low</td>
+                    <td style="color:#FFC107;">Low-Med</td>
+                    <td>Weekly Shopify cross-reference; conversion tracking audit</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="two-column" style="margin-top: 20px;">
+            <div class="tier-box">
+                <div class="tier-title">Scaling Safeguards</div>
+                <ul class="bullet-points" style="font-size: 12px;">
+                    <li>Budget increases capped at 20% per week</li>
+                    <li>7-10 day monitoring period between increases</li>
+                    <li>Automated rules pause campaigns if CPA spikes</li>
+                    <li>Weekly Shopify revenue validation</li>
+                    <li>Thursday budget approval workflow</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <div class="info-title">Contingency Protocol</div>
+                <p style="font-size: 12px;"><strong>If CPA exceeds $8 for 5+ days:</strong></p>
+                <ol style="font-size: 12px; padding-left: 20px; margin-top: 10px;">
+                    <li>Pause lowest performing ad groups</li>
+                    <li>Reduce budgets to previous level</li>
+                    <li>Audit search terms for waste</li>
+                    <li>Review competitor activity</li>
+                    <li>Emergency Loom update to Emma</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 16: Technical Requirements -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">16</div>
+        </div>
+        <div class="section-title">Technical Requirements & Access Checklist</div>
+        
+        <div class="two-column">
+            <div>
+                <div class="section-title" style="font-size: 1.2em;">Access Status</div>
+                <div class="data-table">
+                    <table>
+                        <tr><th>Platform</th><th>Status</th><th>Action Required</th></tr>
+                        <tr>
+                            <td>Google Ads</td>
+                            <td style="color:#4CAF50;">✓ Complete</td>
+                            <td>None</td>
+                        </tr>
+                        <tr>
+                            <td>Google Analytics 4</td>
+                            <td style="color:#4CAF50;">✓ Complete</td>
+                            <td>None</td>
+                        </tr>
+                        <tr>
+                            <td>Google Tag Manager</td>
+                            <td style="color:#4CAF50;">✓ Complete</td>
+                            <td>Audit untagged pages</td>
+                        </tr>
+                        <tr>
+                            <td>Shopify</td>
+                            <td style="color:#4CAF50;">✓ Complete</td>
+                            <td>None</td>
+                        </tr>
+                        <tr>
+                            <td style="color:#f44336;"><strong>Merchant Center</strong></td>
+                            <td style="color:#f44336;">✗ Pending</td>
+                            <td style="color:#f44336;"><strong>Emma: Email alias or Google Support</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Search Console</td>
+                            <td style="color:#FF9800;">○ Optional</td>
+                            <td>Setup if SEO insights needed</td>
+                        </tr>
+                        <tr>
+                            <td>Canva</td>
+                            <td style="color:#FF9800;">○ Pending</td>
+                            <td>Emma to share access</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <div class="section-title" style="font-size: 1.2em;">Merchant Center Resolution Options</div>
+                <div class="alert-box">
+                    <div class="alert-title">Option 1: Email Alias Redirect (Recommended)</div>
+                    <ol style="font-size: 12px; padding-left: 20px;">
+                        <li>Create email alias for old admin email</li>
+                        <li>Set redirect to Emma's inbox</li>
+                        <li>Request password reset</li>
+                        <li>Log in and add Heathmedia access</li>
+                    </ol>
+                </div>
+                <div class="warning-box">
+                    <div class="warning-title">Option 2: Google Support Escalation</div>
+                    <ol style="font-size: 12px; padding-left: 20px;">
+                        <li>Contact Google Support</li>
+                        <li>Explain business ownership change</li>
+                        <li>Provide business documentation</li>
+                        <li>Request admin transfer</li>
+                    </ol>
+                    <p style="font-size: 11px; margin-top: 10px;">Timeline: 5-10 business days</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Merchant Center Impact</h3>
+            <p>Shopping campaigns (Performance Max) currently running but optimisation limited without full MC access. Feed quality checks, disapproval resolution, and product title optimisation require access.</p>
+        </div>
+    </div>
+
+    <!-- Slide 17: Q1-Q4 2026 Projections -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">17</div>
+        </div>
+        <div class="section-title">2026 Annual Projections: Full Year Outlook</div>
+        
+        <div class="performance-table">
+            <table>
+                <tr>
+                    <th>Quarter</th>
+                    <th>Monthly Budget</th>
+                    <th>Monthly Conv</th>
+                    <th>CPA</th>
+                    <th>Monthly Revenue</th>
+                    <th>ROAS</th>
+                </tr>
+                <tr>
+                    <td><strong>Q1 2026</strong> (Jan-Mar)</td>
+                    <td>$5,250 avg</td>
+                    <td>1,100 avg</td>
+                    <td>$4.75</td>
+                    <td>$89,100 avg</td>
+                    <td>17.0x</td>
+                </tr>
+                <tr>
+                    <td><strong>Q2 2026</strong> (Apr-Jun)</td>
+                    <td>$8,000 avg</td>
+                    <td>1,600 avg</td>
+                    <td>$5.00</td>
+                    <td>$129,600 avg</td>
+                    <td>16.2x</td>
+                </tr>
+                <tr>
+                    <td><strong>Q3 2026</strong> (Jul-Sep)</td>
+                    <td>$10,000 avg</td>
+                    <td>1,900 avg</td>
+                    <td>$5.25</td>
+                    <td>$153,900 avg</td>
+                    <td>15.4x</td>
+                </tr>
+                <tr style="background: rgba(76,175,80,0.15);">
+                    <td><strong>Q4 2026</strong> (Oct-Dec)</td>
+                    <td>$14,000 avg</td>
+                    <td>3,200 avg</td>
+                    <td>$4.40</td>
+                    <td>$259,200 avg</td>
+                    <td>18.5x</td>
+                </tr>
+                <tr style="background: rgba(204, 91, 39, 0.3);">
+                    <td><strong>2026 ANNUAL</strong></td>
+                    <td><strong>$111,750</strong></td>
+                    <td><strong>23,400</strong></td>
+                    <td><strong>$4.78</strong></td>
+                    <td><strong>$1,895,400</strong></td>
+                    <td><strong>16.9x</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card" style="border-color: #4CAF50;">
+                <span class="stat-number" style="color: #4CAF50;">$1.9M</span>
+                <div class="stat-label">Projected Annual<br>Google Ads Revenue</div>
+            </div>
+            <div class="stat-card" style="border-color: #2196F3;">
+                <span class="stat-number" style="color: #2196F3;">23,400</span>
+                <div class="stat-label">Projected Annual<br>Conversions</div>
+            </div>
+            <div class="stat-card" style="border-color: #FF9800;">
+                <span class="stat-number" style="color: #FF9800;">$4.78</span>
+                <div class="stat-label">Blended Annual<br>CPA</div>
+            </div>
+            <div class="stat-card" style="border-color: #9C27B0;">
+                <span class="stat-number" style="color: #9C27B0;">16.9x</span>
+                <div class="stat-label">Annual ROAS<br>(4.2x Above Target)</div>
+            </div>
+        </div>
+
+        <div class="executive-summary-box">
+            <h3 style="color: #4CAF50; margin-bottom: 10px;">Conservative Projections Based on Current Performance</h3>
+            <p style="font-size: 13px;">These projections assume gradual CPA increase during scaling (realistic expectation) and Q4 seasonality boost. Actual performance may exceed these estimates based on current exceptional efficiency.</p>
+        </div>
+    </div>
+
+    <!-- Slide 18: Success Criteria -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">18</div>
+        </div>
+        <div class="section-title">Success Criteria: 90-Day Milestones</div>
+        
+        <div class="three-column">
+            <div class="tier-box">
+                <div class="tier-title">30-Day Milestone (Week 4)</div>
+                <div style="font-size: 13px;">
+                    <p><strong>Target Metrics:</strong></p>
+                    <br>
+                    <p>☐ Monthly conversions: 700+</p>
+                    <p>☐ Blended CPA: &lt;$5.25</p>
+                    <p>☐ Monthly spend: $5,000+</p>
+                    <p>☐ ROAS: &gt;12x</p>
+                    <br>
+                    <p><strong>Technical Goals:</strong></p>
+                    <p>☐ Merchant Center access resolved</p>
+                    <p>☐ Ad schedule implemented</p>
+                    <p>☐ Negative keywords added</p>
+                    <p>☐ RSA tests launched</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <div class="info-title">60-Day Milestone (Week 8)</div>
+                <div style="font-size: 13px;">
+                    <p><strong>Target Metrics:</strong></p>
+                    <br>
+                    <p>☐ Monthly conversions: 1,200+</p>
+                    <p>☐ Blended CPA: &lt;$5.00</p>
+                    <p>☐ Monthly spend: $7,500+</p>
+                    <p>☐ ROAS: &gt;14x</p>
+                    <br>
+                    <p><strong>Strategic Goals:</strong></p>
+                    <p>☐ Brand campaign launched</p>
+                    <p>☐ Competitor campaign live</p>
+                    <p>☐ Product campaigns segmented</p>
+                    <p>☐ Audience testing complete</p>
+                </div>
+            </div>
+            <div class="executive-summary-box" style="border-color: #4CAF50; padding: 18px;">
+                <div class="tier-title" style="color: #4CAF50;">90-Day Milestone (Week 12)</div>
+                <div style="font-size: 13px;">
+                    <p><strong>Target Metrics:</strong></p>
+                    <br>
+                    <p>☐ Monthly conversions: 2,000+</p>
+                    <p>☐ Blended CPA: &lt;$4.75</p>
+                    <p>☐ Monthly spend: $10,000+</p>
+                    <p>☐ ROAS: &gt;15x</p>
+                    <br>
+                    <p><strong>Strategic Goals:</strong></p>
+                    <p>☐ Full account restructure complete</p>
+                    <p>☐ Q2 strategy developed</p>
+                    <p>☐ Channel expansion planned</p>
+                    <p>☐ Seasonal calendar mapped</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Partnership Success Definition</h3>
+            <p>Success at 90 days = 3x conversion volume from baseline while maintaining CPA below $5.00 target. Current trajectory indicates high probability of exceeding all targets.</p>
+        </div>
+    </div>
+
+    <!-- Slide 19: Next Steps & Immediate Actions -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">19</div>
+        </div>
+        <div class="section-title">Immediate Next Steps: Week 1 Action Items</div>
+        
+        <div class="two-column">
+            <div>
+                <div class="section-title" style="font-size: 1.2em;">Heathmedia Actions (Charles)</div>
+                <ul class="checklist">
+                    <li>Increase Q4-2025-search budget to $50/day <span class="priority-high">TODAY</span></li>
+                    <li>Add 25 negative keywords (recipe, how to, near me, etc.)</li>
+                    <li>Add top 10 search terms as exact match keywords</li>
+                    <li>Set up automated CPA alert rules</li>
+                    <li>Complete conversion tracking audit</li>
+                    <li>Audit Tag Manager untagged pages</li>
+                    <li>Prepare Week 1 performance Loom</li>
+                    <li>Draft Thursday budget recommendation</li>
+                </ul>
+            </div>
+            <div>
+                <div class="section-title" style="font-size: 1.2em;">Emma Actions Required</div>
+                <ul class="checklist">
+                    <li>Resolve Merchant Center access (email alias or Google Support) <span class="priority-high">URGENT</span></li>
+                    <li>Share Canva folder access</li>
+                    <li>Confirm budget approval workflow</li>
+                    <li>Flag any stock availability issues</li>
+                    <li>Provide seasonal promotion calendar</li>
+                    <li>Thursday: Approve first budget increase</li>
+                </ul>
+                <div class="warning-box" style="margin-top: 20px;">
+                    <div class="warning-title">Thursday Budget Meeting</div>
+                    <p style="font-size: 12px;">Budget recommendation will be sent by Thursday morning with Week 1 performance data and proposed increase from $94/day to $129/day (+37%).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Communication Channels</h3>
+            <table style="width: 100%; text-align: center; font-size: 14px;">
+                <tr>
+                    <td><strong>Slack:</strong> Daily/real-time updates</td>
+                    <td><strong>Loom:</strong> Weekly performance reviews</td>
+                    <td><strong>Call:</strong> Bi-weekly strategy alignment</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Slide 20: Strategic Recommendation -->
+    <div class="slide">
+        <div class="slide-header">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heathmedia Logo" class="logo">
+            <div class="slide-number">20</div>
+        </div>
+        <div class="main-title" style="font-size: 2.4em;">Strategic Recommendation</div>
+        <div class="subtitle">Immediate Scaling Approved: Exceptional Foundation in Place</div>
+        
+        <div class="executive-summary-box">
+            <h3 style="color: #4CAF50; margin-bottom: 15px; font-size: 1.4em;">Account Assessment: Exceptional Performance with Massive Untapped Potential</h3>
+            <p style="font-size: 14px; line-height: 1.7;">Parker's GBI Google Ads account is performing at an elite level, with the star campaign achieving $0.76 CPA against a $5.00 target. All four campaigns are budget-limited, indicating significant demand is being left on the table. The 90-day roadmap focuses on controlled scaling to capture this demand while maintaining efficiency.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card" style="border-color: #4CAF50;">
+                <span class="stat-number" style="color: #4CAF50;">$0.76</span>
+                <div class="stat-label">Current Star CPA<br>(84% Below Target)</div>
+            </div>
+            <div class="stat-card" style="border-color: #2196F3;">
+                <span class="stat-number" style="color: #2196F3;">90%+</span>
+                <div class="stat-label">Impression Share Lost<br>(Scaling Opportunity)</div>
+            </div>
+            <div class="stat-card" style="border-color: #FF9800;">
+                <span class="stat-number" style="color: #FF9800;">342%</span>
+                <div class="stat-label">90-Day Growth Target<br>(Conversions)</div>
+            </div>
+            <div class="stat-card" style="border-color: #9C27B0;">
+                <span class="stat-number" style="color: #9C27B0;">$1.9M</span>
+                <div class="stat-label">2026 Revenue Potential<br>(Google Ads)</div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Ready to Scale</h3>
+            <p style="font-size: 15px;">With exceptional efficiency already proven, the path forward is clear: controlled budget increases, campaign restructuring, and strategic expansion. The foundation is solid. Let's build on it.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <p style="font-size: 1.2em;"><strong>Prepared by Charles Piper | Heathmedia</strong></p>
+            <p style="opacity: 0.8;">January 2026</p>
+        </div>
+    </div>
+</body>
+</html>
