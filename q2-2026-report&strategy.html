@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parker's GBI | Q2 2026 Performance and Q3 Growth Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1A1341;
+  --navy-2:#241a55;
+  --cream:#FAF1E6;
+  --orange:#cc5b27;
+  --orange-l:#e8763f;
+  --muted:rgba(250,241,230,.70);
+  --faint:rgba(250,241,230,.50);
+  --line:rgba(250,241,230,.15);
+  --card:rgba(250,241,230,.045);
+  --card-2:rgba(250,241,230,.08);
+  --good:#9ec08a;
+  --watch:#e0a45a;
+  --bad:#d98a7a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:#0f0a2a;
+  color:var(--cream);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.deck{max-width:1280px;margin:0 auto}
+.slide{
+  position:relative;
+  min-height:100vh;
+  padding:44px 60px 46px;
+  display:flex;
+  flex-direction:column;
+  background:linear-gradient(150deg,var(--navy) 0%,#150f38 55%,var(--navy-2) 100%);
+  border-bottom:1px solid rgba(0,0,0,.4);
+  page-break-after:always;
+  overflow:hidden;
+}
+.slide::after{
+  content:"";position:absolute;right:-180px;top:-180px;width:520px;height:520px;
+  background:radial-gradient(circle,rgba(204,91,39,.16),transparent 62%);
+  pointer-events:none;
+}
+/* top bar */
+.bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;position:relative;z-index:2}
+.lockup{font-family:'Fraunces',serif;font-weight:600;font-size:15px;letter-spacing:.02em}
+.lockup .x{color:var(--orange);margin:0 7px;font-weight:500}
+.lockup .hm{color:var(--muted);font-weight:500}
+.pageno{font-family:'Fraunces',serif;font-size:13px;color:var(--faint);letter-spacing:.18em}
+.eyebrow{
+  font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--orange-l);margin-bottom:10px;position:relative;z-index:2;
+}
+h1{font-family:'Fraunces',serif;font-weight:600;line-height:1.05;position:relative;z-index:2}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:30px;line-height:1.12;margin-bottom:7px;position:relative;z-index:2}
+.lead{color:var(--muted);font-size:14px;max-width:860px;position:relative;z-index:2;line-height:1.5}
+.content{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:center;width:100%}
+.rule{height:1px;background:var(--line);margin:18px 0;position:relative;z-index:2}
+.accent-rule{width:64px;height:3px;background:var(--orange);border-radius:2px;margin-top:14px;position:relative;z-index:2}
+
+/* ---- TITLE ---- */
+.title-slide{justify-content:center}
+.title-kicker{font-size:12.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--orange-l);margin-bottom:22px}
+.title-slide h1{font-size:64px;letter-spacing:-.01em}
+.title-slide .sub{font-family:'Fraunces',serif;font-size:25px;color:var(--cream);font-weight:400;margin-top:14px;opacity:.92}
+.title-meta{display:flex;gap:40px;margin-top:40px;flex-wrap:wrap}
+.title-meta div{font-size:13.5px;color:var(--muted)}
+.title-meta div b{color:var(--cream);font-weight:600;display:block;font-size:15px;margin-bottom:2px;font-family:'Fraunces',serif}
+.title-strip{display:flex;gap:14px;margin-top:46px;flex-wrap:wrap}
+.chip{
+  background:var(--card-2);border:1px solid var(--line);border-radius:30px;
+  padding:9px 18px;font-size:13px;color:var(--cream);
+}
+.chip b{color:var(--orange-l)}
+
+/* ---- stat cards ---- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:6px 0}
+.stat{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px;
+  border-top:3px solid var(--orange);
+}
+.stat .num{font-family:'Fraunces',serif;font-size:30px;font-weight:600;line-height:1;color:var(--cream);display:block}
+.stat .lab{font-size:12.5px;color:var(--muted);margin-top:9px;line-height:1.4}
+.stat.good{border-top-color:var(--good)}
+.stat.watch{border-top-color:var(--watch)}
+.stat .delta{font-size:12px;font-weight:600;margin-top:7px;display:inline-block}
+.up{color:var(--good)} .down{color:var(--bad)} .flat{color:var(--muted)}
+
+/* ---- two col ---- */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.cols-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
+.panel h3,.block-title{font-family:'Fraunces',serif;font-size:18px;font-weight:600;margin-bottom:12px;color:var(--cream)}
+.panel.accent{border-left:3px solid var(--orange)}
+.panel.good{border-left:3px solid var(--good)}
+.panel.watch{border-left:3px solid var(--watch)}
+
+/* ---- lists ---- */
+ul.points{list-style:none}
+ul.points li{position:relative;padding-left:20px;margin:8px 0;font-size:13px;color:var(--cream);line-height:1.45}
+ul.points li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--orange)}
+ul.points li b{color:var(--cream)}
+ul.points.tight li{margin:6px 0;font-size:12.5px;line-height:1.4}
+
+/* ---- tables ---- */
+.tbl{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden;margin:6px 0;font-size:13px}
+.tbl th{background:rgba(0,0,0,.25);text-align:left;padding:9px 13px;font-weight:600;font-size:12px;letter-spacing:.04em;color:var(--cream);border-bottom:1px solid var(--line)}
+.tbl td{padding:8px 13px;border-bottom:1px solid rgba(250,241,230,.08);color:var(--muted)}
+.tbl td.lead-cell{color:var(--cream);font-weight:600}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr.total td{background:rgba(204,91,39,.12);color:var(--cream);font-weight:600;border-top:1px solid var(--line)}
+.num-cell{font-variant-numeric:tabular-nums}
+.pos{color:var(--good);font-weight:600} .neg{color:var(--bad);font-weight:600} .neu{color:var(--muted)}
+
+/* ---- callout ---- */
+.callout{
+  background:linear-gradient(135deg,rgba(204,91,39,.20),rgba(204,91,39,.06));
+  border:1px solid rgba(204,91,39,.35);border-radius:14px;padding:14px 22px;margin-top:12px;
+}
+.callout .k{font-family:'Fraunces',serif;font-size:16px;font-weight:600;margin-bottom:6px;color:var(--cream)}
+.callout p{font-size:13.5px;color:var(--muted)}
+.note{font-size:11.5px;color:var(--faint);margin-top:14px;line-height:1.5}
+
+/* ---- bars (svg) ---- */
+.chart-wrap{margin-top:8px}
+.legend{display:flex;gap:18px;margin-top:10px;flex-wrap:wrap}
+.legend span{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:7px}
+.legend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+
+/* tag */
+.tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.05em;padding:3px 9px;border-radius:20px;text-transform:uppercase}
+.tag.win{background:rgba(158,192,138,.18);color:var(--good);border:1px solid rgba(158,192,138,.4)}
+.tag.watch{background:rgba(224,164,90,.16);color:var(--watch);border:1px solid rgba(224,164,90,.4)}
+.tag.new{background:rgba(232,118,63,.16);color:var(--orange-l);border:1px solid rgba(232,118,63,.4)}
+
+/* phase cards */
+.phase{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;border-top:3px solid var(--orange)}
+.phase .ph-when{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-l);font-weight:600;margin-bottom:6px}
+.phase .ph-title{font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:10px}
+
+footer.end{margin-top:auto;padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--faint);position:relative;z-index:2}
+
+@media (max-width:900px){
+  .slide{padding:40px 26px 46px}
+  .cols,.cols-3{grid-template-columns:1fr;gap:18px}
+  .title-slide h1{font-size:42px}
+  h2{font-size:26px}
+}
+@media print{
+  body{background:#fff}
+  .slide{min-height:100vh;page-break-after:always;break-after:page}
+  a{color:inherit;text-decoration:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- 01 TITLE -->
+<section class="slide title-slide">
+  <div class="bar">
+    <div class="lockup">Parker's GBI <span class="x">×</span><span class="hm">Heath Media</span></div>
+    <div class="pageno">01 / 18</div>
+  </div>
+  <div class="content">
+    <div class="title-kicker">Quarterly Performance Review and Forward Strategy</div>
+    <h1>Q2 2026 Performance<br>and Q3 Growth Strategy</h1>
+    <div class="sub">Meta and Google Ads, reviewed together for the first time</div>
+    <div class="accent-rule"></div>
+    <div class="title-meta">
+      <div><b>Review period</b>1 April to 27 June 2026</div>
+      <div><b>Compared with</b>Q1 2026 and the last 14 days</div>
+      <div><b>Channels</b>Meta Ads and Google Ads</div>
+      <div><b>Store truth source</b>Shopify</div>
+    </div>
+    <div class="title-strip">
+      <div class="chip"><b>$616K</b> store gross sales</div>
+      <div class="chip"><b>2,092</b> new customers</div>
+      <div class="chip"><b>$27</b> blended cost per new customer</div>
+      <div class="chip"><b>Google Shopping</b> launched and scaling</div>
+    </div>
+  </div>
+  <footer class="end"><span>Prepared by Heath Media for Emma Reynolds</span><span>Parker's Great British Institution</span></footer>
+</section>
+
+<!-- 02 EXECUTIVE SUMMARY -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">×</span><span class="hm">Heath Media</span></div><div class="pageno">02 / 18</div></div>
+  <div class="eyebrow">Executive Summary</div>
+  <h2>A record quarter for the store, with one efficiency question to solve</h2>
+  <p class="lead">The store had its strongest quarter yet. Paid media is bringing new customers in at a cost well inside target. The single thing to fix this quarter is Meta efficiency, which softened as spend scaled. Google moved the other way, with Shopping now live and scaling cleanly.</p>
+  <div class="content">
+    <div class="stats">
+      <div class="stat good"><span class="num">$616K</span><div class="lab">Shopify gross sales, Q2<span class="delta up">store source of truth</span></div></div>
+      <div class="stat good"><span class="num">2,092</span><div class="lab">New customers acquired<span class="delta up">+5.2% vs Q1</span></div></div>
+      <div class="stat good"><span class="num">$27</span><div class="lab">Blended cost per new customer<span class="delta up">inside $25 to $35 target</span></div></div>
+      <div class="stat watch"><span class="num">4.96x</span><div class="lab">Meta ROAS, Q2<span class="delta down">down from 7.34x in Q1</span></div></div>
+      <div class="stat good"><span class="num">+121%</span><div class="lab">Google productive spend<span class="delta up">Shopping launched in Q2</span></div></div>
+    </div>
+    <div class="cols" style="margin-top:8px">
+      <div class="panel good"><h3>What is working</h3>
+        <ul class="points tight">
+          <li>The store grew to <b>$616K gross sales</b> with <b>2,092 new customers</b>, up on Q1.</li>
+          <li>Across both platforms we acquire a new customer for around <b>$27</b>, against a <b>$300 to $500</b> lifetime value.</li>
+          <li>Google <b>Shopping Feed Only</b> launched and is now the top conversion driver on Google.</li>
+          <li>Proven Meta creative themes keep performing: pies, build a box, bacon, founders and testimonials.</li>
+        </ul>
+      </div>
+      <div class="panel watch"><h3>What we are solving in Q3</h3>
+        <ul class="points tight">
+          <li>Meta spend rose <b>49%</b> while revenue held flat, so <b>ROAS compressed</b> from 7.3x to 5.0x.</li>
+          <li>The <b>World Cup campaign</b> ran below target and creative fatigue is showing on the evergreen.</li>
+          <li>On Google, <b>Sales PMax</b> softened and has been rebuilt as v2, now on watch.</li>
+          <li>The biggest untapped lever is <b>fish creative</b> on Meta, where store demand is rising fast.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 METHODOLOGY -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">×</span><span class="hm">Heath Media</span></div><div class="pageno">03 / 18</div></div>
+  <div class="eyebrow">How To Read This Deck</div>
+  <h2>Three numbers, measured three different ways</h2>
+  <p class="lead">Meta and Google count results differently, and both overlap with the store. To keep this honest we report each platform on its own basis and treat Shopify as the single source of truth for what actually happened.</p>
+  <div class="content">
+    <div class="cols-3">
+      <div class="panel accent">
+        <span class="tag new">Meta</span>
+        <h3 style="margin-top:12px">Counts purchases</h3>
+        <p style="font-size:13px;color:var(--muted)">Meta reports purchases on a 7 day click and 1 day view window. In Q2 it recorded <b style="color:var(--cream)">1,504 purchases</b> worth <b style="color:var(--cream)">$240,330</b>. This is the closest platform number to a real order.</p>
+      </div>
+      <div class="panel accent">
+        <span class="tag new">Google</span>
+        <h3 style="margin-top:12px">Counts conversions</h3>
+        <p style="font-size:13px;color:var(--muted)">Google counts conversions, which include some secondary actions, so the count runs high. Brand alone shows <b style="color:var(--cream)">715 conversions on $440</b>, which is a measure of branded capture, not 715 separate orders.</p>
+      </div>
+      <div class="panel good">
+        <span class="tag win">Shopify</span>
+        <h3 style="margin-top:12px">Counts reality</h3>
+        <p style="font-size:13px;color:var(--muted)">The store is the truth. Q2 delivered <b style="color:var(--cream)">$616,222 gross sales</b> and <b style="color:var(--cream)">2,092 new customers</b>. Every efficiency claim in this deck is anchored back to these figures.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="k">The one rule we hold to</div>
+      <p>We never add Meta and Google figures together, and we never compare their ROAS directly. Both platforms claim some of the same orders, and they count in different ways. Where we need a single efficiency number, we use total paid spend against real Shopify new customers.</p>
+    </div>
+    <p class="note">Platform claimed revenue, Meta $240,330 plus Google $132,413, comes to $372,743. That is more than half of store gross sales, with overlap between the two, which is exactly why we reconcile rather than sum.</p>
+  </div>
+</section>
+
+<!-- 04 THE STORE (SHOPIFY) -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">×</span><span class="hm">Heath Media</span></div><div class="pageno">04 / 18</div></div>
+  <div class="eyebrow">The Store, Top Down</div>
+  <h2>Shopify: the quarter in real numbers</h2>
+  <p class="lead">Before the platforms, here is what the store actually did. This is the backdrop every paid decision is measured against.</p>
+  <div class="content">
+    <div class="stats">
+      <div class="stat good"><span class="num">$616,222</span><div class="lab">Gross sales, Q2</div></div>
+      <div class="stat good"><span class="num">2,092</span><div class="lab">New customers<span class="delta up">+5.2% vs Q1 (1,989)</span></div></div>
+      <div class="stat"><span class="num">$311,488</span><div class="lab">Revenue from new customers<span class="delta flat">51% of gross sales</span></div></div>
+      <div class="stat watch"><span class="num">39.3%</span><div class="lab">Checkout completion rate<span class="delta down">from 40.7% in Q1</span></div></div>
+    </div>
+    <div class="cols" style="margin-top:6px">
+      <div class="panel">
+        <h3>Q2 purchase funnel</h3>
+        <table class="tbl">
+          <tr><th>Stage</th><th class="num-cell">Q2</th><th class="num-cell">Q1</th></tr>
+          <tr><td class="lead-cell">Sessions with cart additions</td><td class="num-cell">11,424</td><td class="num-cell">11,975</td></tr>
+          <tr><td class="lead-cell">Sessions reaching checkout</td><td class="num-cell">6,634</td><td class="num-cell">6,881</td></tr>
+          <tr><td class="lead-cell">Sessions completing checkout</td><td class="num-cell">2,605</td><td class="num-cell">2,802</td></tr>
+        </table>
+        <p class="note">Cart adds and completions softened slightly quarter on quarter. This lines up with the late May site and tracking wobble we flagged at the time, which has since been resolved. Mobile carries the large majority of orders.</p>
+      </div>
+      <div class="panel good">
+        <h3>What this tells us</h3>
+        <ul class="points tight">
+          <li>The business is <b>growing on new customers</b>, not just repeat orders. New customer revenue is over half of the total.</li>
+          <li>Repeat behaviour is steady. Cohorts reorder at roughly <b>8 to 12% a month</b>, consistent with the 60 to 120 day reorder cycle, which underpins the $300 to $500 lifetime value.</li>
+          <li>The slight funnel dip is a <b>conversion question, not a traffic question</b>, and is being addressed on the tracking and store side.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 BLENDED ECONOMICS -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">×</span><span class="hm">Heath Media</span></div><div class="pageno">05 / 18</div></div>
+  <div class="eyebrow">Acquisition Economics</div>
+  <h2>The number that matters most: cost to win a new customer</h2>
+  <p class="lead">Total paid media across both platforms, set against the real new customers the store gained. This is the honest, all in efficiency picture.</p>
+  <div class="content">
+    <div class="cols">
+      <div>
+        <div class="stats" style="grid-template-columns:1fr 1fr">
+          <div class="stat"><span class="num">$57.1K</span><div class="lab">Total paid media, Q2<br>Meta $49.6K + Google $7.5K</div></div>
+          <div class="stat good"><span class="num">$27.30</span><div class="lab">Blended cost per new customer<span class="delta up">target $25 to $35</span></div></div>
+          <div class="stat good"><span class="num">11x</span><div class="lab">to <b>18x</b> lifetime value to cost<span class="delta up">benchmark is 3x</span></div></div>
+          <div class="stat"><span class="num">$45 to $50</span><div class="lab">Breakeven cost per customer<span class="delta flat">we sit well below it</span></div></div>
+        </div>
+      </div>
+      <div class="panel accent">
+        <h3>Reading it straight</h3>
+        <ul class="points tight">
+          <li>We are spending <b>$57.1K</b> across Meta and Google and bringing in <b>2,092 new customers</b>, which is roughly <b>$27 each</b>.</li>
+          <li>Against a lifetime value of <b>$300 to $500</b>, that is a return of eleven to eighteen times over a customer's life, far above the standard three to one health line.</li>
+          <li>This is the case for <b>spending more, not less</b>, as long as we put the next dollars into the campaigns that hold their efficiency at scale.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="k">Where the spend sat</div>
+      <p>Meta did the heavy lifting on volume at $49.6K, around 87% of paid media. Google ran lean at $7.5K and punched above its weight, with Shopping now scaling into more of the budget. The blended $27 holds even though Meta efficiency softened, because Google and the store ran strong underneath it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 06 META OVERVIEW + QoQ -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">×</span><span class="hm">Heath Media</span></div><div class="pageno">06 / 18</div></div>
+  <div class="eyebrow">Meta Ads &middot; Quarter On Quarter</div>
+  <h2>We put 49% more into Meta and held revenue flat</h2>
+  <p class="lead">This is the central Meta finding for the quarter. Volume held, but efficiency compressed as spend scaled into the World Cup campaign and fatiguing creative. It is fixable, and the plan is later in this deck.</p>
+  <div class="content">
+    <div class="cols">
+      <div class="panel">
+        <h3>Meta sales campaigns, Q1 vs Q2</h3>
+        <table class="tbl">
+          <tr><th>Metric</th><th class="num-cell">Q1</th><th class="num-cell">Q2</th><th class="num-cell">Change</th></tr>
+          <tr><td class="lead-cell">Spend</td><td class="num-cell">$32,606</td><td class="num-cell">$48,452</td><td class="num-cell pos">+48.6%</td></tr>
+          <tr><td class="lead-cell">Purchases</td><td class="num-cell">1,552</td><td class="num-cell">1,504</td><td class="num-cell neg">-3.1%</td></tr>
+          <tr><td class="lead-cell">Revenue</td><td class="num-cell">$239,322</td><td class="num-cell">$240,330</td><td class="num-cell neu">+0.4%</td></tr>
+          <tr><td class="lead-cell">ROAS</td><td class="num-cell">7.34x</td><td class="num-cell">4.96x</td><td class="num-cell neg">-32%</td></tr>
+          <tr><td class="lead-cell">Cost per purchase</td><td class="num-cell">$21.01</td><td class="num-cell">$32.21</td><td class="num-cell neg">+53%</td></tr>
+          <tr class="total"><td>AOV (Meta)</td><td class="num-cell">$154.20</td><td class="num-cell">$159.79</td><td class="num-cell pos">+3.6%</td></tr>
+        </table>
+        <p class="note">Q1 Meta ran a single evergreen engine. Q2 added the World Cup campaign and the Francesca partnership, which scaled spend and volume but at lower efficiency.</p>
+      </div>
+      <div class="panel watch">
+        <h3>Why efficiency compressed</h3>
+        <ul class="points tight">
+          <li><b>World Cup campaign at 3.22x.</b> It absorbed $8,623 below the 4.0x target, pulling the blended number down.</li>
+          <li><b>Creative fatigue.</b> The strongest evergreen audience, Value Optimisation, is running at a frequency of 4.36, so the same people are seeing ads too often.</li>
+          <li><b>The engine itself softened.</b> The evergreen Advantage+ campaign moved from 7.34x to 5.35x as the proven creative aged.</li>
+        </ul>
+        <div class="callout" style="margin-top:14px">
+          <div class="k">The honest read</div>
+          <p>None of this is a broken account. It is a quarter where we scaled into fatigue and a seasonal campaign. Q3 is about consolidating back into proven winners and refreshing creative, not adding budget.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 META CAMPAIGN STRUCTURE -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">×</span><span class="hm">Heath Media</span></div><div class="pageno">07 / 18</div></div>
+  <div class="eyebrow">Meta Ads &middot; Campaign Structure</div>
+  <h2>One engine, one seasonal play, one new test</h2>
+  <p class="lead">How Meta spend split across campaigns in Q2, and how each is performing against the 4.0x target.</p>
+  <div class="content">
+    <table class="tbl" style="font-size:13.5px">
+      <tr><th>Campaign</th><th>Role</th><th class="num-cell">Spend</th><th class="num-cell">Purchases</th><th class="num-cell">Revenue</th><th class="num-cell">ROAS</th><th class="num-cell">CPA</th><th>Status</th></tr>
+      <tr><td class="lead-cell">HM Advantage+ CBO</td><td class="neu">Evergreen engine</td><td class="num-cell">$39,614</td><td class="num-cell">1,337</td><td class="num-cell">$211,989</td><td class="num-cell">5.35x</td><td class="num-cell">$29.63</td><td><span class="tag win">Core</span></td></tr>
+      <tr><td class="lead-cell">World Cup Double Header CBO</td><td class="neu">Seasonal</td><td class="num-cell">$8,623</td><td class="num-cell">162</td><td class="num-cell">$27,745</td><td class="num-cell">3.22x</td><td class="num-cell">$53.23</td><td><span class="tag watch">Below target</span></td></tr>
+      <tr><td class="lead-cell">Partnership ABO (Francesca)</td><td class="neu">Creator test</td><td class="num-cell">$215</td><td class="num-cell">5</td><td class="num-cell">$596</td><td class="num-cell">2.78x</td><td class="num-cell">$42.91</td><td><span class="tag new">Just launched</span></td></tr>
+      <tr><td class="lead-cell">Leads CBO</td><td class="neu">List building</td><td class="num-cell">$871</td><td class="num-cell">n/a</td><td class="num-cell">n/a</td><td class="num-cell">n/a</td><td class="num-cell">&lt;$1 / lead</td><td><span class="tag win">Efficient</span></td></tr>
+      <tr><td class="lead-cell">Promotional Engagement CBO</td><td class="neu">Awareness</td><td class="num-cell">$240</td><td class="num-cell">n/a</td><td class="num-cell">n/a</td><td class="num-cell">n/a</td><td class="num-cell">n/a</td><td><span class="tag watch">Minimal</span></td></tr>
+    </table>
+    <div class="cols" style="margin-top:18px">
+      <div class="panel good"><h3>The engine is healthy</h3><p style="font-size:13px;color:var(--muted)">Advantage+ still drives almost all volume at a solid 5.35x and a $29.63 cost per purchase, inside target. The job is to refresh its creative so it climbs back toward Q1 levels.</p></div>
+      <div class="panel watch"><h3>The seasonal play needs a plan</h3><p style="font-size:13px;color:var(--muted)">The World Cup campaign added real revenue but at a 3.22x return and a $53 cost per purchase. It ends naturally when the tournament finishes, so we lift its one proven winner into the evergreen now and let the rest retire.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 META AD SETS -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">×</span><span class="hm">Heath Media</span></div><div class="pageno">08 / 18</div></div>
+  <div class="eyebrow">Meta Ads &middot; Audience Read</div>
+  <h2>LLA is the most efficient audience, and the most under-resourced</h2>
+  <p class="lead">Inside the evergreen engine, all three audiences earn their place. The pattern is clear: the smallest audience returns the best cost per purchase, while the strongest performer is starting to see the same people too often.</p>
+  <div class="content">
+    <table class="tbl" style="font-size:13.5px">
+      <tr><th>Audience (evergreen)</th><th class="num-cell">Spend</th><th class="num-cell">Purchases</th><th class="num-cell">ROAS</th><th class="num-cell">CPA</th><th class="num-cell">Frequency</th><th>Read</th></tr>
+      <tr><td class="lead-cell">Broad</td><td class="num-cell">$21,280</td><td class="num-cell">676</td><td class="num-cell">5.08x</td><td class="num-cell">$31.48</td><td class="num-cell">3.91</td><td class="neu">Volume driver</td></tr>
+      <tr><td class="lead-cell">Value Optimisation</td><td class="num-cell">$13,342</td><td class="num-cell">460</td><td class="num-cell">5.71x</td><td class="num-cell">$29.00</td><td class="num-cell">4.36</td><td class="neg">Best ROAS, frequency creeping</td></tr>
+      <tr><td class="lead-cell">LLA</td><td class="num-cell">$4,992</td><td class="num-cell">201</td><td class="num-cell">5.55x</td><td class="num-cell">$24.84</td><td class="num-cell">3.22</td><td class="pos">Best CPA, room to scale</td></tr>
+    </table>
+    <div class="cols" style="margin-top:18px">
+      <div class="panel accent">
+        <h3>What we do with this</h3>
+        <ul class="points tight">
+          <li><b>Scale LLA.</b> It returns the cheapest customers at $24.84 and is only carrying a tenth of the budget. There is headroom here.</li>
+          <li><b>Refresh Value Optimisation creative.</b> A frequency of 4.36 means fatigue. New cuts reset the experience and protect the best return in the account.</li>
+          <li><b>Hold Broad as the base.</b> It is the reliable volume floor and stays funded.</li>
+        </ul>
+      </div>
+      <div class="panel watch">
+        <h3>The World Cup audiences, for contrast</h3>
+        <table class="tbl">
+          <tr><th>Audience</th><th class="num-cell">Spend</th><th class="num-cell">ROAS</th><th class="num-cell">CPA</th></tr>
+          <tr><td class="lead-cell">Broad</td><td class="num-cell">$4,676</td><td class="num-cell">3.16x</td><td class="num-cell">$54.37</td></tr>
+          <tr><td class="lead-cell">Value Optimisation</td><td class="num-cell">$3,700</td><td class="num-cell">3.45x</td><td class="num-cell">$49.33</td></tr>
+          <tr><td class="lead-cell">LLA 1%</td><td class="num-cell">$248</td><td class="num-cell">0.80x</td><td class="num-cell">$247.65</td></tr>
+        </table>
+        <p class="note">The World Cup LLA 1% ad set returned $0.80 on the dollar and should be switched off now.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 META CREATIVE -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">×</span><span class="hm">Heath Media</span></div><div class="pageno">09 / 18</div></div>
+  <div class="eyebrow">Meta Ads &middot; Creative</div>
+  <h2>The winning themes are clear, and fish is the gap</h2>
+  <p class="lead">Across 160 ads in Q2, the same angles keep winning. The opportunity is a category we have store demand for but have never put real creative behind.</p>
+  <div class="content">
+    <div class="cols">
+      <div class="panel">
+        <h3>Top creatives by volume</h3>
+        <table class="tbl">
+          <tr><th>Ad</th><th class="num-cell">Purchases</th><th class="num-cell">ROAS</th></tr>
+          <tr><td class="lead-cell">FeedLexi Partnership video</td><td class="num-cell">159</td><td class="num-cell">5.36x</td></tr>
+          <tr><td class="lead-cell">Pies, This Or That (IG)</td><td class="num-cell">108</td><td class="num-cell">5.71x</td></tr>
+          <tr><td class="lead-cell">Pack A Box, Copy</td><td class="num-cell">96</td><td class="num-cell">6.28x</td></tr>
+          <tr><td class="lead-cell">Sausage Rolls, priced honestly</td><td class="num-cell">70</td><td class="num-cell">5.42x</td></tr>
+          <tr><td class="lead-cell">Scones</td><td class="num-cell">50</td><td class="num-cell">6.37x</td></tr>
+          <tr><td class="lead-cell">Testimonials, behind the scenes</td><td class="num-cell">50</td><td class="num-cell">6.21x</td></tr>
+        </table>
+      </div>
+      <div class="panel">
+        <h3>Top creatives by efficiency</h3>
+        <table class="tbl">
+          <tr><th>Ad (min $400 spend)</th><th class="num-cell">ROAS</th><th class="num-cell">CPA</th></tr>
+          <tr><td class="lead-cell">Black Pudding, Copy</td><td class="num-cell">8.38x</td><td class="num-cell">$21.62</td></tr>
+          <tr><td class="lead-cell">USA vs UK Bacon</td><td class="num-cell">7.73x</td><td class="num-cell">$26.19</td></tr>
+          <tr><td class="lead-cell">Founders, behind the scenes</td><td class="num-cell">7.59x</td><td class="num-cell">$21.94</td></tr>
+          <tr><td class="lead-cell">AJ Slambino</td><td class="num-cell">7.21x</td><td class="num-cell">$24.99</td></tr>
+          <tr><td class="lead-cell">Taste of Home, testimonial</td><td class="num-cell">6.93x</td><td class="num-cell">$23.64</td></tr>
+          <tr><td class="lead-cell">Bacon Baps (IG)</td><td class="num-cell">6.26x</td><td class="num-cell">$27.16</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="k">The fish opportunity</div>
+      <p>Pies, build a box, bacon, founder content and testimonials are the proven backbone. Fish is the gap. Smoked Kippers has been a top store revenue product and the fish category has been climbing in your Shopify data, yet the Fish and Chips ad sets are built and have never spent. This is the clearest new creative lever we have for Q3.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10 META LAST 14 DAYS -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">×</span><span class="hm">Heath Media</span></div><div class="pageno">10 / 18</div></div>
+  <div class="eyebrow">Meta Ads &middot; Last 14 Days</div>
+  <h2>The recent fortnight: where we are right now</h2>
+  <p class="lead">A short window read for 13 to 26 June, so the strategy starts from the present, not the quarter average. A discrete 7 day Meta export was not available, so this is the cleanest recent Meta view.</p>
+  <div class="content">
+    <div class="stats">
+      <div class="stat"><span class="num">$10,985</span><div class="lab">Spend, last 14 days</div></div>
+      <div class="stat"><span class="num">258</span><div class="lab">Purchases</div></div>
+      <div class="stat"><span class="num">$41,978</span><div class="lab">Revenue</div></div>
+      <div class="stat watch"><span class="num">3.82x</span><div class="lab">Blended ROAS<span class="delta down">below the 4.0x target</span></div></div>
+    </div>
+    <div class="cols" style="margin-top:6px">
+      <div class="panel">
+        <h3>By campaign, last 14 days</h3>
+        <table class="tbl">
+          <tr><th>Campaign</th><th class="num-cell">Spend</th><th class="num-cell">Purchases</th><th class="num-cell">ROAS</th></tr>
+          <tr><td class="lead-cell">Advantage+ evergreen</td><td class="num-cell">$6,808</td><td class="num-cell">196</td><td class="num-cell">4.49x</td></tr>
+          <tr><td class="lead-cell">World Cup Double Header</td><td class="num-cell">$3,693</td><td class="num-cell">57</td><td class="num-cell">2.94x</td></tr>
+          <tr><td class="lead-cell">Partnership (Francesca)</td><td class="num-cell">$203</td><td class="num-cell">5</td><td class="num-cell">2.94x</td></tr>
+        </table>
+      </div>
+      <div class="panel watch">
+        <h3>What is pulling the fortnight down</h3>
+        <ul class="points tight">
+          <li>The <b>World Cup campaign and the Double Header giveaway ads</b> are sitting around 2.9x to 3.1x and taking a third of recent spend.</li>
+          <li>The newest high volume creative, <b>Rhubarb Crumble</b>, is converting but only at 3.97x, so it needs efficiency support.</li>
+          <li>The <b>evergreen engine is still the floor</b> at 4.49x. Consolidating spend back into it and its winners is the fastest route above 4.0x.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 GOOGLE OVERVIEW + QoQ -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">×</span><span class="hm">Heath Media</span></div><div class="pageno">11 / 18</div></div>
+  <div class="eyebrow">Google Ads &middot; Quarter On Quarter</div>
+  <h2>Google productive spend more than doubled, and it earned it</h2>
+  <p class="lead">Q2 was a structural step up on Google. We resolved Merchant Center, launched Shopping, and concentrated budget into three productive campaigns. Conversion value rose 60% as spend scaled.</p>
+  <div class="content">
+    <div class="cols">
+      <div class="panel">
+        <h3>Google, current campaign structure</h3>
+        <table class="tbl">
+          <tr><th>Metric</th><th class="num-cell">Q1</th><th class="num-cell">Q2</th><th class="num-cell">Change</th></tr>
+          <tr><td class="lead-cell">Productive spend</td><td class="num-cell">$3,294</td><td class="num-cell">$7,274</td><td class="num-cell pos">+121%</td></tr>
+          <tr><td class="lead-cell">Conversions</td><td class="num-cell">860</td><td class="num-cell">1,612</td><td class="num-cell pos">+88%</td></tr>
+          <tr><td class="lead-cell">Conversion value</td><td class="num-cell">$82,970</td><td class="num-cell">$132,413</td><td class="num-cell pos">+60%</td></tr>
+          <tr><td class="lead-cell">Value per cost</td><td class="num-cell">25.19x</td><td class="num-cell">18.20x</td><td class="num-cell neu">mix shift</td></tr>
+          <tr><td class="lead-cell">Cost per conversion</td><td class="num-cell">$3.83</td><td class="num-cell">$4.51</td><td class="num-cell neu">+18%</td></tr>
+        </table>
+        <p class="note">Value per cost eased as Shopping, at around 13x, scaled into the mix alongside the brand campaign. That is healthy dilution, more total value at a still very strong return.</p>
+      </div>
+      <div class="panel good">
+        <h3>The structural wins this quarter</h3>
+        <ul class="points tight">
+          <li><b>Merchant Center resolved</b> after a long ownership transfer, then the Sodium Nitrite product appeals cleared bacon and pork pie SKUs.</li>
+          <li><b>Shopping Feed Only launched</b> in April and is already the top conversion driver on Google.</li>
+          <li><b>Budget concentrated.</b> Q1 also carried around $2,700 of legacy paused search campaigns. Those are gone, so spend now sits in three productive campaigns.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 GOOGLE CAMPAIGN READ -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">×</span><span class="hm">Heath Media</span></div><div class="pageno">12 / 18</div></div>
+  <div class="eyebrow">Google Ads &middot; Campaign Read</div>
+  <h2>Shopping is the scaler, PMax is the rebuild, Brand is the anchor</h2>
+  <p class="lead">The three live Google campaigns each play a distinct role. A reminder on counting: Google conversions include some secondary actions, so we read these as efficiency signals, not as a count of separate orders.</p>
+  <div class="content">
+    <table class="tbl" style="font-size:13.5px">
+      <tr><th>Campaign</th><th>Role</th><th class="num-cell">Spend</th><th class="num-cell">Conversions</th><th class="num-cell">Conv. value</th><th class="num-cell">Value / cost</th><th>Status</th></tr>
+      <tr><td class="lead-cell">Shopping Feed Only</td><td class="neu">Scaler</td><td class="num-cell">$3,377</td><td class="num-cell">618</td><td class="num-cell">$44,413</td><td class="num-cell">13.15x</td><td><span class="tag win">Scaling cleanly</span></td></tr>
+      <tr><td class="lead-cell">Sales PMax (now v2)</td><td class="neu">Rebuild</td><td class="num-cell">$3,456</td><td class="num-cell">279</td><td class="num-cell">$35,001</td><td class="num-cell">10.13x</td><td><span class="tag watch">On watch</span></td></tr>
+      <tr><td class="lead-cell">Brand</td><td class="neu">Anchor</td><td class="num-cell">$440</td><td class="num-cell">715</td><td class="num-cell">$53,004</td><td class="num-cell">120.55x</td><td><span class="tag new">Counts inflated</span></td></tr>
+    </table>
+    <div class="cols-3" style="margin-top:18px">
+      <div class="panel good"><h3>Shopping Feed Only</h3><p style="font-size:12.5px;color:var(--muted)">Launched in April, now the top conversion driver. It has taken several controlled 20% budget steps with the return climbing rather than falling, which is the signal there is real headroom above current spend.</p></div>
+      <div class="panel watch"><h3>Sales PMax v2</h3><p style="font-size:12.5px;color:var(--muted)">Value per cost softened from 15.0x in Q1 to 10.1x, so it was rebuilt from scratch as v2 with Final URL Expansion off, stripped assets and the Winback list as the primary signal. Judged at its next checkpoint.</p></div>
+      <div class="panel accent"><h3>Brand</h3><p style="font-size:12.5px;color:var(--muted)">The most efficient line in the account at a cent on the dollar. The 715 figure counts branded interactions, not 715 orders, so we treat it as proof we own the brand auction, which the competitor data confirms.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 GOOGLE WHERE GROWTH IS -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">×</span><span class="hm">Heath Media</span></div><div class="pageno">13 / 18</div></div>
+  <div class="eyebrow">Google Ads &middot; Where The Growth Is</div>
+  <h2>We dominate the brand auction. The headroom is non-brand.</h2>
+  <p class="lead">The device, network and competitor data point to the same conclusion: brand demand is captured, and the next stage of Google growth is reaching customers who do not yet search for us by name.</p>
+  <div class="content">
+    <div class="cols-3">
+      <div class="panel">
+        <h3>Auction position</h3>
+        <table class="tbl">
+          <tr><th>Advertiser</th><th class="num-cell">Impr. share</th><th class="num-cell">Top of page</th></tr>
+          <tr><td class="lead-cell">Parker's (you)</td><td class="num-cell pos">82.87%</td><td class="num-cell pos">95.93%</td></tr>
+          <tr><td class="lead-cell">Jolly Posh</td><td class="num-cell">63.86%</td><td class="num-cell">78.21%</td></tr>
+          <tr><td class="lead-cell">British Food Depot</td><td class="num-cell">19.83%</td><td class="num-cell">69.17%</td></tr>
+          <tr><td class="lead-cell">Goodwoods</td><td class="num-cell">&lt;10%</td><td class="num-cell">65.76%</td></tr>
+        </table>
+        <p class="note">We out-rank Jolly Posh on share and on top of page rate.</p>
+      </div>
+      <div class="panel">
+        <h3>Devices, Q2</h3>
+        <table class="tbl">
+          <tr><th>Device</th><th class="num-cell">Spend</th><th class="num-cell">Conv.</th></tr>
+          <tr><td class="lead-cell">Mobile</td><td class="num-cell">$4,886</td><td class="num-cell">1,021</td></tr>
+          <tr><td class="lead-cell">Computers</td><td class="num-cell">$2,079</td><td class="num-cell">507</td></tr>
+          <tr><td class="lead-cell">Tablets</td><td class="num-cell">$299</td><td class="num-cell">83</td></tr>
+        </table>
+        <p class="note">Mobile drives roughly 63% of Google conversions.</p>
+      </div>
+      <div class="panel">
+        <h3>Where spend goes</h3>
+        <table class="tbl">
+          <tr><th>Network</th><th class="num-cell">Spend</th><th class="num-cell">Clicks</th></tr>
+          <tr><td class="lead-cell">Cross-network<br><span style="font-size:11px;color:var(--faint)">Shopping + PMax</span></td><td class="num-cell">$6,834</td><td class="num-cell">16,851</td></tr>
+          <tr><td class="lead-cell">Google Search<br><span style="font-size:11px;color:var(--faint)">Brand</span></td><td class="num-cell">$440</td><td class="num-cell">3,396</td></tr>
+        </table>
+        <p class="note">94% of Google spend is the Shopping and PMax engine.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="k">The signal in the search terms</div>
+      <p>The top Google search terms are almost entirely branded, parkers british foods, parkers gbi, parkers pies and so on. That tells us brand demand is well covered. The growth lever is the non-brand work already in motion: the agreed search themes, Shopping expansion and a new Demand Gen channel to reach people before they know the name.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 14 GOOGLE RECENT + MERCHANT CENTER -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">×</span><span class="hm">Heath Media</span></div><div class="pageno">14 / 18</div></div>
+  <div class="eyebrow">Google Ads &middot; Recent Read and Store Signals</div>
+  <h2>Last 7 and 14 days, plus the store quality unlock</h2>
+  <p class="lead">Google daily data lets us read the most recent windows cleanly. Alongside the campaign work, four store side fixes would lift Merchant Center to the top tier and strengthen Shopping.</p>
+  <div class="content">
+    <div class="cols">
+      <div class="panel">
+        <h3>Google recent windows</h3>
+        <table class="tbl">
+          <tr><th>Window</th><th class="num-cell">Spend</th><th class="num-cell">Conv.</th><th class="num-cell">Conv. value</th><th class="num-cell">Value / cost</th></tr>
+          <tr><td class="lead-cell">Last 7 days (20 to 26 Jun)</td><td class="num-cell">$638</td><td class="num-cell">100</td><td class="num-cell">$8,440</td><td class="num-cell">13.24x</td></tr>
+          <tr><td class="lead-cell">Prior 7 days (13 to 19 Jun)</td><td class="num-cell">$693</td><td class="num-cell">159</td><td class="num-cell">$13,012</td><td class="num-cell">18.79x</td></tr>
+          <tr><td class="lead-cell">Last 14 days (13 to 26 Jun)</td><td class="num-cell">$1,330</td><td class="num-cell">259</td><td class="num-cell">$21,452</td><td class="num-cell">16.13x</td></tr>
+        </table>
+        <p class="note">Google holds a very strong 13x to 19x value per cost across recent windows. Same day attribution lag means the latest day or two read low and fill in afterward.</p>
+      </div>
+      <div class="panel accent">
+        <h3>Merchant Center: four fixes to reach Top Quality Store</h3>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:10px">The account sits at Great, one tier below the top. The badge is a positive Shopping auction signal on the campaign driving most Google conversions. All four sit on the store side.</p>
+        <ul class="points tight">
+          <li><b>Delivery time estimates</b> set to match real transit times.</li>
+          <li><b>Return cost field</b> populated, or a free returns statement added.</li>
+          <li><b>eWallet options</b> enabled, Apple Pay, Google Pay or Shop Pay.</li>
+          <li><b>Three to four images per product</b> where any run on a single image.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 15 META STRATEGY -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">×</span><span class="hm">Heath Media</span></div><div class="pageno">15 / 18</div></div>
+  <div class="eyebrow">Q3 Strategy &middot; Meta</div>
+  <h2>Consolidate into winners, refresh the creative, open the fish lever</h2>
+  <p class="lead">The Meta plan is about discipline, not budget. We pull spend out of fatigue and the seasonal campaign, refresh the engine, and finally test a category the store is already selling.</p>
+  <div class="content">
+    <div class="cols">
+      <div class="panel accent">
+        <h3>Actions, in order</h3>
+        <ul class="points tight">
+          <li><b>The World Cup campaign ends with the tournament,</b> so we lift its one proven winner, the Missing Home carousel, into the evergreen now and switch off the World Cup LLA 1% straight away.</li>
+          <li><b>Refresh evergreen creative</b> to fix the frequency creep on Value Optimisation, using fresh cuts from the ongoing video contract.</li>
+          <li><b>Scale the LLA audience.</b> It returns the cheapest customers and is under-funded.</li>
+          <li><b>Launch fish creative.</b> Smoked Kippers, a proper British fish shop angle and seaside nostalgia, into the Fish and Chips ad sets already built.</li>
+          <li><b>Judge Francesca</b> on a clean 5 to 7 day read, then decide on the full 30 day window.</li>
+        </ul>
+      </div>
+      <div class="panel good">
+        <h3>What this should achieve</h3>
+        <ul class="points tight">
+          <li>Blended Meta ROAS back toward <b>4.5x to 5.0x</b> by consolidating into proven performers.</li>
+          <li>Cost per purchase back toward <b>$28 to $30</b>.</li>
+          <li>A new winning category in fish, reducing reliance on the same pie and box creative.</li>
+          <li>A fresher creative rotation that protects the strongest audience from fatigue.</li>
+        </ul>
+        <div class="callout" style="margin-top:14px">
+          <div class="k">Proven themes we keep leaning on</div>
+          <p>Pies, build a box, bacon comparisons, founder and behind the scenes content, and customer testimonials. These are the backbone, and fish joins them.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 16 GOOGLE STRATEGY -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">×</span><span class="hm">Heath Media</span></div><div class="pageno">16 / 18</div></div>
+  <div class="eyebrow">Q3 Strategy &middot; Google</div>
+  <h2>Scale the proven Shopping engine, add a new acquisition channel</h2>
+  <p class="lead">Google is in a strong position. The plan is to keep scaling what works, make a clear call on the rebuild, and open the first net new acquisition channel since Shopping went live.</p>
+  <div class="content">
+    <div class="cols">
+      <div class="panel accent">
+        <h3>Actions, in order</h3>
+        <ul class="points tight">
+          <li><b>Keep scaling Shopping Feed Only</b> in controlled 20% steps with 5 to 7 day spacing, inside the $3,000 monthly Google ceiling.</li>
+          <li><b>Make the Sales PMax v2 call</b> at its next checkpoint. If it lags Shopping economics, fold its budget into Shopping.</li>
+          <li><b>Launch Demand Gen</b> behind the new YouTube videos and the Winback Customer Match list, the first new acquisition channel since Shopping.</li>
+          <li><b>Complete the four Merchant Center fixes</b> to reach Top Quality Store.</li>
+          <li><b>Expand non-brand reach.</b> Load the agreed search themes and push Shopping and PMax into the demand we are not yet capturing.</li>
+        </ul>
+      </div>
+      <div class="panel good">
+        <h3>What this should achieve</h3>
+        <ul class="points tight">
+          <li>Shopping held above <b>10x value per cost</b> while it takes more budget.</li>
+          <li>A clean decision on PMax v2 rather than letting it drift.</li>
+          <li>A genuine top of funnel channel in Demand Gen, feeding the rest of the account.</li>
+          <li>More non-brand customers, reducing reliance on people who already know the name.</li>
+        </ul>
+        <div class="callout" style="margin-top:14px">
+          <div class="k">Budget note</div>
+          <p>Google ran at 96% of the $3,000 ceiling in the back half of Q2. Scaling Shopping further may warrant a modest lift to that ceiling, which we will quantify before any change.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 17 BUDGET AND SCALING PLAN -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">17 / 18</div></div>
+  <div class="eyebrow">Q3 Strategy &middot; Budget and Scaling</div>
+  <h2>The budget plan: reallocate first, then scale in steps</h2>
+  <div class="content">
+    <table class="tbl" style="font-size:13.5px">
+      <tr><th>Phase</th><th class="num-cell">Meta / month</th><th class="num-cell">Google / month</th><th class="num-cell">Total paid / month</th><th>Unlocks the next step when</th></tr>
+      <tr><td class="lead-cell">Now (current run rate)</td><td class="num-cell">around $23,500</td><td class="num-cell">$3,000</td><td class="num-cell">around $26,500</td><td class="neu">Cost per new customer holding at $27</td></tr>
+      <tr><td class="lead-cell">Phase 1 &middot; Weeks 1 to 3</td><td class="num-cell">around $23,500</td><td class="num-cell">$3,600</td><td class="num-cell">around $27,100</td><td class="neu">Meta ROAS back to 4.5x, Shopping above 10x</td></tr>
+      <tr><td class="lead-cell">Phase 2 &middot; Weeks 4 to 7</td><td class="num-cell">around $27,000</td><td class="num-cell">$4,300</td><td class="num-cell">around $31,300</td><td class="neu">Efficiency holds, fish and Demand Gen validated</td></tr>
+      <tr class="total"><td>Phase 3 &middot; Weeks 8 to 12</td><td class="num-cell">around $32,000</td><td class="num-cell">$5,200</td><td class="num-cell">around $37,200</td><td>Q4 runway, CPA inside target</td></tr>
+    </table>
+    <div class="cols" style="margin-top:10px">
+      <div class="panel accent">
+        <h3>Where the next dollars go</h3>
+        <ul class="points tight">
+          <li><b>Meta, Phase 1.</b> As the World Cup ends, redirect its spend into LLA, a fish test at around $50 to $75 a day, and an evergreen refresh. No net increase yet.</li>
+          <li><b>Meta, Phases 2 and 3.</b> Scale LLA and proven winners in 20% steps once ROAS is back above 4.5x.</li>
+          <li><b>Google.</b> Lift the $3,000 ceiling in 20% steps, all into Shopping first, then Demand Gen at around $25 a day in Phase 2.</li>
+        </ul>
+      </div>
+      <div class="panel good">
+        <h3>The scaling rules we hold to</h3>
+        <ul class="points tight">
+          <li><b>20% maximum per step</b>, 5 to 7 day spacing, to respect the learning cycle.</li>
+          <li><b>Cost per new customer stays inside $25 to $35</b> at every level.</li>
+          <li><b>Any campaign below its gate pauses its next step</b> until it recovers.</li>
+          <li><b>Reallocation before expansion</b>, so the mix is fixed before budget is added.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="k">Net effect by the end of Q3</div>
+      <p>Paid media moves from around $26,500 to around $37,200 a month by the end of Q3, roughly 40% higher, with cost per new customer held in target. Early phases are funded by reallocation, later phases by proven efficiency.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 18 ROADMAP + NEXT STEPS -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">×</span><span class="hm">Heath Media</span></div><div class="pageno">18 / 18</div></div>
+  <div class="eyebrow">Q3 Roadmap, Targets and Next Steps</div>
+  <h2>The next twelve weeks, and what we need from you</h2>
+  <div class="content">
+    <div class="cols-3">
+      <div class="phase">
+        <div class="ph-when">Weeks 1 to 3</div>
+        <div class="ph-title">Tidy and refresh</div>
+        <ul class="points tight">
+          <li>World Cup ends with the tournament, lift its winner into evergreen now</li>
+          <li>Refresh fatigued evergreen creative</li>
+          <li>Google: next Shopping step, read PMax v2</li>
+          <li>Complete the four Merchant Center fixes</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="ph-when">Weeks 4 to 7</div>
+        <div class="ph-title">Open new levers</div>
+        <ul class="points tight">
+          <li>Launch fish creative test on Meta</li>
+          <li>Scale the LLA audience</li>
+          <li>Google: launch Demand Gen on Winback and video</li>
+          <li>Load non-brand search themes</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="ph-when">Weeks 8 to 12</div>
+        <div class="ph-title">Scale and prepare</div>
+        <ul class="points tight">
+          <li>Consolidate spend into proven winners</li>
+          <li>Scale what holds efficiency on both platforms</li>
+          <li>Refresh Customer Match monthly</li>
+          <li>Begin Q4 seasonal planning, Christmas first</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cols" style="margin-top:18px">
+      <div class="panel accent">
+        <h3>Targets for Q3</h3>
+        <ul class="points tight">
+          <li><b>Meta:</b> rebuild blended ROAS toward 4.5x to 5.0x, cost per purchase toward $28 to $30.</li>
+          <li><b>Google:</b> hold Shopping above 10x while scaling, clear decision on PMax v2.</li>
+          <li><b>Blended:</b> hold cost per new customer inside $25 to $35, currently $27.</li>
+          <li><b>Store:</b> keep new customer growth, defend AOV around $133 to $160.</li>
+        </ul>
+      </div>
+      <div class="panel good">
+        <h3>What we need from you</h3>
+        <ul class="points tight">
+          <li>Approve the evergreen creative refresh and the fish creative test.</li>
+          <li>Keep the video pipeline flowing, with fish, founder and testimonial content prioritised.</li>
+          <li>Complete the four Merchant Center store fixes.</li>
+          <li>Confirm the Google budget ceiling so we can scale Shopping with headroom.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer class="end"><span>Heath Media for Parker's GBI &middot; Q2 2026 review, 1 April to 27 June</span><span>All figures validated against raw platform exports and reconciled to Shopify</span></footer>
+</section>
+
+</div>
+</body>
+</html>
