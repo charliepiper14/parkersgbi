@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parker's GBI | July 2026 Performance and August Tactical Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1A1341;
+  --navy-2:#241a55;
+  --cream:#FAF1E6;
+  --orange:#cc5b27;
+  --orange-l:#e8763f;
+  --muted:rgba(250,241,230,.70);
+  --faint:rgba(250,241,230,.50);
+  --line:rgba(250,241,230,.15);
+  --card:rgba(250,241,230,.045);
+  --card-2:rgba(250,241,230,.08);
+  --good:#9ec08a;
+  --watch:#e0a45a;
+  --bad:#d98a7a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:#0f0a2a;
+  color:var(--cream);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.deck{max-width:1280px;margin:0 auto}
+.slide{
+  position:relative;
+  min-height:100vh;
+  padding:44px 60px 46px;
+  display:flex;
+  flex-direction:column;
+  background:linear-gradient(150deg,var(--navy) 0%,#150f38 55%,var(--navy-2) 100%);
+  border-bottom:1px solid rgba(0,0,0,.4);
+  page-break-after:always;
+  overflow:hidden;
+}
+.slide::after{
+  content:"";position:absolute;right:-180px;top:-180px;width:520px;height:520px;
+  background:radial-gradient(circle,rgba(204,91,39,.16),transparent 62%);
+  pointer-events:none;
+}
+.bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;position:relative;z-index:2}
+.lockup{font-family:'Fraunces',serif;font-weight:600;font-size:15px;letter-spacing:.02em}
+.lockup .x{color:var(--orange);margin:0 7px;font-weight:500}
+.lockup .hm{color:var(--muted);font-weight:500}
+.pageno{font-family:'Fraunces',serif;font-size:13px;color:var(--faint);letter-spacing:.18em}
+.eyebrow{
+  font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--orange-l);margin-bottom:10px;position:relative;z-index:2;
+}
+h1{font-family:'Fraunces',serif;font-weight:600;line-height:1.05;position:relative;z-index:2}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:30px;line-height:1.12;margin-bottom:7px;position:relative;z-index:2}
+.lead{color:var(--muted);font-size:14px;max-width:880px;position:relative;z-index:2;line-height:1.5}
+.content{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:center;width:100%}
+.rule{height:1px;background:var(--line);margin:18px 0;position:relative;z-index:2}
+.accent-rule{width:64px;height:3px;background:var(--orange);border-radius:2px;margin-top:14px;position:relative;z-index:2}
+
+.title-slide{justify-content:center}
+.title-kicker{font-size:12.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--orange-l);margin-bottom:22px}
+.title-slide h1{font-size:60px;letter-spacing:-.01em}
+.title-slide .sub{font-family:'Fraunces',serif;font-size:25px;color:var(--cream);font-weight:400;margin-top:14px;opacity:.92}
+.title-meta{display:flex;gap:40px;margin-top:40px;flex-wrap:wrap}
+.title-meta div{font-size:13.5px;color:var(--muted)}
+.title-meta div b{color:var(--cream);font-weight:600;display:block;font-size:15px;margin-bottom:2px;font-family:'Fraunces',serif}
+.title-strip{display:flex;gap:14px;margin-top:46px;flex-wrap:wrap}
+.chip{
+  background:var(--card-2);border:1px solid var(--line);border-radius:30px;
+  padding:9px 18px;font-size:13px;color:var(--cream);
+}
+.chip b{color:var(--orange-l)}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:6px 0}
+.stat{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px;
+  border-top:3px solid var(--orange);
+}
+.stat .num{font-family:'Fraunces',serif;font-size:29px;font-weight:600;line-height:1;color:var(--cream);display:block}
+.stat .lab{font-size:12.5px;color:var(--muted);margin-top:9px;line-height:1.4}
+.stat.good{border-top-color:var(--good)}
+.stat.watch{border-top-color:var(--watch)}
+.stat.bad{border-top-color:var(--bad)}
+.stat .delta{font-size:12px;font-weight:600;margin-top:7px;display:inline-block}
+.up{color:var(--good)} .down{color:var(--bad)} .flat{color:var(--muted)}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.cols-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+.cols-6040{display:grid;grid-template-columns:1.45fr 1fr;gap:24px;align-items:start}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
+.panel h3,.block-title{font-family:'Fraunces',serif;font-size:18px;font-weight:600;margin-bottom:12px;color:var(--cream)}
+.panel.accent{border-left:3px solid var(--orange)}
+.panel.good{border-left:3px solid var(--good)}
+.panel.watch{border-left:3px solid var(--watch)}
+.panel.bad{border-left:3px solid var(--bad)}
+
+ul.points{list-style:none}
+ul.points li{position:relative;padding-left:20px;margin:8px 0;font-size:13px;color:var(--cream);line-height:1.45}
+ul.points li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--orange)}
+ul.points li b{color:var(--cream)}
+ul.points.tight li{margin:6px 0;font-size:12.5px;line-height:1.4}
+
+.tbl{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden;margin:6px 0;font-size:13px}
+.tbl th{background:rgba(0,0,0,.25);text-align:left;padding:9px 13px;font-weight:600;font-size:12px;letter-spacing:.04em;color:var(--cream);border-bottom:1px solid var(--line)}
+.tbl td{padding:8px 13px;border-bottom:1px solid rgba(250,241,230,.08);color:var(--muted)}
+.tbl td.lead-cell{color:var(--cream);font-weight:600}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr.total td{background:rgba(204,91,39,.12);color:var(--cream);font-weight:600;border-top:1px solid var(--line)}
+.num-cell{font-variant-numeric:tabular-nums}
+.pos{color:var(--good);font-weight:600} .neg{color:var(--bad);font-weight:600} .neu{color:var(--muted)}
+
+.callout{
+  background:linear-gradient(135deg,rgba(204,91,39,.20),rgba(204,91,39,.06));
+  border:1px solid rgba(204,91,39,.35);border-radius:14px;padding:14px 22px;margin-top:12px;
+}
+.callout .k{font-family:'Fraunces',serif;font-size:16px;font-weight:600;margin-bottom:6px;color:var(--cream)}
+.callout p{font-size:13.5px;color:var(--muted)}
+.note{font-size:11.5px;color:var(--faint);margin-top:14px;line-height:1.5}
+
+.tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.05em;padding:3px 9px;border-radius:20px;text-transform:uppercase}
+.tag.win{background:rgba(158,192,138,.18);color:var(--good);border:1px solid rgba(158,192,138,.4)}
+.tag.watch{background:rgba(224,164,90,.16);color:var(--watch);border:1px solid rgba(224,164,90,.4)}
+.tag.new{background:rgba(232,118,63,.16);color:var(--orange-l);border:1px solid rgba(232,118,63,.4)}
+.tag.stop{background:rgba(217,138,122,.16);color:var(--bad);border:1px solid rgba(217,138,122,.4)}
+
+.phase{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;border-top:3px solid var(--orange)}
+.phase .ph-when{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-l);font-weight:600;margin-bottom:6px}
+.phase .ph-title{font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:10px}
+
+.bars{display:flex;flex-direction:column;gap:11px;margin-top:6px}
+.barrow{display:grid;grid-template-columns:170px 1fr 92px;align-items:center;gap:12px;font-size:12.5px}
+.barrow .bl{color:var(--cream);font-weight:500}
+.bartrack{height:20px;background:rgba(250,241,230,.07);border-radius:5px;overflow:hidden}
+.barfill{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--orange),var(--orange-l))}
+.barfill.g{background:linear-gradient(90deg,#7ba465,var(--good))}
+.barfill.w{background:linear-gradient(90deg,#c98c42,var(--watch))}
+.barfill.b{background:linear-gradient(90deg,#c07264,var(--bad))}
+.barval{text-align:right;font-variant-numeric:tabular-nums;color:var(--cream);font-weight:600}
+
+footer.end{margin-top:auto;padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--faint);position:relative;z-index:2}
+
+@media (max-width:900px){
+  .slide{padding:40px 26px 46px}
+  .cols,.cols-3,.cols-6040{grid-template-columns:1fr;gap:18px}
+  .title-slide h1{font-size:40px}
+  h2{font-size:25px}
+  .barrow{grid-template-columns:120px 1fr 78px}
+}
+@media print{
+  body{background:#fff}
+  .slide{min-height:100vh;page-break-after:always;break-after:page}
+  a{color:inherit;text-decoration:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- 01 TITLE -->
+<section class="slide title-slide">
+  <div class="bar">
+    <div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div>
+    <div class="pageno">01 / 21</div>
+  </div>
+  <div class="content">
+    <div class="title-kicker">Monthly Performance Review and Forward Plan</div>
+    <h1>July 2026 Performance<br>and the August Tactical Plan</h1>
+    <div class="sub">Meta Ads and Google Ads, read separately and reconciled</div>
+    <div class="accent-rule"></div>
+    <div class="title-meta">
+      <div><b>Review period</b>1 to 31 July 2026</div>
+      <div><b>Compared with</b>1 to 30 June 2026</div>
+      <div><b>Channels</b>Meta Ads and Google Ads</div>
+      <div><b>Store truth source</b>Shopify</div>
+    </div>
+    <div class="title-strip">
+      <div class="chip"><b>3.92x</b> Meta ROAS on $23,164 sales spend</div>
+      <div class="chip"><b>14.69x</b> Google return on $3,082 spend</div>
+      <div class="chip"><b>586</b> Meta purchases</div>
+      <div class="chip"><b>World Cup</b> fully cleared, first clean base</div>
+    </div>
+  </div>
+  <footer class="end"><span>Prepared by Heath Media for Emma Reynolds</span><span>Parker's Great British Institution</span></footer>
+</section>
+
+<!-- 02 EXECUTIVE SUMMARY -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">02 / 21</div></div>
+  <div class="eyebrow">Executive Summary</div>
+  <h2>Two platforms, one shared story: the ads are working harder, the money is in the wrong places</h2>
+  <p class="lead">July closed with both platforms holding real efficiency and both carrying one clearly identifiable drag. On Meta, click and add-to-cart performance improved while purchases stayed flat. On Google, a single campaign accounted for 83% of the entire month-on-month decline in conversion value. August is a reallocation month, not a spending month.</p>
+  <div class="content">
+    <div class="stats">
+      <div class="stat watch"><span class="num">3.92x</span><div class="lab">Meta ROAS, July<span class="delta down">from 4.09x in June</span></div></div>
+      <div class="stat good"><span class="num">$39.53</span><div class="lab">Meta cost per purchase<span class="delta flat">$39.41 in June, effectively flat</span></div></div>
+      <div class="stat watch"><span class="num">14.69x</span><div class="lab">Google return on ad spend<span class="delta down">from 19.41x in June</span></div></div>
+      <div class="stat good"><span class="num">$4.68</span><div class="lab">Google cost per conversion<span class="delta flat">$4.32 in June</span></div></div>
+      <div class="stat bad"><span class="num">$10,212</span><div class="lab">Google value forgone to Sales PMax<span class="delta down">versus Shopping efficiency</span></div></div>
+    </div>
+    <div class="cols" style="margin-top:8px">
+      <div class="panel good"><h3>What is genuinely working</h3>
+        <ul class="points tight">
+          <li><b>Meta creative is performing better than June.</b> Link clicks up 11.0% and add-to-cart rate up from 42.35% to 47.64%. The ads are creating more intent per dollar.</li>
+          <li><b>Creators are the most efficient thing in the account.</b> The partnership campaign returned 4.33x at a $35.81 cost per purchase against the main campaign's 3.96x and $38.56.</li>
+          <li><b>Google Shopping improved while pinned at its budget cap.</b> 13.43x from 13.02x, conversions up 9.9% on effectively identical spend.</li>
+          <li><b>Brand is close to fully captured</b> at 88.79% impression share, up from 85.31%, with only 6.83% lost to rank.</li>
+        </ul>
+      </div>
+      <div class="panel watch"><h3>What we are fixing in August</h3>
+        <ul class="points tight">
+          <li><b>63.9% of Meta sales spend sat in ads returning under 4.0x.</b> The three most efficient ads in the account took 4.2% of budget between them.</li>
+          <li><b>Sales PMax cost $1,219 to return $6,161</b> at 5.05x, down from 12.33x. It alone is $8,918 of the $10,781 fall in Google conversion value.</li>
+          <li><b>LLA absorbed 47% more spend for one extra purchase.</b> Cost per purchase went from $26.94 to $39.25.</li>
+          <li><b>The Meta funnel is losing people after add-to-cart,</b> not before it. This points at the store, and needs Shopify reconciliation before we call it.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 METHODOLOGY -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">03 / 21</div></div>
+  <div class="eyebrow">How To Read This Deck</div>
+  <h2>Three numbers, measured three different ways</h2>
+  <p class="lead">Meta and Google count differently and both overlap with the store. Every figure in this deck has been validated in Python against the raw platform exports at account, campaign and ad set level. Where the two platforms disagree with Shopify, we treat that as an attribution difference until it is reconciled, not as a performance finding.</p>
+  <div class="content">
+    <div class="cols-3">
+      <div class="panel accent">
+        <span class="tag new">Meta</span>
+        <h3 style="margin-top:12px">Counts purchases</h3>
+        <p style="font-size:13px;color:var(--muted)">Meta reported <b style="color:var(--cream)">586 purchases</b> worth <b style="color:var(--cream)">$90,848.51</b> on a 7 day click and 1 day view window. This is the closest platform number to a real order.</p>
+      </div>
+      <div class="panel accent">
+        <span class="tag new">Google</span>
+        <h3 style="margin-top:12px">Counts conversions</h3>
+        <p style="font-size:13px;color:var(--muted)">Google counted <b style="color:var(--cream)">658.45 conversions</b> worth <b style="color:var(--cream)">$45,271.89</b>. Conversions include secondary actions and arrive as fractions, so the count runs high against real orders.</p>
+      </div>
+      <div class="panel good">
+        <span class="tag win">Shopify</span>
+        <h3 style="margin-top:12px">Counts reality</h3>
+        <p style="font-size:13px;color:var(--muted)">The store remains the single source of truth for revenue and for real new customers. Every efficiency claim here is written to be reconciled back to it.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="k">The rule we hold to</div>
+      <p>We never add Meta and Google figures together and we never compare their returns side by side. Both platforms claim some of the same orders and they count in different ways. Where a single efficiency number is needed, it is total paid spend against real Shopify new customers.</p>
+    </div>
+    <p class="note">One reporting note. The Google figure reported to you on 31 July was $42,006 of conversion value on $2,983 of spend. The closed month is $45,271.89 on $3,082.05. The difference is late attribution filling in on the final days plus the last day of spend, which is normal and expected. June closed at $56,053.28 and is unchanged from what was reported at the time.</p>
+  </div>
+</section>
+
+<!-- 04 META HEADLINE -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">04 / 21</div></div>
+  <div class="eyebrow">Meta Ads &middot; The Month In Numbers</div>
+  <h2>Flat spend, flat volume, and the first clean month without football</h2>
+  <p class="lead">Meta ran almost exactly the same money in July as June and produced almost exactly the same number of purchases. The World Cup campaign wound down on 17 July and took $3,761.77 with it, which makes the evergreen and creator engine the honest base for August.</p>
+  <div class="content">
+    <div class="panel">
+      <h3>Meta sales campaigns, June against July</h3>
+      <table class="tbl">
+        <tr><th>Metric</th><th class="num-cell">June</th><th class="num-cell">July</th><th class="num-cell">Change</th></tr>
+        <tr><td class="lead-cell">Spend, sales campaigns</td><td class="num-cell">$22,820.61</td><td class="num-cell">$23,164.50</td><td class="num-cell neu">+1.5%</td></tr>
+        <tr><td class="lead-cell">Purchases</td><td class="num-cell">579</td><td class="num-cell">586</td><td class="num-cell pos">+1.2%</td></tr>
+        <tr><td class="lead-cell">Conversion value</td><td class="num-cell">$93,298.97</td><td class="num-cell">$90,848.51</td><td class="num-cell neg">-2.6%</td></tr>
+        <tr><td class="lead-cell">ROAS</td><td class="num-cell">4.09x</td><td class="num-cell">3.92x</td><td class="num-cell neg">-4.1%</td></tr>
+        <tr><td class="lead-cell">Cost per purchase</td><td class="num-cell">$39.41</td><td class="num-cell">$39.53</td><td class="num-cell neu">+0.3%</td></tr>
+        <tr><td class="lead-cell">Average order value</td><td class="num-cell">$161.14</td><td class="num-cell">$155.03</td><td class="num-cell neg">-3.8%</td></tr>
+        <tr><td class="lead-cell">CPM</td><td class="num-cell">$12.10</td><td class="num-cell">$11.82</td><td class="num-cell pos">-2.3%</td></tr>
+        <tr class="total"><td>Link clicks</td><td class="num-cell">29,025</td><td class="num-cell">32,224</td><td class="num-cell pos">+11.0%</td></tr>
+      </table>
+      <p class="note">Total Meta account spend including the lead generation and engagement campaigns was $23,495.27 in July against $23,398.62 in June. The lead campaign delivered 329 signups at $0.94 each on $308.79.</p>
+    </div>
+    <div class="callout">
+      <div class="k">The one line that matters most on this slide</div>
+      <p>Cost per purchase did not move. It was $39.41 in June and $39.53 in July, a difference of twelve cents. The entire fall in return comes from average order value dropping $6.11 per order. That is a very different problem from an acquisition problem, and it is diagnosed properly on slide five.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 META DECOMPOSITION -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">05 / 21</div></div>
+  <div class="eyebrow">Meta Ads &middot; Diagnosis</div>
+  <h2>Return is made of two things, and only one of them moved</h2>
+  <p class="lead">Return on ad spend is average order value divided by cost per purchase. Splitting July that way isolates exactly where the 4.1% decline came from, and rules out the explanation everyone reaches for first.</p>
+  <div class="content">
+    <div class="cols-6040">
+      <div class="panel">
+        <h3>Decomposing the move from 4.09x to 3.92x</h3>
+        <table class="tbl">
+          <tr><th>Component</th><th class="num-cell">June</th><th class="num-cell">July</th><th class="num-cell">Effect on ROAS</th></tr>
+          <tr><td class="lead-cell">Average order value</td><td class="num-cell">$161.14</td><td class="num-cell">$155.03</td><td class="num-cell neg">-3.8%</td></tr>
+          <tr><td class="lead-cell">Cost per purchase</td><td class="num-cell">$39.41</td><td class="num-cell">$39.53</td><td class="num-cell neu">-0.3%</td></tr>
+          <tr class="total"><td>Combined</td><td class="num-cell">4.09x</td><td class="num-cell">3.92x</td><td class="num-cell neg">-4.1%</td></tr>
+        </table>
+        <p class="note">Read this as: acquisition cost held, basket size fell. Ninety two per cent of the decline in return is basket size, not media efficiency.</p>
+        <div style="margin-top:16px">
+          <div class="block-title">Where the basket fell</div>
+          <table class="tbl">
+            <tr><th>Ad set</th><th class="num-cell">June AOV</th><th class="num-cell">July AOV</th><th class="num-cell">Change</th></tr>
+            <tr><td class="lead-cell">Broad</td><td class="num-cell">$156.99</td><td class="num-cell">$144.76</td><td class="num-cell neg">-7.8%</td></tr>
+            <tr><td class="lead-cell">Value Optimisation</td><td class="num-cell">$166.18</td><td class="num-cell">$164.55</td><td class="num-cell neu">-1.0%</td></tr>
+            <tr><td class="lead-cell">LLA</td><td class="num-cell">$138.13</td><td class="num-cell">$140.01</td><td class="num-cell pos">+1.4%</td></tr>
+            <tr><td class="lead-cell">Partnership, all creators</td><td class="num-cell">$136.90</td><td class="num-cell">$154.96</td><td class="num-cell pos">+13.2%</td></tr>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="panel watch">
+          <h3>What this rules out</h3>
+          <ul class="points tight">
+            <li><b>It is not rising media costs.</b> CPM fell 2.3% and cost per link click held.</li>
+            <li><b>It is not audience exhaustion at account level.</b> Combined ad set reach was 668,865 in July against 673,987 in June, within 1%.</li>
+            <li><b>It is not the creators.</b> Their average order value rose 13.2%.</li>
+          </ul>
+        </div>
+        <div class="panel accent" style="margin-top:18px">
+          <h3>What it points at</h3>
+          <ul class="points tight">
+            <li>Broad carried the basket decline, down $12.23 an order, and Broad is where the ageing generic creative sits.</li>
+            <li>Your free shipping threshold is $150. A July average of $155.03 means a meaningful share of baskets now land just under it and attract shipping at checkout.</li>
+            <li>This is the thread that runs into the funnel finding on slide twelve.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 META CAMPAIGN READ -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">06 / 21</div></div>
+  <div class="eyebrow">Meta Ads &middot; Campaign Read</div>
+  <h2>The creator campaign is now the most efficient thing we run</h2>
+  <p class="lead">Three campaigns carried sales spend in July. The one that grew seven-fold is also the one returning the best number, which is the clearest signal in the month for where August budget belongs.</p>
+  <div class="content">
+    <table class="tbl" style="font-size:13.5px">
+      <tr><th>Campaign</th><th>Role</th><th class="num-cell">Spend</th><th class="num-cell">Purchases</th><th class="num-cell">Value</th><th class="num-cell">ROAS</th><th class="num-cell">CPP</th><th class="num-cell">Freq.</th><th>Status</th></tr>
+      <tr><td class="lead-cell">HM Advantage+ CBO</td><td class="neu">Evergreen engine</td><td class="num-cell">$16,466.16</td><td class="num-cell">427</td><td class="num-cell">$65,193.29</td><td class="num-cell">3.96x</td><td class="num-cell">$38.56</td><td class="num-cell">4.08</td><td><span class="tag watch">Below floor</span></td></tr>
+      <tr><td class="lead-cell">HM Partnership ABO</td><td class="neu">Creators</td><td class="num-cell">$2,936.57</td><td class="num-cell">82</td><td class="num-cell">$12,706.80</td><td class="num-cell">4.33x</td><td class="num-cell">$35.81</td><td class="num-cell">2.96</td><td><span class="tag win">Best return</span></td></tr>
+      <tr><td class="lead-cell">World Cup Double Header</td><td class="neu">Seasonal, closed</td><td class="num-cell">$3,761.77</td><td class="num-cell">77</td><td class="num-cell">$12,948.42</td><td class="num-cell">3.44x</td><td class="num-cell">$48.85</td><td class="num-cell">4.50</td><td><span class="tag stop">Ended 17 Jul</span></td></tr>
+      <tr><td class="lead-cell">HM Leads CBO</td><td class="neu">List building</td><td class="num-cell">$308.79</td><td class="num-cell">329 leads</td><td class="num-cell">n/a</td><td class="num-cell">n/a</td><td class="num-cell">$0.94</td><td class="num-cell">1.82</td><td><span class="tag win">Efficient</span></td></tr>
+      <tr class="total"><td>Sales campaigns combined</td><td>&nbsp;</td><td class="num-cell">$23,164.50</td><td class="num-cell">586</td><td class="num-cell">$90,848.51</td><td class="num-cell">3.92x</td><td class="num-cell">$39.53</td><td class="num-cell">&mdash;</td><td>&nbsp;</td></tr>
+    </table>
+    <div class="cols" style="margin-top:18px">
+      <div class="panel good"><h3>Strip the football out and you get the August base</h3>
+        <p style="font-size:13px;color:var(--muted)">Evergreen plus creators ran <b style="color:var(--cream)">$19,402.73</b> for <b style="color:var(--cream)">509 purchases</b> at <b style="color:var(--cream)">4.01x</b> and a <b style="color:var(--cream)">$38.12</b> cost per purchase. That is the honest run rate we start August from, and it sits just above your 4.0x floor rather than comfortably above it.</p>
+      </div>
+      <div class="panel watch"><h3>The evergreen engine is the one carrying the problem</h3>
+        <p style="font-size:13px;color:var(--muted)">Advantage+ took 71% of sales spend and returned 3.96x, below your floor, with frequency at 4.08 against 3.50 in June. The creators took 12.7% and returned 4.33x at frequency 2.96. We are funding the tired half of the account nearly six times as heavily as the fresh half.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 META AUDIENCE READ -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">07 / 21</div></div>
+  <div class="eyebrow">Meta Ads &middot; Audience Read</div>
+  <h2>Value Optimisation holds, Broad is buying repetition, LLA hit its ceiling</h2>
+  <p class="lead">Every ad set that took more money in July returned less per dollar than in June. The detail underneath tells us which of those is a fixable creative problem and which is a genuine audience limit.</p>
+  <div class="content">
+    <table class="tbl" style="font-size:13px">
+      <tr><th>Ad set</th><th class="num-cell">Spend</th><th class="num-cell">Purch.</th><th class="num-cell">ROAS</th><th class="num-cell">CPP</th><th class="num-cell">Freq.</th><th class="num-cell">Reach</th><th class="num-cell">June ROAS</th><th class="num-cell">June CPP</th><th>Read</th></tr>
+      <tr><td class="lead-cell">Broad &ndash; Value Optimisation</td><td class="num-cell">$6,954.60</td><td class="num-cell">192</td><td class="num-cell pos">4.54x</td><td class="num-cell">$36.22</td><td class="num-cell">2.49</td><td class="num-cell">238,637</td><td class="num-cell">5.32x</td><td class="num-cell">$31.24</td><td class="neu">Still the engine</td></tr>
+      <tr><td class="lead-cell">Broad</td><td class="num-cell">$6,057.86</td><td class="num-cell">147</td><td class="num-cell neg">3.51x</td><td class="num-cell">$41.21</td><td class="num-cell neg">4.02</td><td class="num-cell neg">123,896</td><td class="num-cell">3.65x</td><td class="num-cell">$43.06</td><td class="neg">Reach collapsed 36%</td></tr>
+      <tr><td class="lead-cell">LLA</td><td class="num-cell">$3,453.70</td><td class="num-cell">88</td><td class="num-cell neg">3.57x</td><td class="num-cell neg">$39.25</td><td class="num-cell">2.78</td><td class="num-cell">121,760</td><td class="num-cell">5.13x</td><td class="num-cell">$26.94</td><td class="neg">Scaled past its ceiling</td></tr>
+      <tr><td class="lead-cell">Georgia, partnership</td><td class="num-cell">$849.13</td><td class="num-cell">27</td><td class="num-cell pos">5.06x</td><td class="num-cell">$31.45</td><td class="num-cell">3.30</td><td class="num-cell">17,187</td><td class="num-cell neu">not live</td><td class="num-cell neu">&mdash;</td><td class="pos">Best return in account</td></tr>
+      <tr><td class="lead-cell">Francesca, partnership</td><td class="num-cell">$1,513.16</td><td class="num-cell">34</td><td class="num-cell">4.05x</td><td class="num-cell">$44.50</td><td class="num-cell pos">1.72</td><td class="num-cell">55,849</td><td class="num-cell">4.00x</td><td class="num-cell">$34.22</td><td class="neu">Single clip since 22 Jun</td></tr>
+      <tr><td class="lead-cell">Brits Gone USA, partnership</td><td class="num-cell">$574.28</td><td class="num-cell">21</td><td class="num-cell">3.99x</td><td class="num-cell pos">$27.35</td><td class="num-cell">2.53</td><td class="num-cell">12,429</td><td class="num-cell neu">not live</td><td class="num-cell neu">&mdash;</td><td class="pos">Cheapest customers</td></tr>
+      <tr><td class="lead-cell">World Cup, both sets</td><td class="num-cell">$3,761.77</td><td class="num-cell">77</td><td class="num-cell">3.44x</td><td class="num-cell">$48.85</td><td class="num-cell">4.50</td><td class="num-cell">76,544</td><td class="num-cell">3.28x</td><td class="num-cell">$53.28</td><td class="neu">Closed, no August spend</td></tr>
+    </table>
+    <div class="cols" style="margin-top:16px">
+      <div class="panel bad">
+        <h3>Broad: a reach problem wearing a creative costume</h3>
+        <p style="font-size:12.5px;color:var(--muted)">Broad spent 9% less than June but reached 36% fewer people, so frequency jumped from 2.93 to 4.02. Impressions only fell 12%, meaning we bought roughly the same delivery from a third fewer humans. That is the mechanical reason Broad's basket size fell 7.8%. New creative is the only thing that reopens the pool.</p>
+      </div>
+      <div class="panel bad">
+        <h3>LLA: the clearest diminishing return in the account</h3>
+        <p style="font-size:12.5px;color:var(--muted)">Spend rose 47.4% from $2,343.85 to $3,453.70. Purchases rose from 87 to 88. One extra purchase for $1,109.85 of extra spend. Cost per purchase went from $26.94 to $39.25, a 46% deterioration. LLA is not broken, it was simply pushed well past the point where it was still cheap.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 META MARGINAL ECONOMICS -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">08 / 21</div></div>
+  <div class="eyebrow">Meta Ads &middot; Marginal Economics</div>
+  <h2>The last four thousand dollars of Meta spend cost more than a customer is worth to acquire</h2>
+  <p class="lead">Average efficiency hides the answer to the only question that matters when deciding whether to spend more. What we need is the efficiency of the extra money, not the efficiency of all the money. Comparing the evergreen and creator engine month on month, with football removed from both sides, gives it cleanly.</p>
+  <div class="content">
+    <div class="cols-6040">
+      <div class="panel accent">
+        <h3>Evergreen plus creators, football excluded from both months</h3>
+        <table class="tbl">
+          <tr><th>&nbsp;</th><th class="num-cell">June</th><th class="num-cell">July</th><th class="num-cell">Incremental</th></tr>
+          <tr><td class="lead-cell">Spend</td><td class="num-cell">$14,988.44</td><td class="num-cell">$19,402.73</td><td class="num-cell">+$4,414.29</td></tr>
+          <tr><td class="lead-cell">Purchases</td><td class="num-cell">432</td><td class="num-cell">509</td><td class="num-cell">+77</td></tr>
+          <tr><td class="lead-cell">Conversion value</td><td class="num-cell">$67,572.84</td><td class="num-cell">$77,900.09</td><td class="num-cell">+$10,327.25</td></tr>
+          <tr><td class="lead-cell">Average ROAS</td><td class="num-cell">4.51x</td><td class="num-cell">4.01x</td><td class="num-cell neu">&mdash;</td></tr>
+          <tr class="total"><td>Marginal ROAS on the extra spend</td><td class="num-cell">&mdash;</td><td class="num-cell">&mdash;</td><td class="num-cell neg">2.34x</td></tr>
+          <tr class="total"><td>Marginal cost per purchase</td><td class="num-cell">&mdash;</td><td class="num-cell">&mdash;</td><td class="num-cell neg">$57.33</td></tr>
+        </table>
+        <p class="note">Cross-month comparison, so mix changed underneath it as two new creators launched. It is directional rather than exact, but the gap is far too wide to be explained by mix alone.</p>
+      </div>
+      <div>
+        <div class="stats" style="grid-template-columns:1fr">
+          <div class="stat bad"><span class="num">$57.33</span><div class="lab">Marginal cost per purchase on July's extra Meta spend<span class="delta down">against $45 to $50 breakeven</span></div></div>
+          <div class="stat"><span class="num">$25&ndash;$35</span><div class="lab">Your target acquisition range<span class="delta flat">average July CPP $39.53</span></div></div>
+        </div>
+        <div class="callout" style="margin-top:16px">
+          <div class="k">The decision this makes for us</div>
+          <p>Every additional dollar we put into Meta in July bought a customer at $57.33, above your own $45 to $50 breakeven. That is the evidence for holding Meta spend flat in August and changing the mix instead. We do not add budget to a channel whose next dollar is losing money. We fix where the existing dollars sit, prove the marginal number has come back inside breakeven, and only then scale.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 META CREATIVE CONCENTRATION -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">09 / 21</div></div>
+  <div class="eyebrow">Meta Ads &middot; Creative Allocation</div>
+  <h2>Nearly two thirds of budget sat in ads below your floor</h2>
+  <p class="lead">Sixty seven ads carried spend in July. Grouping every one of them by the return it actually produced shows the account's single largest controllable inefficiency, and it is entirely a budget placement question rather than a creative quality question.</p>
+  <div class="content">
+    <div class="cols-6040">
+      <div class="panel">
+        <h3>Every July sales ad, grouped by the return it delivered</h3>
+        <table class="tbl">
+          <tr><th>Return band</th><th class="num-cell">Ads</th><th class="num-cell">Spend</th><th class="num-cell">Share</th><th class="num-cell">Purchases</th><th class="num-cell">Value</th><th class="num-cell">ROAS</th></tr>
+          <tr><td class="lead-cell">4.5x and above</td><td class="num-cell">14</td><td class="num-cell">$4,969.74</td><td class="num-cell">21.5%</td><td class="num-cell">175</td><td class="num-cell">$28,874.06</td><td class="num-cell pos">5.81x</td></tr>
+          <tr><td class="lead-cell">4.0x to 4.5x</td><td class="num-cell">3</td><td class="num-cell">$3,005.93</td><td class="num-cell">13.0%</td><td class="num-cell">75</td><td class="num-cell">$12,256.04</td><td class="num-cell">4.08x</td></tr>
+          <tr><td class="lead-cell">Below 4.0x</td><td class="num-cell">17</td><td class="num-cell">$14,791.29</td><td class="num-cell neg">63.9%</td><td class="num-cell">334</td><td class="num-cell">$49,718.41</td><td class="num-cell neg">3.36x</td></tr>
+          <tr><td class="lead-cell">No purchases</td><td class="num-cell">33</td><td class="num-cell">$397.54</td><td class="num-cell">1.7%</td><td class="num-cell">0</td><td class="num-cell">$0.00</td><td class="num-cell neu">&mdash;</td></tr>
+          <tr class="total"><td>All sales ads</td><td class="num-cell">67</td><td class="num-cell">$23,164.50</td><td class="num-cell">100%</td><td class="num-cell">586</td><td class="num-cell">$90,848.51</td><td class="num-cell">3.92x</td></tr>
+        </table>
+        <p class="note">The 33 ads with no purchases only consumed $397.54 between them, so the tail is not the problem. The problem is the size of the middle band.</p>
+      </div>
+      <div>
+        <div class="panel good">
+          <h3>The three cheapest ads in the account</h3>
+          <table class="tbl">
+            <tr><th>Ad</th><th class="num-cell">Spend</th><th class="num-cell">CPP</th><th class="num-cell">ROAS</th></tr>
+            <tr><td class="lead-cell">Pork Pie, Behind The Scenes 2</td><td class="num-cell">$209.90</td><td class="num-cell pos">$16.15</td><td class="num-cell">6.76x</td></tr>
+            <tr><td class="lead-cell">Black Pudding, Copy</td><td class="num-cell">$352.02</td><td class="num-cell pos">$19.56</td><td class="num-cell">8.95x</td></tr>
+            <tr><td class="lead-cell">USA vs UK Bacon, Copy</td><td class="num-cell">$406.05</td><td class="num-cell pos">$22.56</td><td class="num-cell">6.82x</td></tr>
+            <tr class="total"><td>Combined</td><td class="num-cell">$967.97</td><td class="num-cell">$19.75</td><td class="num-cell">7.58x</td></tr>
+          </table>
+          <p class="note">Between them they took <b style="color:var(--cream)">4.2%</b> of July sales spend and delivered 49 purchases at less than half your target acquisition cost.</p>
+        </div>
+        <div class="callout" style="margin-top:14px">
+          <div class="k">The August unlock in one sentence</div>
+          <p>Moving even a quarter of the sub-4.0x budget into the proven product-truth creative is worth more than any new campaign we could launch this month.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 META FATIGUE -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">10 / 21</div></div>
+  <div class="eyebrow">Meta Ads &middot; Creative Fatigue and Headroom</div>
+  <h2>The ads that decayed got the money. The ads that improved got starved.</h2>
+  <p class="lead">Comparing the same ads across both months separates genuine fatigue from a creative that simply had not been given enough budget yet. The split is unusually clean, and it explains the whole month.</p>
+  <div class="content">
+    <table class="tbl" style="font-size:13px">
+      <tr><th>Ad</th><th class="num-cell">June spend</th><th class="num-cell">July spend</th><th class="num-cell">June ROAS</th><th class="num-cell">July ROAS</th><th class="num-cell">June CPP</th><th class="num-cell">July CPP</th><th>Verdict</th></tr>
+      <tr><td class="lead-cell">May '26 Video, Pack A Box, Copy</td><td class="num-cell">$2,556.43</td><td class="num-cell neg">$4,501.18</td><td class="num-cell">5.64x</td><td class="num-cell neg">3.89x</td><td class="num-cell">$31.96</td><td class="num-cell neg">$41.30</td><td><span class="tag stop">Fatigued, now paused</span></td></tr>
+      <tr><td class="lead-cell">March '26 IG, Pies, This Or That</td><td class="num-cell">$2,017.34</td><td class="num-cell">$1,521.65</td><td class="num-cell">5.14x</td><td class="num-cell neg">3.00x</td><td class="num-cell">$28.02</td><td class="num-cell neg">$49.09</td><td><span class="tag stop">Fatigued, now paused</span></td></tr>
+      <tr><td class="lead-cell">May '26 Video, This Or That</td><td class="num-cell neu">&mdash;</td><td class="num-cell neg">$2,313.71</td><td class="num-cell neu">&mdash;</td><td class="num-cell neg">2.99x</td><td class="num-cell neu">&mdash;</td><td class="num-cell neg">$47.22</td><td><span class="tag stop">Still live, pause now</span></td></tr>
+      <tr><td class="lead-cell">AJ Slambino</td><td class="num-cell">$293.70</td><td class="num-cell">$706.88</td><td class="num-cell">4.14x</td><td class="num-cell neg">2.93x</td><td class="num-cell">$36.71</td><td class="num-cell neg">$50.49</td><td><span class="tag stop">Retired</span></td></tr>
+      <tr><td class="lead-cell">May '26 Video, This Is A Pork Pie, Copy</td><td class="num-cell">$322.19</td><td class="num-cell">$1,308.02</td><td class="num-cell">4.37x</td><td class="num-cell pos">5.03x</td><td class="num-cell">$35.80</td><td class="num-cell pos">$34.42</td><td><span class="tag win">Improved at 4x spend</span></td></tr>
+      <tr><td class="lead-cell">June '26 IG, Rhubarb Crumble, Copy</td><td class="num-cell">$2,198.64</td><td class="num-cell">$1,371.50</td><td class="num-cell">3.61x</td><td class="num-cell pos">4.75x</td><td class="num-cell">$43.97</td><td class="num-cell pos">$31.90</td><td><span class="tag win">Recovered</span></td></tr>
+      <tr><td class="lead-cell">May '26 Video, USA vs UK Bacon, Copy</td><td class="num-cell">$638.28</td><td class="num-cell">$406.05</td><td class="num-cell">5.59x</td><td class="num-cell pos">6.82x</td><td class="num-cell">$29.01</td><td class="num-cell pos">$22.56</td><td><span class="tag win">Starved</span></td></tr>
+      <tr><td class="lead-cell">May '26 Video, Black Pudding, Copy</td><td class="num-cell">$286.28</td><td class="num-cell">$352.02</td><td class="num-cell">6.88x</td><td class="num-cell pos">8.95x</td><td class="num-cell">$23.86</td><td class="num-cell pos">$19.56</td><td><span class="tag win">Starved</span></td></tr>
+    </table>
+    <div class="cols" style="margin-top:16px">
+      <div class="panel watch"><h3>What fatigued</h3><p style="font-size:12.5px;color:var(--muted)">The two big comparison and box-building videos, both running since March and May, both scaled into more spend as they aged. Pack A Box alone absorbed <b style="color:var(--cream)">19.4%</b> of all Meta sales spend in July at 3.89x. These are format-led ads: the mechanic wears out once the audience has seen the reveal.</p></div>
+      <div class="panel good"><h3>What improved</h3><p style="font-size:12.5px;color:var(--muted)">Every ad that got better is a single-product truth claim. Black pudding, back bacon, a pork pie being made. They are narrower, they age far more slowly, and three of them are running on token budgets. This is the creative direction the August shoot should double down on, alongside fish.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 META CREATORS -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">11 / 21</div></div>
+  <div class="eyebrow">Meta Ads &middot; The Creator Programme</div>
+  <h2>Three creators, three very different assets, one clear ranking</h2>
+  <p class="lead">The partnership campaign grew from $410.62 in June to $2,936.57 in July and returned the best number of any campaign. Underneath that, watch-through depth separates the ones worth a second video from the ones that are simply running.</p>
+  <div class="content">
+    <table class="tbl" style="font-size:13.5px">
+      <tr><th>Creator</th><th class="num-cell">Spend</th><th class="num-cell">Purchases</th><th class="num-cell">Value</th><th class="num-cell">ROAS</th><th class="num-cell">CPP</th><th class="num-cell">AOV</th><th class="num-cell">Reached 95%</th><th>Verdict</th></tr>
+      <tr><td class="lead-cell">Georgia</td><td class="num-cell">$849.13</td><td class="num-cell">27</td><td class="num-cell">$4,294.97</td><td class="num-cell pos">5.06x</td><td class="num-cell">$31.45</td><td class="num-cell">$159.07</td><td class="num-cell">23.7%</td><td><span class="tag win">Scale</span></td></tr>
+      <tr><td class="lead-cell">Brits Gone USA</td><td class="num-cell">$574.28</td><td class="num-cell">21</td><td class="num-cell">$2,290.20</td><td class="num-cell">3.99x</td><td class="num-cell pos">$27.35</td><td class="num-cell">$109.06</td><td class="num-cell pos">39.3%</td><td><span class="tag win">Scale, get more</span></td></tr>
+      <tr><td class="lead-cell">Francesca</td><td class="num-cell">$1,513.16</td><td class="num-cell">34</td><td class="num-cell">$6,121.63</td><td class="num-cell">4.05x</td><td class="num-cell neg">$44.50</td><td class="num-cell pos">$180.05</td><td class="num-cell neg">7.4%</td><td><span class="tag watch">Hold low</span></td></tr>
+      <tr class="total"><td>Partnership campaign</td><td class="num-cell">$2,936.57</td><td class="num-cell">82</td><td class="num-cell">$12,706.80</td><td class="num-cell">4.33x</td><td class="num-cell">$35.81</td><td class="num-cell">$154.96</td><td class="num-cell">&mdash;</td><td>&nbsp;</td></tr>
+    </table>
+    <p class="note">Reached 95% is the share of people who got a quarter of the way through the video and then watched it to the end. It is the cleanest available proxy for whether the creator, rather than the offer, is holding attention.</p>
+    <div class="cols-3" style="margin-top:18px">
+      <div class="panel good"><h3>Brits Gone USA</h3><p style="font-size:12.5px;color:var(--muted)">Cheapest customers anywhere in the account at $27.35, inside your target range, and by far the strongest retention at 39.3%. The one weakness is a $109.06 basket, well under the $150 free shipping threshold. A bundle-led second video is the obvious fix and the crumpet comparison is already requested.</p></div>
+      <div class="panel good"><h3>Georgia</h3><p style="font-size:12.5px;color:var(--muted)">Best return in the whole account at 5.06x with a healthy $159.07 basket. Frequency is already 3.30 on a small audience, so scaling her needs a second piece of content rather than simply more budget against the same clip.</p></div>
+      <div class="panel watch"><h3>Francesca</h3><p style="font-size:12.5px;color:var(--muted)">Highest basket at $180.05 but the most expensive customers at $44.50 and only 7.4% retention on a clip running since 22 June. She is out with family matters, so we hold her at a low level rather than pushing a single ageing video, and pick it back up when she is ready.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 META FUNNEL -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">12 / 21</div></div>
+  <div class="eyebrow">Meta Ads &middot; The Funnel Finding</div>
+  <h2>The ads got better. The step after add-to-cart got worse.</h2>
+  <p class="lead">This is the most important slide in the deck. Walking the full July funnel against June shows every media-side metric improving and every store-side metric declining. It is the strongest signal we have had that the constraint has moved off the platform.</p>
+  <div class="content">
+    <div class="cols-6040">
+      <div class="panel">
+        <h3>Meta sales funnel, June against July</h3>
+        <table class="tbl">
+          <tr><th>Stage</th><th class="num-cell">June</th><th class="num-cell">July</th><th class="num-cell">Change</th><th>Owner</th></tr>
+          <tr><td class="lead-cell">Link clicks</td><td class="num-cell">29,025</td><td class="num-cell">32,224</td><td class="num-cell pos">+11.0%</td><td class="neu">Media</td></tr>
+          <tr><td class="lead-cell">Adds to cart</td><td class="num-cell">12,291</td><td class="num-cell">15,353</td><td class="num-cell pos">+24.9%</td><td class="neu">Media</td></tr>
+          <tr><td class="lead-cell">Add-to-cart rate</td><td class="num-cell">42.35%</td><td class="num-cell">47.64%</td><td class="num-cell pos">+12.5%</td><td class="neu">Media</td></tr>
+          <tr><td class="lead-cell">Checkouts initiated</td><td class="num-cell">1,917</td><td class="num-cell">2,066</td><td class="num-cell pos">+7.8%</td><td class="neu">Store</td></tr>
+          <tr><td class="lead-cell">Cart to checkout rate</td><td class="num-cell">15.60%</td><td class="num-cell">13.46%</td><td class="num-cell neg">-13.7%</td><td class="neg">Store</td></tr>
+          <tr><td class="lead-cell">Checkout to purchase rate</td><td class="num-cell">30.20%</td><td class="num-cell">28.36%</td><td class="num-cell neg">-6.1%</td><td class="neg">Store</td></tr>
+          <tr class="total"><td>Cart to purchase, end to end</td><td class="num-cell">4.71%</td><td class="num-cell">3.82%</td><td class="num-cell neg">-18.9%</td><td>Store</td></tr>
+        </table>
+        <p class="note">Had the June cart-to-purchase rate held in July, the same 15,353 adds to cart would have produced roughly 723 purchases rather than 586. At the July average order value that is in the region of $21,000 of conversion value, which is materially larger than anything media reallocation can deliver this month.</p>
+      </div>
+      <div>
+        <div class="panel bad">
+          <h3>What we are not saying</h3>
+          <ul class="points tight">
+            <li>We are <b>not</b> calling this a confirmed store fault. Meta's funnel events are pixel-side and can be affected by the tag work and by browser handoff.</li>
+            <li>Google gives a partial control. Shopping Feed Only's conversion rate per click held at <b>10.36%</b> against 10.54%, which argues against a total checkout break.</li>
+            <li>The step that moved on Meta is cart to checkout, which Google Shopping does not measure the same way, so the two are not contradictory.</li>
+          </ul>
+        </div>
+        <div class="callout" style="margin-top:14px">
+          <div class="k">The one thing that settles it</div>
+          <p>A Shopify checkout funnel export for June against July, cart to checkout to completed order. If Shopify shows the same shape, this is the account's number one priority for August and it sits with the store, starting with the $150 free shipping threshold against a $155.03 average basket.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 GOOGLE HEADLINE -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">13 / 21</div></div>
+  <div class="eyebrow">Google Ads &middot; The Month In Numbers</div>
+  <h2>Still returning nearly fifteen to one, with one campaign doing all the damage</h2>
+  <p class="lead">Google delivered $45,271.89 of conversion value on $3,082.05 of spend in July. Return fell from 19.41x to 14.69x, and the decomposition on the next slide shows that fall is almost entirely one campaign rather than a broad softening.</p>
+  <div class="content">
+    <div class="stats">
+      <div class="stat good"><span class="num">14.69x</span><div class="lab">Conversion value per dollar<span class="delta down">from 19.41x, still 3.7x your target</span></div></div>
+      <div class="stat good"><span class="num">$4.68</span><div class="lab">Cost per conversion<span class="delta flat">$4.32 in June</span></div></div>
+      <div class="stat"><span class="num">$3,082</span><div class="lab">Spend<span class="delta flat">+6.7% on June, 2.7% over the ceiling</span></div></div>
+      <div class="stat watch"><span class="num">658.45</span><div class="lab">Conversions<span class="delta down">-1.4% on June's 668.08</span></div></div>
+      <div class="stat"><span class="num">8,346</span><div class="lab">Clicks<span class="delta up">+16.1% on June</span></div></div>
+    </div>
+    <div class="cols" style="margin-top:6px">
+      <div class="panel">
+        <h3>Where the month went, week by week</h3>
+        <table class="tbl">
+          <tr><th>Window</th><th class="num-cell">Spend</th><th class="num-cell">Conv.</th><th class="num-cell">Value</th><th class="num-cell">Return</th></tr>
+          <tr><td class="lead-cell">1 to 7 July</td><td class="num-cell">$676.28</td><td class="num-cell">122.87</td><td class="num-cell">$9,627.83</td><td class="num-cell">14.24x</td></tr>
+          <tr><td class="lead-cell">8 to 14 July</td><td class="num-cell">$657.87</td><td class="num-cell">161.87</td><td class="num-cell">$10,937.39</td><td class="num-cell pos">16.63x</td></tr>
+          <tr><td class="lead-cell">15 to 21 July</td><td class="num-cell">$659.02</td><td class="num-cell">151.20</td><td class="num-cell">$10,141.05</td><td class="num-cell">15.39x</td></tr>
+          <tr><td class="lead-cell">22 to 28 July</td><td class="num-cell">$747.06</td><td class="num-cell">145.44</td><td class="num-cell">$9,922.81</td><td class="num-cell">13.28x</td></tr>
+          <tr><td class="lead-cell">29 to 31 July</td><td class="num-cell">$341.80</td><td class="num-cell">77.07</td><td class="num-cell">$4,643.10</td><td class="num-cell">13.58x</td></tr>
+        </table>
+        <p class="note">The dip in the final ten days is the Demand Gen launch on 24 July drawing spend at a learning-phase return, exactly as expected for a new channel.</p>
+      </div>
+      <div class="panel good">
+        <h3>The auction position is unchanged and dominant</h3>
+        <table class="tbl">
+          <tr><th>Advertiser</th><th class="num-cell">Impression share</th><th class="num-cell">Top of page</th></tr>
+          <tr><td class="lead-cell">Parker's</td><td class="num-cell pos">84.17%</td><td class="num-cell pos">95.55%</td></tr>
+          <tr><td class="lead-cell">Jolly Posh</td><td class="num-cell">58.32%</td><td class="num-cell">77.60%</td></tr>
+          <tr><td class="lead-cell">British Food Depot</td><td class="num-cell">11.80%</td><td class="num-cell">50.69%</td></tr>
+          <tr><td class="lead-cell">Goodwoods</td><td class="num-cell">&lt;10%</td><td class="num-cell">66.67%</td></tr>
+          <tr><td class="lead-cell">British Essentials</td><td class="num-cell">&lt;10%</td><td class="num-cell">52.36%</td></tr>
+        </table>
+        <p class="note">We continue to out-rank Jolly Posh on both share and top of page rate. Where both of us appear, we outrank them 66.75% of the time, and they appear above us in the remaining 32.77%.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 GOOGLE CAMPAIGN READ -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">14 / 21</div></div>
+  <div class="eyebrow">Google Ads &middot; Campaign Read</div>
+  <h2>Four campaigns, four completely different economics</h2>
+  <p class="lead">A reminder on counting before reading the Brand line: Google conversions include secondary actions and arrive as fractions, so Brand's 273.52 is a measure of branded capture rather than 273 separate orders.</p>
+  <div class="content">
+    <table class="tbl" style="font-size:13px">
+      <tr><th>Campaign</th><th class="num-cell">Daily budget</th><th class="num-cell">Spend</th><th class="num-cell">Conv.</th><th class="num-cell">Value</th><th class="num-cell">Return</th><th class="num-cell">Cost / conv.</th><th class="num-cell">Conv. per click</th><th>Status</th></tr>
+      <tr><td class="lead-cell">Shopping Feed Only</td><td class="num-cell">$50.00</td><td class="num-cell">$1,521.15</td><td class="num-cell">308.15</td><td class="num-cell">$20,424.16</td><td class="num-cell pos">13.43x</td><td class="num-cell pos">$4.94</td><td class="num-cell pos">10.36%</td><td><span class="tag win">Capped, scale it</span></td></tr>
+      <tr><td class="lead-cell">Sales PMax</td><td class="num-cell">$40.20</td><td class="num-cell">$1,219.49</td><td class="num-cell">74.79</td><td class="num-cell">$6,161.42</td><td class="num-cell neg">5.05x</td><td class="num-cell neg">$16.31</td><td class="num-cell neg">2.04%</td><td><span class="tag stop">Retire</span></td></tr>
+      <tr><td class="lead-cell">Demand Gen, prospecting</td><td class="num-cell">$30.00</td><td class="num-cell">$189.44</td><td class="num-cell">1.99</td><td class="num-cell">$356.94</td><td class="num-cell">1.88x</td><td class="num-cell">$95.12</td><td class="num-cell">1.29%</td><td><span class="tag new">8 days live</span></td></tr>
+      <tr><td class="lead-cell">Brand</td><td class="num-cell">$5.00</td><td class="num-cell">$151.97</td><td class="num-cell">273.52</td><td class="num-cell">$18,329.36</td><td class="num-cell pos">120.61x</td><td class="num-cell pos">$0.56</td><td class="num-cell">17.73%</td><td><span class="tag win">Anchor</span></td></tr>
+      <tr class="total"><td>Account</td><td class="num-cell">$125.20</td><td class="num-cell">$3,082.05</td><td class="num-cell">658.45</td><td class="num-cell">$45,271.89</td><td class="num-cell">14.69x</td><td class="num-cell">$4.68</td><td class="num-cell">7.89%</td><td>&nbsp;</td></tr>
+    </table>
+    <div class="cols" style="margin-top:16px">
+      <div class="panel good">
+        <h3>Shopping did the job quietly again</h3>
+        <ul class="points tight">
+          <li>Conversions rose <b>9.9%</b> to 308.15 on spend that moved by $8.40, so the improvement is pure efficiency.</li>
+          <li>Cost per conversion fell from $5.39 to <b>$4.94</b>.</li>
+          <li>It spent $49.07 of its $50 daily budget on average, so it was pinned at the cap for essentially the whole month.</li>
+          <li>Its listed limitation is <b>ad strength is poor</b>, which is directly fixable and unlocks better serving without changing the feed.</li>
+        </ul>
+      </div>
+      <div class="panel watch">
+        <h3>Brand: more clicks, the same conversions</h3>
+        <ul class="points tight">
+          <li>Impression share improved to <b>88.79%</b> from 85.31% and clicks rose 21.1% to 1,543.</li>
+          <li>Conversions were flat at 273.52 against 274.26, so conversion rate fell from 21.53% to 17.73%.</li>
+          <li>Value per conversion fell from $77.59 to $67.01, which is the same basket-size story we see on Meta.</li>
+          <li>Only <b>6.83%</b> of impression share is now lost to rank, so there is very little left to buy here.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 15 GOOGLE PMAX -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">15 / 21</div></div>
+  <div class="eyebrow">Google Ads &middot; The Constraint</div>
+  <h2>One campaign accounts for 83% of the entire monthly decline</h2>
+  <p class="lead">Google's conversion value fell $10,781.40 month on month. Attributing that fall to each campaign takes about ten seconds and removes any ambiguity about what August's first action should be.</p>
+  <div class="content">
+    <div class="cols-6040">
+      <div>
+        <div class="block-title">Contribution to the $10,781 fall in conversion value</div>
+        <div class="bars">
+          <div class="barrow"><span class="bl">Sales PMax</span><div class="bartrack"><div class="barfill b" style="width:100%"></div></div><span class="barval">-$8,918</span></div>
+          <div class="barrow"><span class="bl">Brand</span><div class="bartrack"><div class="barfill b" style="width:33.1%"></div></div><span class="barval">-$2,951</span></div>
+          <div class="barrow"><span class="bl">Shopping Feed Only</span><div class="bartrack"><div class="barfill g" style="width:8.2%"></div></div><span class="barval">+$730</span></div>
+          <div class="barrow"><span class="bl">Demand Gen</span><div class="bartrack"><div class="barfill g" style="width:4.0%"></div></div><span class="barval">+$357</span></div>
+        </div>
+        <div class="panel bad" style="margin-top:20px">
+          <h3>Sales PMax, the full picture</h3>
+          <table class="tbl">
+            <tr><th>Metric</th><th class="num-cell">June</th><th class="num-cell">July</th></tr>
+            <tr><td class="lead-cell">Spend</td><td class="num-cell">$1,222.94</td><td class="num-cell">$1,219.49</td></tr>
+            <tr><td class="lead-cell">Conversions</td><td class="num-cell">113.36</td><td class="num-cell neg">74.79</td></tr>
+            <tr><td class="lead-cell">Conversion value</td><td class="num-cell">$15,079.07</td><td class="num-cell neg">$6,161.42</td></tr>
+            <tr><td class="lead-cell">Return</td><td class="num-cell">12.33x</td><td class="num-cell neg">5.05x</td></tr>
+            <tr><td class="lead-cell">Cost per conversion</td><td class="num-cell">$10.79</td><td class="num-cell neg">$16.31</td></tr>
+            <tr class="total"><td>Conversion rate per click</td><td class="num-cell">3.48%</td><td class="num-cell neg">2.04%</td></tr>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="stats" style="grid-template-columns:1fr">
+          <div class="stat bad"><span class="num">$10,212</span><div class="lab">Conversion value forgone in July<span class="delta down">PMax budget at Shopping's efficiency</span></div></div>
+          <div class="stat bad"><span class="num">3.3x</span><div class="lab">More expensive per conversion than Shopping<span class="delta down">$16.31 against $4.94</span></div></div>
+        </div>
+        <div class="callout" style="margin-top:16px">
+          <div class="k">The arithmetic, plainly</div>
+          <p>Sales PMax spent $1,219.49 and returned $6,161.42. The same money running at Shopping Feed Only's July efficiency of 13.43x would have returned roughly $16,374. The cost of leaving it live for one more month was around $10,212 of conversion value, on identical spend.</p>
+        </div>
+        <div class="panel accent" style="margin-top:14px">
+          <h3>Why it has been given every chance</h3>
+          <p style="font-size:12.5px;color:var(--muted)">This campaign was rebuilt from scratch as v2 in Q2 with URL expansion off and the Winback list as its primary signal. It briefly recovered to 4.91x in mid July, which is why it was held rather than retired at the time. A full closed month at 5.05x on a falling conversion rate settles it. The rebuild has been tested properly and the verdict is now clear.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 16 GOOGLE DEVICE / TRACKING -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">16 / 21</div></div>
+  <div class="eyebrow">Google Ads &middot; The Desktop Question, Resolved</div>
+  <h2>The desktop drop we flagged mid-month was not a tracking break</h2>
+  <p class="lead">In the week of 17 to 23 July we flagged a conversion fall concentrated on desktop and tablet, sitting in the same window as the tag migration, and held it pending reconciliation. The full closed month resolves it, and the answer is better than the alternative.</p>
+  <div class="content">
+    <div class="cols-6040">
+      <div class="panel">
+        <h3>Devices, June against July</h3>
+        <table class="tbl">
+          <tr><th>Device</th><th class="num-cell">June cost</th><th class="num-cell">July cost</th><th class="num-cell">June clicks</th><th class="num-cell">July clicks</th><th class="num-cell">June conv.</th><th class="num-cell">July conv.</th><th class="num-cell">Conv. per click</th></tr>
+          <tr><td class="lead-cell">Mobile</td><td class="num-cell">$2,015.80</td><td class="num-cell">$2,074.83</td><td class="num-cell">5,613</td><td class="num-cell">6,599</td><td class="num-cell">443.01</td><td class="num-cell pos">449.88</td><td class="num-cell">7.89% &rarr; 6.82%</td></tr>
+          <tr><td class="lead-cell">Computers</td><td class="num-cell">$781.54</td><td class="num-cell">$900.68</td><td class="num-cell">1,078</td><td class="num-cell">1,268</td><td class="num-cell">183.07</td><td class="num-cell">178.57</td><td class="num-cell">16.98% &rarr; 14.08%</td></tr>
+          <tr><td class="lead-cell">Tablets</td><td class="num-cell">$87.92</td><td class="num-cell">$100.84</td><td class="num-cell">495</td><td class="num-cell">475</td><td class="num-cell">41.00</td><td class="num-cell neg">30.00</td><td class="num-cell">8.28% &rarr; 6.32%</td></tr>
+          <tr class="total"><td>Account</td><td class="num-cell">$2,888.03</td><td class="num-cell">$3,082.05</td><td class="num-cell">7,187</td><td class="num-cell">8,346</td><td class="num-cell">668.08</td><td class="num-cell">658.45</td><td class="num-cell">9.30% &rarr; 7.89%</td></tr>
+        </table>
+        <p class="note">Desktop conversions closed the month down only 2.5%, not the third we saw in a single week. Conversion rate softened on every device including mobile, so this was never desktop-specific once the full month landed.</p>
+      </div>
+      <div>
+        <div class="panel good">
+          <h3>The control that clears the tags</h3>
+          <p style="font-size:12.5px;color:var(--muted)">Shopping Feed Only's conversion rate per click held at <b style="color:var(--cream)">10.36%</b> against 10.54%, straight through the migration window. If the tags had broken, Shopping would have fallen with everything else. It did not. Purchase tracking is sound.</p>
+        </div>
+        <div class="panel accent" style="margin-top:14px">
+          <h3>What actually happened</h3>
+          <ul class="points tight">
+            <li>The account took <b>16.1% more clicks</b> for 1.4% fewer conversions, so the dilution is in click quality, not in measurement.</li>
+            <li><b>Sales PMax</b> added 421 more clicks at a 2.04% conversion rate, and <b>Demand Gen</b> added 154 clicks at 1.29%. Between them that is most of the account-level rate decline.</li>
+            <li><b>Brand</b> added 269 clicks for no extra conversions, which is broader branded curiosity rather than a fault.</li>
+          </ul>
+        </div>
+        <p class="note">Tag migration continues on schedule and well ahead of the 26 August deadline. Nothing on this slide changes that plan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 17 GOOGLE DEMAND GEN + MC -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">17 / 21</div></div>
+  <div class="eyebrow">Google Ads &middot; New Channel and Store Signals</div>
+  <h2>Demand Gen's first eight days, and the four store fixes still open</h2>
+  <p class="lead">Demand Gen launched on 24 July off your YouTube uploads, opening YouTube, Discover and Gmail as acquisition ground for the first time. It is far too early for a verdict, but it needs a defined gate rather than an open-ended run.</p>
+  <div class="content">
+    <div class="cols">
+      <div class="panel watch">
+        <h3>Demand Gen, first read</h3>
+        <table class="tbl">
+          <tr><th>Metric</th><th class="num-cell">July, 8 days live</th></tr>
+          <tr><td class="lead-cell">Spend</td><td class="num-cell">$189.44</td></tr>
+          <tr><td class="lead-cell">Impressions</td><td class="num-cell">9,718</td></tr>
+          <tr><td class="lead-cell">Clicks</td><td class="num-cell">154</td></tr>
+          <tr><td class="lead-cell">Cost per click</td><td class="num-cell">$1.23</td></tr>
+          <tr><td class="lead-cell">Conversions</td><td class="num-cell">1.99</td></tr>
+          <tr><td class="lead-cell">Conversion value</td><td class="num-cell">$356.94</td></tr>
+          <tr class="total"><td>Return</td><td class="num-cell">1.88x</td></tr>
+        </table>
+        <ul class="points tight" style="margin-top:12px">
+          <li>Cost per click at $1.23 is <b>12 times</b> Brand's $0.10 and more than double Shopping's $0.51, which is normal for cold video placements.</li>
+          <li>Bidding is on Maximise Conversions and phases to target return at 30 to 50 conversions. At the current rate that is months away, so the gate below matters.</li>
+          <li>The 8,172 person prospect audience built from Mailchimp applies as a targeting signal once matching completes.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="panel accent">
+          <h3>Merchant Center: the four store fixes, current state</h3>
+          <table class="tbl">
+            <tr><th>Fix</th><th>Owner</th><th>State</th></tr>
+            <tr><td class="lead-cell">eWallet payments</td><td class="neu">Emma</td><td><span class="tag win">Done, Apple Pay live</span></td></tr>
+            <tr><td class="lead-cell">Return cost field</td><td class="neu">Heath Media</td><td><span class="tag new">Set in Merchant Center</span></td></tr>
+            <tr><td class="lead-cell">Delivery time estimates</td><td class="neu">Heath Media</td><td><span class="tag new">In progress</span></td></tr>
+            <tr><td class="lead-cell">Three to four images per product</td><td class="neu">Emma</td><td><span class="tag watch">Open</span></td></tr>
+          </table>
+          <p class="note">Store quality badge changes take up to 30 days to reflect, so anything landing in August shows in September's Shopping auction behaviour, not immediately.</p>
+        </div>
+        <div class="callout" style="margin-top:14px">
+          <div class="k">The Shopping ad strength fix</div>
+          <p>Shopping Feed Only is flagged as limited for poor ad strength. Feed Only campaigns do not expose the search themes or audience signal panels, so the route in is adding a minimal set of advertiser headlines and descriptions to the asset group. No images or video, so Shopping listings stay dominant, and asset group edits do not reset the learning period.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 18 AUGUST META PLAN -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">18 / 21</div></div>
+  <div class="eyebrow">August Plan &middot; Meta</div>
+  <h2>Hold the total, move a third of it, and refill the creative pool</h2>
+  <p class="lead">Meta's marginal cost per purchase was $57.33, above your breakeven. That is the evidence for not adding a dollar this month. Instead we move the World Cup budget and the fatigued creative money into the two places that proved they hold efficiency, and we replace what has worn out.</p>
+  <div class="content">
+    <div class="cols-6040">
+      <div class="panel">
+        <h3>Proposed August allocation, total held flat</h3>
+        <table class="tbl">
+          <tr><th>Ad set</th><th class="num-cell">July spend</th><th class="num-cell">August target</th><th class="num-cell">Change</th><th>Why</th></tr>
+          <tr><td class="lead-cell">Broad &ndash; Value Optimisation</td><td class="num-cell">$6,954.60</td><td class="num-cell">$8,400</td><td class="num-cell pos">+21%</td><td class="neu">Best ROAS at scale, frequency only 2.49</td></tr>
+          <tr><td class="lead-cell">Partnership, all creators</td><td class="num-cell">$2,936.57</td><td class="num-cell">$7,000</td><td class="num-cell pos">+138%</td><td class="neu">Best campaign return, four new videos due</td></tr>
+          <tr><td class="lead-cell">Broad</td><td class="num-cell">$6,057.86</td><td class="num-cell">$5,000</td><td class="num-cell neg">-17%</td><td class="neu">Frequency 4.02, reach down 36%</td></tr>
+          <tr><td class="lead-cell">LLA</td><td class="num-cell">$3,453.70</td><td class="num-cell">$2,800</td><td class="num-cell neg">-19%</td><td class="neu">Back toward where it ran at 5.13x</td></tr>
+          <tr><td class="lead-cell">World Cup</td><td class="num-cell">$3,761.77</td><td class="num-cell">$0</td><td class="num-cell neg">closed</td><td class="neu">Tournament finished 17 July</td></tr>
+          <tr class="total"><td>Sales total</td><td class="num-cell">$23,164.50</td><td class="num-cell">$23,200</td><td class="num-cell">flat</td><td>No net increase</td></tr>
+        </table>
+        <p class="note">All moves in 20% steps with 5 to 7 days between them. New creator ad sets are additions rather than steps, so they launch at $50 a day without disturbing the existing learning.</p>
+      </div>
+      <div>
+        <div class="panel accent">
+          <h3>Creative actions, in order</h3>
+          <ul class="points tight">
+            <li><b>Pause This Or That in Broad today.</b> $2,313.71 at 2.99x, the largest live drag in the account.</li>
+            <li><b>Scale the three starved winners.</b> Black Pudding, USA vs UK Bacon Copy and Pork Pie Behind The Scenes, from $968 combined toward $3,000, in steps, watching CPP at every stage.</li>
+            <li><b>Launch the Great Taste award creative</b> against Welsh Dragon, once the Guild's usage rules are cleared. A blind-judged 2 star award is the strongest new proof point we have had all year.</li>
+            <li><b>Open the fish angle.</b> The Fish and Chips ad sets have been built since Q2 and have never spent a dollar. Kippers are a top store product and August's shoot covers it.</li>
+            <li><b>Second videos from Georgia and Brits Gone USA</b> before either gets meaningful extra budget. Both are running single clips.</li>
+          </ul>
+        </div>
+        <div class="panel good" style="margin-top:14px">
+          <h3>What this should achieve</h3>
+          <ul class="points tight">
+            <li>Blended Meta return back to <b>4.2x to 4.4x</b> on flat spend.</li>
+            <li>Cost per purchase back toward <b>$34 to $36</b>.</li>
+            <li>Marginal cost per purchase back inside breakeven, which is the gate that unlocks any September scaling.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 19 AUGUST GOOGLE PLAN -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">19 / 21</div></div>
+  <div class="eyebrow">August Plan &middot; Google</div>
+  <h2>Retire the drag, uncap the engine, put a gate on the new channel</h2>
+  <p class="lead">Google is the opposite case to Meta. Its most efficient campaign has been pinned at its budget ceiling all month while its least efficient one held 40% of daily budget. This is the clearest scaling opportunity anywhere in the account.</p>
+  <div class="content">
+    <div class="cols-6040">
+      <div class="panel">
+        <h3>Daily budget plan, August</h3>
+        <table class="tbl">
+          <tr><th>Campaign</th><th class="num-cell">Now</th><th class="num-cell">Wk 1</th><th class="num-cell">Wk 2</th><th class="num-cell">Wk 3</th><th class="num-cell">Wk 4</th><th>Gate to move on</th></tr>
+          <tr><td class="lead-cell">Shopping Feed Only</td><td class="num-cell">$50</td><td class="num-cell">$60</td><td class="num-cell">$72</td><td class="num-cell">$86</td><td class="num-cell">$86 or $100</td><td class="neu">Holds 10x or better</td></tr>
+          <tr><td class="lead-cell">Sales PMax</td><td class="num-cell">$40.20</td><td class="num-cell neg">$0</td><td class="num-cell neg">$0</td><td class="num-cell neg">$0</td><td class="num-cell neg">$0</td><td class="neu">Retired, no further review</td></tr>
+          <tr><td class="lead-cell">Demand Gen</td><td class="num-cell">$30</td><td class="num-cell">$30</td><td class="num-cell">$30</td><td class="num-cell">$30</td><td class="num-cell">$30 or $15</td><td class="neu">Cost per conv. under $25 by 21 Aug</td></tr>
+          <tr><td class="lead-cell">Brand</td><td class="num-cell">$5</td><td class="num-cell">$6</td><td class="num-cell">$6</td><td class="num-cell">$6</td><td class="num-cell">$6</td><td class="neu">Only 6.83% share left to rank</td></tr>
+          <tr class="total"><td>Daily total</td><td class="num-cell">$125.20</td><td class="num-cell">$96</td><td class="num-cell">$108</td><td class="num-cell">$122</td><td class="num-cell">$122</td><td>&nbsp;</td></tr>
+        </table>
+        <p class="note">Projected August Google spend lands at roughly $3,300 to $3,500 against $3,082 in July. That needs the monthly ceiling lifted from $3,000 to $3,500, which is the one budget decision in this deck.</p>
+      </div>
+      <div>
+        <div class="panel accent">
+          <h3>Actions, in order</h3>
+          <ul class="points tight">
+            <li><b>Retire Sales PMax</b> and fold its budget into Shopping. Straight reallocation.</li>
+            <li><b>Fix Shopping's ad strength</b> with headline and description assets only, no images or video, so the feed stays dominant.</li>
+            <li><b>Step Shopping in four 20% moves</b> with 5 to 7 day holds, pausing the next step if return drops below 10x.</li>
+            <li><b>Complete the tag migration</b> and remove the duplicate tags, well ahead of 26 August.</li>
+            <li><b>Apply the prospect audience</b> to Demand Gen as a signal, retire the old exclusion list in favour of the shared suppression list.</li>
+            <li><b>Add Great Taste award messaging</b> to Brand copy and the Welsh Dragon product description, not the Merchant Center title, where promotional text risks disapproval.</li>
+          </ul>
+        </div>
+        <div class="panel good" style="margin-top:14px">
+          <h3>What this should achieve</h3>
+          <ul class="points tight">
+            <li>Google conversion value back above <b>$50,000</b> for the month.</li>
+            <li>Return held in the <b>13x to 15x</b> range while spend grows, rather than protected by starving the account.</li>
+            <li>A clean, dated decision on Demand Gen instead of an open-ended learning phase.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 20 AWARD ACTIVATION -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">20 / 21</div></div>
+  <div class="eyebrow">August Plan &middot; The Great Taste Activation</div>
+  <h2>A blind-judged award is the strongest proof point in the account</h2>
+  <p class="lead">The Welsh Dragon Sausages took a 2 star Great Taste award, judged blind by the Guild of Fine Food. Your two biggest customer objections are price and scepticism about British-style knock-offs. An independent taste award answers both at once, which is exactly the kind of asset the sub-4.0x creative pool needs.</p>
+  <div class="content">
+    <div class="cols-3">
+      <div class="panel accent">
+        <h3>Meta</h3>
+        <ul class="points tight">
+          <li>Award-led statics and a short video into the <b>Value Optimisation</b> ad set, where new creative currently performs best.</li>
+          <li>Runs to the Welsh Dragon page so the badge and the product sit together.</li>
+          <li>Angle is the sceptic's objection: judged blind, by British food experts, made in Buffalo.</li>
+          <li>Sits alongside the product-truth ads that improved in July, same register, same restraint.</li>
+        </ul>
+      </div>
+      <div class="panel accent">
+        <h3>Google</h3>
+        <ul class="points tight">
+          <li>Award messaging into <b>Brand</b> copy, where we already hold 88.79% of the auction.</li>
+          <li>Welsh Dragon prioritised in the Shopping feed with the award in the product description.</li>
+          <li>Carried into <b>Demand Gen</b> as a fresh creative angle once the campaign clears learning.</li>
+          <li>Nothing promotional in the Merchant Center product title, which risks disapproval.</li>
+        </ul>
+      </div>
+      <div class="panel watch">
+        <h3>The gate before any of it goes live</h3>
+        <ul class="points tight">
+          <li>The Guild's usage guidelines are in the shared folder and get read in full before anything goes into production.</li>
+          <li>Award schemes typically restrict the badge to the winning product only, which rules out using it on general sausage or bundle creative.</li>
+          <li>We need to confirm the licence covers <b>paid advertising</b> and not only packaging and owned channels.</li>
+          <li>Every award asset is checked against the rules before it goes live, not after.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="k">Why this matters more than a normal creative refresh</div>
+      <p>Your two most persistent objections are that the price feels high and that customers have been burned by fake British-style food. Every previous answer to those has been our own claim about ourselves. This one is somebody else's, decided by taste alone, and it lands in the middle of a month where the creative pool is exactly what needs refilling.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 21 ROADMAP + ASKS -->
+<section class="slide">
+  <div class="bar"><div class="lockup">Parker's GBI <span class="x">&times;</span><span class="hm">Heath Media</span></div><div class="pageno">21 / 21</div></div>
+  <div class="eyebrow">August Roadmap, Targets and What We Need</div>
+  <h2>The month ahead, week by week</h2>
+  <div class="content">
+    <div class="cols-3">
+      <div class="phase">
+        <div class="ph-when">Week 1</div>
+        <div class="ph-title">Stop the bleeding</div>
+        <ul class="points tight">
+          <li>Retire Sales PMax, budget into Shopping</li>
+          <li>Pause This Or That in Broad</li>
+          <li>Shopping to $60 a day</li>
+          <li>Read the Great Taste usage rules, brief award creative</li>
+          <li>Request the Shopify checkout funnel export</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="ph-when">Weeks 2 and 3</div>
+        <div class="ph-title">Refill and reallocate</div>
+        <ul class="points tight">
+          <li>Scale the three starved winners in steps</li>
+          <li>Value Optimisation and creators up, Broad and LLA down</li>
+          <li>Shopping to $72 then $86</li>
+          <li>Shopping ad strength assets added</li>
+          <li>Award creative live on both platforms</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="ph-when">Week 4</div>
+        <div class="ph-title">Decide and prepare</div>
+        <ul class="points tight">
+          <li>Demand Gen gate on 21 August</li>
+          <li>Tag migration complete before 26 August</li>
+          <li>New creator videos live as they land</li>
+          <li>Fish creative from the August shoot</li>
+          <li>September scaling case, or hold</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cols" style="margin-top:18px">
+      <div class="panel accent">
+        <h3>Targets for August</h3>
+        <ul class="points tight">
+          <li><b>Meta:</b> 4.2x to 4.4x on flat spend, cost per purchase $34 to $36, marginal cost per purchase back under $45.</li>
+          <li><b>Google:</b> conversion value above $50,000, return held between 13x and 15x while Shopping scales.</li>
+          <li><b>Both:</b> no net increase in Meta spend until the marginal number recovers.</li>
+          <li><b>Store:</b> confirm or clear the cart-to-checkout question against Shopify.</li>
+        </ul>
+      </div>
+      <div class="panel good">
+        <h3>What we need from you</h3>
+        <ul class="points tight">
+          <li><b>The Shopify checkout funnel export</b> for June against July, cart to checkout to completed order. This is the highest value thing on the list.</li>
+          <li><b>Confirmation the Great Taste licence covers paid advertising,</b> and the usage rules read across before we produce.</li>
+          <li><b>Approval to lift the Google monthly ceiling</b> from $3,000 to $3,500, funded by retiring PMax.</li>
+          <li><b>Dates for the four creator videos</b> and the August shoot, with fish prioritised.</li>
+          <li><b>Three to four images per product</b> where any product runs on a single image.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer class="end"><span>Heath Media for Parker's GBI &middot; July 2026 review, 1 to 31 July</span><span>All figures validated in Python against raw platform exports at account, campaign and ad set level</span></footer>
+</section>
+
+</div>
+</body>
+</html>
