@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parker's Meta Spend Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a vertical run of full-width "slides", each a framed panel on a cream ground, like pages in a bound heritage report. */
+:root {
+  --ground: #f6efe4;
+  --panel: #fffaf2;
+  --ink: #1a1341;
+  --body: #34304a;
+  --muted: #6d6880;
+  --rule: #e2d8c8;
+  --accent: #711315;
+  --soft: #ece3d4;
+  --good: #2e6a45;
+  --bar1: #1a1341; --bar2: #4a4278; --bar3: #8a83b3; --bar4: #b9763c; --bar5: #c9c2b4;
+  --display: "Libre Caslon Text", Georgia, "Times New Roman", serif;
+  --text: "Figtree", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --ground: #100c26; --panel: #1a1538; --ink: #f4ecdf; --body: #d9d2e6; --muted: #a49dbb; --rule: #332c58;
+  --accent: #e39a8c; --soft: #241e48; --good: #7cc596;
+  --bar1: #f4ecdf; --bar2: #b3a9e0; --bar3: #7c72b8; --bar4: #e0a46b; --bar5: #4a4370; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --ground: #100c26; --panel: #1a1538; --ink: #f4ecdf; --body: #d9d2e6; --muted: #a49dbb; --rule: #332c58;
+  --accent: #e39a8c; --soft: #241e48; --good: #7cc596;
+  --bar1: #f4ecdf; --bar2: #b3a9e0; --bar3: #7c72b8; --bar4: #e0a46b; --bar5: #4a4370; color-scheme: dark }
+
+* { box-sizing: border-box; }
+body { background: var(--ground); color: var(--body); font-family: var(--text); font-size: 16px; line-height: 1.55; margin: 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 48px; }
+.deck { max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; }
+.slide { background: var(--panel); border: 1px solid var(--rule); border-radius: 4px; padding: clamp(22px, 4.5vw, 52px); display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); display: flex; justify-content: space-between; gap: 12px; }
+.eyebrow span:last-child { color: var(--muted); font-variant-numeric: tabular-nums; }
+h1, h2 { font-family: var(--display); color: var(--ink); font-weight: 400; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(34px, 6vw, 60px); line-height: 1.06; }
+h2 { font-size: clamp(25px, 3.6vw, 36px); line-height: 1.15; }
+h1 em, h2 em { font-style: italic; color: var(--accent); }
+p { margin: 0; max-width: 66ch; }
+.lede { font-size: 18px; color: var(--body); }
+.small { font-size: 13.5px; color: var(--muted); }
+
+.cover { background: #1a1341; border-color: #1a1341; color: #fffaf2; padding-block: clamp(36px, 7vw, 76px); }
+.cover h1 { color: #fffaf2; }
+.cover h1 em { color: #e8b9ae; }
+.cover .eyebrow { color: #e8b9ae; }
+.cover .eyebrow span:last-child { color: #bdb6d6; }
+.cover p { color: #d9d2e6; }
+.cover .meta { display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 14px; color: #bdb6d6; border-top: 1px solid #3a3366; padding-top: 16px; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cover { background: #241c52; border-color: #332c58; } }
+:root[data-theme="dark"] .cover { background: #241c52; border-color: #332c58; }
+
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.stat { border-top: 2px solid var(--ink); padding-top: 12px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.stat .label { font-size: 12.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.stat .big { font-family: var(--display); font-size: clamp(36px, 5vw, 50px); color: var(--ink); line-height: 1; font-variant-numeric: tabular-nums; }
+.stat .sub { font-size: 14px; font-variant-numeric: tabular-nums; }
+.pill { display: inline-block; font-size: 12px; font-weight: 600; color: var(--good); border: 1px solid currentColor; border-radius: 999px; padding: 1px 9px; width: fit-content; }
+
+.tablewrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 520px; }
+th { text-align: left; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 8px 10px; border-bottom: 1.5px solid var(--ink); }
+td { padding: 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+td.n, th.n { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+tr.total td { border-top: 1.5px solid var(--ink); border-bottom: none; font-weight: 700; color: var(--ink); }
+.down { color: var(--accent); font-weight: 600; }
+.same { color: var(--muted); }
+
+.split { display: flex; height: 34px; border-radius: 3px; overflow: hidden; }
+.split div { height: 100%; }
+.legend { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px 20px; font-size: 14.5px; }
+.legend div { display: flex; gap: 10px; align-items: baseline; }
+.legend i { width: 11px; height: 11px; border-radius: 2px; flex: none; transform: translateY(1px); }
+.legend b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; margin-left: auto; }
+
+.headline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.headline div { background: var(--soft); border-radius: 3px; padding: 14px 16px; display: flex; flex-direction: column; gap: 2px; }
+.headline span { font-size: 13px; color: var(--muted); }
+.headline strong { font-family: var(--display); font-weight: 400; font-size: 28px; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+.points { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 28px; }
+.point { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.point h3 { font-family: var(--text); font-size: 16.5px; font-weight: 700; color: var(--ink); margin: 0; }
+.point p { font-size: 15px; }
+
+.asks { display: flex; flex-direction: column; gap: 0; counter-reset: ask; }
+.asks li { list-style: none; display: grid; grid-template-columns: 34px 1fr; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+.asks li::before { counter-increment: ask; content: counter(ask); font-family: var(--display); font-size: 22px; color: var(--accent); line-height: 1.2; }
+.asks { padding: 0; margin: 0; }
+
+footer { text-align: center; font-size: 13px; color: var(--muted); }
+
+@media (max-width: 680px) {
+  .stats, .headline, .points { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="deck">
+
+<section class="slide cover">
+  <div class="eyebrow"><span>Parker's GBI | Meta Ads</span><span>16 October 2026</span></div>
+  <h1>Spending less, <em>without losing new customers</em></h1>
+  <p class="lede">A plan to bring Meta spend down by around $5,000 across the next month, keep finding first-time buyers, and arrive at Black Friday ready to scale.</p>
+  <div class="meta"><span>Prepared by Charles Piper</span><span>Data to 15 October 2026</span><span>Meta Ads only</span></div>
+</section>
+
+<section class="slide">
+  <div class="eyebrow"><span>Where we are</span><span>01</span></div>
+  <h2>Every window is <em>above the 4x target</em>, and the last week was the strongest</h2>
+  <div class="stats">
+    <div class="stat"><span class="label">Last 7 days</span><span class="big">4.80x</span><span class="sub">119 purchases at $35.94 each</span><span class="pill">On track</span></div>
+    <div class="stat"><span class="label">Last 14 days</span><span class="big">4.47x</span><span class="sub">231 purchases at $37.05 each</span><span class="pill">On track</span></div>
+    <div class="stat"><span class="label">Last 30 days</span><span class="big">4.59x</span><span class="sub">507 purchases at $36.06 each</span><span class="pill">On track</span></div>
+  </div>
+  <p class="small">Sales campaigns, to 15 October. $20,529.71 in tracked sales from $4,276.70 over the last 7 days. Target: 4.0x or better.</p>
+</section>
+
+<section class="slide">
+  <div class="eyebrow"><span>What's working</span><span>02</span></div>
+  <h2>The main campaign is <em>doing the heavy lifting</em></h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Last 7 days</th><th class="n">Spend</th><th class="n">Purchases</th><th class="n">Sales</th><th class="n">Return</th><th class="n">Per purchase</th></tr></thead>
+    <tbody>
+      <tr><td>Main campaign (Broad, value-based, lookalike)</td><td class="n">$3,768.33</td><td class="n">108</td><td class="n">$18,953.21</td><td class="n">5.03x</td><td class="n">$34.89</td></tr>
+      <tr><td>Creator ads</td><td class="n">$508.37</td><td class="n">11</td><td class="n">$1,576.50</td><td class="n">3.10x</td><td class="n">$46.22</td></tr>
+    </tbody>
+  </table></div>
+  <p>That gap shapes the plan. We take the saving where each dollar returns least, and protect the campaign bringing in nine in ten purchases.</p>
+</section>
+
+<section class="slide">
+  <div class="eyebrow"><span>Today's spend</span><span>03</span></div>
+  <h2>Meta runs at <em>about $621 a day</em></h2>
+  <p>$4,348.79 over the last 7 days, steady across every window we looked at. Here's where it goes over the last 30 days:</p>
+  <div class="split" role="img" aria-label="Spend split over 30 days">
+    <div style="width:36.9%;background:var(--bar1)"></div>
+    <div style="width:32.3%;background:var(--bar2)"></div>
+    <div style="width:18.4%;background:var(--bar3)"></div>
+    <div style="width:10.8%;background:var(--bar4)"></div>
+    <div style="width:1.6%;background:var(--bar5)"></div>
+  </div>
+  <div class="legend">
+    <div><i style="background:var(--bar1)"></i>Broad, value-based<b>36.9%</b></div>
+    <div><i style="background:var(--bar2)"></i>Broad<b>32.3%</b></div>
+    <div><i style="background:var(--bar3)"></i>Lookalike<b>18.4%</b></div>
+    <div><i style="background:var(--bar4)"></i>Creator ads<b>10.8%</b></div>
+    <div><i style="background:var(--bar5)"></i>Email sign-ups<b>1.6%</b></div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="eyebrow"><span>The plan</span><span>04</span></div>
+  <h2>Daily budgets from $653 <em>to $480</em></h2>
+  <div class="headline">
+    <div><span>Saving a day</span><strong>$173</strong></div>
+    <div><span>Saving a week</span><strong>$1,211</strong></div>
+    <div><span>Saving over 30 days</span><strong>$5,190</strong></div>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Ad set</th><th class="n">Now</th><th class="n">New</th><th class="n">Change</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Francesca (creator)</td><td class="n">$30</td><td class="n">Paused</td><td class="n down">−$30</td><td>Running since June, now the most expensive per purchase</td></tr>
+      <tr><td>AJ Slambino (creator)</td><td class="n">$35</td><td class="n">Paused</td><td class="n down">−$35</td><td>Softened after a strong start. Kept ready for Christmas</td></tr>
+      <tr><td>Lookalike</td><td class="n">$114</td><td class="n">$90</td><td class="n down">−$24</td><td>Lowest return of the three main audiences</td></tr>
+      <tr><td>Broad</td><td class="n">$200</td><td class="n">$160</td><td class="n down">−$40</td><td>Bonfire ads run here, within the new budget</td></tr>
+      <tr><td>Broad, value-based</td><td class="n">$229</td><td class="n">$185</td><td class="n down">−$44</td><td>Strongest return, trimmed in line with the others</td></tr>
+      <tr><td>Brits Gone USA (creator)</td><td class="n">$35</td><td class="n">$35</td><td class="n same">No change</td><td>Just launched, and it leads into the Christmas giveaway</td></tr>
+      <tr><td>Email sign-ups</td><td class="n">$10</td><td class="n">$10</td><td class="n same">No change</td><td>Builds the list we'll sell to through Christmas</td></tr>
+      <tr class="total"><td>Total</td><td class="n">$653</td><td class="n">$480</td><td class="n">−$173</td><td></td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">Each main audience comes down by about 20%. Steps of that size keep Meta's learning intact, so the audiences don't have to start again.</p>
+</section>
+
+<section class="slide">
+  <div class="eyebrow"><span>New customers</span><span>05</span></div>
+  <h2>How we keep <em>first-time buyers</em> coming in</h2>
+  <div class="points">
+    <div class="point"><h3>Exclude people who've already bought</h3><p>We load your customer list and keep the main audiences away from it. Historically about 12% of Meta spend reached existing customers, and inside a smaller budget that money goes to new people instead.</p></div>
+    <div class="point"><h3>Measure on your Shopify new customers</h3><p>Weekly, alongside the combined cost per new customer line in the Friday update. That's the number this plan is built to protect.</p></div>
+    <div class="point"><h3>Keep the new creative coming</h3><p>Bonfire, Fish and Chips and Steak &amp; Ale go into the existing audiences within the new budgets. Fresh creative is what keeps Meta finding new people.</p></div>
+    <div class="point"><h3>Keep Brits Gone USA live</h3><p>Creator ads reach people who've never seen us, and this one builds into the Christmas giveaway and the audience we'll sell to in December.</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="eyebrow"><span>What to expect</span><span>06</span></div>
+  <h2>A smaller account, <em>run tighter</em></h2>
+  <div class="points">
+    <div class="point"><h3>Fewer orders, but cheaper ones go first</h3><p>At each audience's average cost, the saving is worth up to about 30 Meta purchases a week, against 119 last week. Likely fewer, because the last dollars in each audience are the least efficient ones.</p></div>
+    <div class="point"><h3>Reported return may dip a little</h3><p>Repeat buyers are the cheapest orders Meta finds, so excluding them lowers the headline figure. It's the right trade when new customers are the goal.</p></div>
+    <div class="point"><h3>Room to go further if needed</h3><p>After 5 to 7 days we can take another 20% off the three main audiences, to $393 a day. That saves $1,820 a week, done in two steps so nothing resets.</p></div>
+    <div class="point"><h3>Checked every day</h3><p>If new customers fall by more than 15% week on week, or cost per purchase sits above $45 for three days, we rebalance straight away.</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="eyebrow"><span>Christmas</span><span>07</span></div>
+  <h2>Set up now for <em>the biggest month of the year</em></h2>
+  <p>Last December was the strongest month on record: 887 purchases at $10.29 each. Black Friday falls on 27 November this year, and Meta needs a week or two to ramp back up. Agreeing now when budget returns, ideally from early November, means we arrive at the season warm rather than starting from cold.</p>
+  <p class="small">Google stays as it is at about $77 a day, and Shopping is reaching more of its auctions each week as the feed work lands.</p>
+</section>
+
+<section class="slide">
+  <div class="eyebrow"><span>Next steps</span><span>08</span></div>
+  <h2>To agree today</h2>
+  <ol class="asks">
+    <li><span>Confirm the $5,000 is across the month, so the new budgets go live straight after this call.</span></li>
+    <li><span>When should budget come back up? Ideally in early November, ahead of Black Friday.</span></li>
+    <li><span>Your last order date for Christmas delivery, so the Christmas ads carry it.</span></li>
+    <li><span>Any low-stock products and the UK delivery date, so we only advertise what you can ship.</span></li>
+  </ol>
+  <p class="small">First review together on Friday 23 October.</p>
+</section>
+
+<footer>Parker's GBI | Meta Ads plan | Charles Piper, Heath Media</footer>
+</div>
+
+</body>
+</html>
